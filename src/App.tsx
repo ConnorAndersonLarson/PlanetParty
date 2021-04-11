@@ -2,44 +2,27 @@ import React from 'react';
 import planetData from './data/planetData.js';
 import './App.css';
 
-interface WhateverIWant {
+interface PlanetBio {
   id: number,
   name: string,
-  mass: string,
+  mass: number,
   diameter: number,
-  gravity: string,
-  length_of_day: string,
-  distance_from_sun: string,
+  gravity: number,
+  length_of_day: number,
+  distance_from_sun: number,
   mean_temperature: number,
   number_of_moons: number,
 }
 
-interface Testing {
-  test: number
-}
-
 interface AllData {
-  allPlanets: Array<WhateverIWant>
+  allPlanets: Array<PlanetBio>
 }
 
 class App extends React.Component<{}, AllData> {
   constructor(props: any) {
     super(props);
     this.state = {
-        allPlanets:[{"id": 1,
-        "name": "Mercury",
-        "mass": "0.33",
-        "diameter": 4879,
-
-        "gravity": "3.7",
-
-        "length_of_day": "4222.6",
-        "distance_from_sun": "57.9",
-
-
-        "mean_temperature": 167,
-        "number_of_moons": 0}]
-
+        allPlanets: planetData
     };
   }
   render() {
