@@ -19,7 +19,7 @@ interface PlanetBio {
 
 interface AllData {
   allPlanets: Array<PlanetBio>,
-  sortCriteria: string
+  // sortCriteria: string
 }
 
 class App extends React.Component<{}, AllData> {
@@ -27,12 +27,23 @@ class App extends React.Component<{}, AllData> {
     super(props);
     this.state = {
       allPlanets: planetData,
-      sortCriteria: 'distance'
+      // sortCriteria: 'distance'
     };
   }
 
-  updateSort = (event: React.MouseEvent<HTMLInputElement>) => {
-    this.setState({sortCriteria: event.currentTarget.value})
+  // updateSort = (event: React.MouseEvent<HTMLInputElement>) => {
+    // this.setState({sortCriteria: event.currentTarget.value})
+  // }
+
+  updateSort = (event: React.MouseEvent<HTMLInputElement>): void => {
+    const sortedPlanets = [...this.state.allPlanets];
+
+    // TODO figure out why replacing hard-coded diameter with event.target.value isn't working
+    sortedPlanets.sort((a: PlanetBio, b: PlanetBio) => (a.diameter - b.diameter));
+    // sortedPlanets.sort((a: PlanetBio, b: PlanetBio) => (a[event.target.value] - b[event.target.value]));
+
+    console.log(sortedPlanets);
+    this.setState({ allPlanets: [...sortedPlanets] });
   }
 
   render() {
