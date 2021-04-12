@@ -14,4 +14,5 @@ export const discoverPlanets = () => {
       number_of_moons: info.number_of_moons
     }
   }))
+  .then(response => response.filter(planet => (planet.name !== 'Moon' && planet.name !== 'Pluto')))
 }
