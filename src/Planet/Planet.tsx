@@ -9,10 +9,10 @@ interface PlanetData {
 }
 
 
-const Planet: React.FC<PlanetData> = ({ id, name, planetFact }) => {
+const Planet: React.FC<PlanetData> = ({ id, name, planetFact }): JSX.Element => {
 
   return (
-    <article className='planet-card'>
+    <article className='planet-card' id={id.toString()}>
       <img className='planet-icon' alt='earth' src={earth}></img>
       <h2 className='planet-card-name'>{name}</h2>
       <p className='planet-card-fact'>{planetFact}</p>

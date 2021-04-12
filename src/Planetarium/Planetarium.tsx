@@ -18,7 +18,7 @@ interface AllData {
   allPlanets: Array<PlanetBio>
 }
 
-const Planetarium: React.FC<AllData> = ({ allPlanets }) => {
+const Planetarium: React.FC<AllData> = ({ allPlanets }): JSX.Element => {
 
   const planetCards = allPlanets.map(planet => {
     return (

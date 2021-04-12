@@ -1,3 +1,7 @@
 .planet-icon {
   height: 150px;
 }
+
+.planet-icon:hover {
+  cursor: pointer;
+}
