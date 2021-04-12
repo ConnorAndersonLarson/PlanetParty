@@ -37,8 +37,8 @@ class App extends React.Component<{}, AllData> {
         <main>
 
           <h2>SortBox</h2>
-          {/* <Planetarium allPlanets={this.state.allPlanets} /> */}
-          <PlanetInfo />
+          <Planetarium allPlanets={this.state.allPlanets} />
+          <PlanetInfo currentPlanet={this.state.allPlanets[2]} />
         </main>
         <footer>
           <p className="credits">Icons made by <a href="https://www.flaticon.com/authors/monkik" title="monkik">monkik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
