@@ -1,6 +1,5 @@
 import React from 'react';
 import './planetInfo.css';
-import earth from '../planets/earth.png';
 
 interface PlanetFacts {
   name: string;
@@ -22,7 +21,7 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet }): JSX.Element => {
   return (
     <section className='planet-info-view'>
       <h2>{name}</h2>
-      <img className='planet-info-img' src={earth}></img>
+      <img className='planet-info-img' src={`../planets/${name}.png`}></img>
       <article>
         <h3>Planet Fun Facts:</h3>
         <ul className='planet-info-list'>
