@@ -7,7 +7,7 @@ const PlanetInfo: React.FC = () => {
   return (
     <section className='planet-info-view'>
       <h2>Earth</h2>
-      <img src={earth}></img>
+      <img className='planet-info-img' src={earth}></img>
       <article>
         <h3>Planet Fun Facts:</h3>
         <ul className='planet-info-list'>
