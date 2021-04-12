@@ -1,5 +1,6 @@
 import React from 'react';
 import './planetarium.css';
+import Planet from '../Planet/Planet';
 
 
 const Planetarium: React.FC = () => {
@@ -7,7 +8,12 @@ const Planetarium: React.FC = () => {
 
 
   return (
-    <h1>Hello</h1>
+    <>
+      <Planet />
+      <Planet />
+      <Planet />
+      <Planet />
+    </>
   )
 }
 
