@@ -1,23 +1,7 @@
 import React from 'react';
-import {PlanetBio, AllData} from '../interface.js';
+import {PlanetBio, AllData} from '../interface';
 import './planetarium.css';
 import Planet from '../Planet/Planet';
-
-// interface PlanetBio {
-//   id: number,
-//   name: string,
-//   mass: number,
-//   diameter: number,
-//   gravity: number,
-//   length_of_day: number,
-//   distance_from_sun: number,
-//   mean_temperature: number,
-//   number_of_moons: number,
-// }
-//
-// interface AllData {
-//   allPlanets: Array<PlanetBio>
-// }
 
 const Planetarium: React.FC<AllData> = ({ allPlanets }): JSX.Element => {
 

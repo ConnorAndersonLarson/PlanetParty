@@ -1,5 +1,5 @@
 import React from 'react';
-import {PlanetBio, AllData} from '../interface.js'
+import {PlanetBio, AllData} from '../interface'
 import planetData from '../data/planetData.js';
 import Planetarium from '../Planetarium/Planetarium';
 import './App.css';
