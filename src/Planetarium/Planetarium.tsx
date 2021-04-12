@@ -8,12 +8,12 @@ const Planetarium: React.FC = () => {
 
 
   return (
-    <>
+    <section className='planets-view'>
       <Planet />
       <Planet />
       <Planet />
       <Planet />
-    </>
+    </section>
   )
 }
 
