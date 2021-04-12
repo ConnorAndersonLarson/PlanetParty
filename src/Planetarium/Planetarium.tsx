@@ -6,6 +6,7 @@ import Planet from '../Planet/Planet';
 const Planetarium: React.FC<AllData> = ({ allPlanets }): JSX.Element => {
 
   const planetCards = allPlanets.map(planet => {
+    if(planet.name !== 'Moon' && planet.name !== 'Pluto') {
     return (
       <Planet
         name={planet.name}
@@ -14,6 +15,7 @@ const Planetarium: React.FC<AllData> = ({ allPlanets }): JSX.Element => {
         planetFact={planet.distance_from_sun}
       />
     )
+    }
   })
 
 

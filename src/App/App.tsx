@@ -1,8 +1,11 @@
 import React from 'react';
-import {PlanetBio, AllData} from '../interface'
+import {PlanetBio, AllData} from '../interface';
+import {discoverPlanets} from '../apiCalls.js';
 import planetData from '../data/planetData.js';
 import Planetarium from '../Planetarium/Planetarium';
 import './App.css';
+
+console.log(discoverPlanets())
 
 class App extends React.Component<{}, AllData> {
   constructor(props: any) {
@@ -11,6 +14,12 @@ class App extends React.Component<{}, AllData> {
       allPlanets: planetData
     };
   }
+
+  componentDidMount = () => {
+    discoverPlanets()
+      .then(result => this.setState({allPlanets: result}))
+  }
+
   render() {
     return (
       <div className="App">
@@ -33,3 +42,6 @@ class App extends React.Component<{}, AllData> {
 }
 
 export default App;
+function planet(planet: any, arg1: (any: any) => boolean): any {
+  throw new Error('Function not implemented.');
+}
