@@ -1,23 +1,8 @@
 import React from 'react';
-import planetData from './data/planetData.js';
-import Planetarium from './Planetarium/Planetarium';
+import {PlanetBio, AllData} from '../interface.js'
+import planetData from '../data/planetData.js';
+import Planetarium from '../Planetarium/Planetarium';
 import './App.css';
-
-interface PlanetBio {
-  id: number,
-  name: string,
-  mass: number,
-  diameter: number,
-  gravity: number,
-  length_of_day: number,
-  distance_from_sun: number,
-  mean_temperature: number,
-  number_of_moons: number,
-}
-
-interface AllData {
-  allPlanets: Array<PlanetBio>
-}
 
 class App extends React.Component<{}, AllData> {
   constructor(props: any) {
