@@ -1,6 +1,7 @@
 import React from 'react';
 import planetData from './data/planetData.js';
 import './App.css';
+import SortBox from './components/SortBox/SortBox';
 
 interface PlanetBio {
   id: number,
@@ -13,6 +14,7 @@ interface PlanetBio {
   mean_temperature: number,
   number_of_moons: number,
 }
+
 
 interface AllData {
   allPlanets: Array<PlanetBio>
@@ -34,7 +36,8 @@ class App extends React.Component<{}, AllData> {
           <img className="galaxy" src="galaxy2.png" alt="galaxy" />
         </header>
         <main>
-          <h2>SortBox</h2>
+          {/* <h2>SortBox</h2> */}
+          <SortBox />
           <h2>Planetarium</h2>
         </main>
       </div>
