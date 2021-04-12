@@ -1,4 +1,4 @@
-# PR Rancid Tomatillos
+# PR PlanetParty
 **Connor A-L, Alex T & Katie B**
 
 ### What does this do?
