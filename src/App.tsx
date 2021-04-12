@@ -36,7 +36,7 @@ class App extends React.Component<{}, AllData> {
         </header>
         <main>
           <h2>SortBox</h2>
-          <Planetarium />
+          <Planetarium allPlanets={this.state.allPlanets} />
         </main>
       </div>
     );
