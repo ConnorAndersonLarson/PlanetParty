@@ -18,16 +18,23 @@ interface PlanetBio {
 
 
 interface AllData {
-  allPlanets: Array<PlanetBio>
+  allPlanets: Array<PlanetBio>,
+  sortCriteria: string
 }
 
 class App extends React.Component<{}, AllData> {
   constructor(props: any) {
     super(props);
     this.state = {
-      allPlanets: planetData
+      allPlanets: planetData,
+      sortCriteria: 'distance'
     };
   }
+
+  updateSort = (event: React.MouseEvent<HTMLInputElement>) => {
+    this.setState({sortCriteria: event.currentTarget.value})
+  }
+
   render() {
     return (
       <div className="App">
@@ -36,7 +43,7 @@ class App extends React.Component<{}, AllData> {
           <h1 className="title">Planet Party!</h1>
         </header>
         <main>
-          <SortBox />
+          <SortBox updateSort={this.updateSort} />
           <Planetarium allPlanets={this.state.allPlanets} />
         </main>
         <footer>
