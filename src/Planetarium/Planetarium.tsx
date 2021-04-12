@@ -26,7 +26,7 @@ const Planetarium: React.FC<AllData> = ({ allPlanets }) => {
         name={planet.name}
         id={planet.id}
         key={planet.id}
-        distance={planet.distance_from_sun}
+        planetFact={planet.distance_from_sun}
       />
     )
   })
@@ -34,10 +34,7 @@ const Planetarium: React.FC<AllData> = ({ allPlanets }) => {
 
   return (
     <section className='planets-view'>
-      <Planet />
-      <Planet />
-      <Planet />
-      <Planet />
+      {planetCards}
     </section>
   )
 }
