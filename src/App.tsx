@@ -1,5 +1,6 @@
 import React from 'react';
 import planetData from './data/planetData.js';
+import Planetarium from './Planetarium/Planetarium';
 import './App.css';
 
 interface PlanetBio {
@@ -22,7 +23,7 @@ class App extends React.Component<{}, AllData> {
   constructor(props: any) {
     super(props);
     this.state = {
-        allPlanets: planetData
+      allPlanets: planetData
     };
   }
   render() {
@@ -35,7 +36,7 @@ class App extends React.Component<{}, AllData> {
         </header>
         <main>
           <h2>SortBox</h2>
-          <h2>Planetarium</h2>
+          <Planetarium />
         </main>
       </div>
     );

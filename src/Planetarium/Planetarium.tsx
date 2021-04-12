@@ -1,12 +1,13 @@
 import React from 'react';
-import './Planetarium.css';
+import './planetarium.css';
 
 
-const Planetarium = () => {
+const Planetarium: React.FC = () => {
+
 
 
   return (
-
+    <h1>Hello</h1>
   )
 }
 
