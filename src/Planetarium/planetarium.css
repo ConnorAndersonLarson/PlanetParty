@@ -1,0 +1,7 @@
+.planets-view {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 3% 0;
+  background-color: white;
+}
