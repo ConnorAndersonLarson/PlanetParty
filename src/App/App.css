@@ -21,12 +21,6 @@ html {
   text-align: center;
 }
 
-
-.giphy-embed {
-  height: 320;
-  border: 0;
-}
-
 .galaxy{
   position: absolute;
   right: 0;
@@ -39,15 +33,6 @@ html {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  background-color: #071927;
-  width: 100%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  color: #D0D7DF;
 }
 
 .App-link {
