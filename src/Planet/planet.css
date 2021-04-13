@@ -1,5 +1,14 @@
+.planet-card {
+  display: flex;
+  flex-direction: column;
+  width: 18%;
+  margin: 10px 15px;
+}
+
 .planet-icon {
-  height: 150px;
+  height: 200px;
+  width: 200px;
+  align-self: center;
 }
 
 .planet-icon:hover {
