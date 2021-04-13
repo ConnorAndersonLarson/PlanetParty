@@ -1,5 +1,5 @@
 import React from 'react';
-import { PlanetBio, AllData } from '../interface';
+import { PlanetBio, AllData } from '../../interface';
 import './planetarium.css';
 import Planet from '../Planet/Planet';
 
