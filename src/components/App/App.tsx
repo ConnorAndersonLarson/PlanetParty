@@ -1,10 +1,11 @@
 import React from 'react';
-import {PlanetBio, AllData} from '../interface';
-import {discoverPlanets} from '../apiCalls.js';
-import planetData from '../data/planetData.js';
+import {PlanetBio, AllData} from '../../interface';
+import {discoverPlanets} from '../../apiCalls.js';
+import planetData from '../../data/planetData.js';
 import Planetarium from '../Planetarium/Planetarium';
 import Header from '../Header/Header';
 import './App.css';
+import SortBox from '../SortBox/SortBox';
 
 console.log(discoverPlanets())
 
@@ -12,8 +13,19 @@ class App extends React.Component<{}, AllData> {
   constructor(props: any) {
     super(props);
     this.state = {
-      allPlanets: planetData
+      allPlanets: planetData,
     };
+  }
+
+  updateSort = (event: React.MouseEvent<HTMLInputElement>): void => {
+    const sortedPlanets = [...this.state.allPlanets];
+    const input = event.target as HTMLInputElement;
+    const sortKey = input.value as keyof PlanetBio;
+
+    sortedPlanets.sort((a: PlanetBio, b: PlanetBio) => ((a[sortKey] as number) - (b[sortKey] as number)));
+
+    console.log(sortedPlanets);
+    this.setState({ allPlanets: [...sortedPlanets] });
   }
 
   componentDidMount = () => {
@@ -26,7 +38,7 @@ class App extends React.Component<{}, AllData> {
       <div className="App">
         <Header />
         <main>
-          <h2>SortBox</h2>
+          <SortBox updateSort={this.updateSort} />
           <Planetarium allPlanets={this.state.allPlanets} />
         </main>
         <footer>
