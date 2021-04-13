@@ -24,7 +24,7 @@ class App extends React.Component<{}, AllData> {
     return (
       <div className="App">
         <header className="App-header">
-          <iframe src="https://giphy.com/embed/VI2UC13hwWin1MIfmi" className="giphy-embed"></iframe>
+          <iframe src="https://giphy.com/embed/VI2UC13hwWin1MIfmi" className="giphy-embed" data-alt="Gif of a cartoon Earth spinning; the Moon is spinning with it."></iframe>
           <h1 className="title">Planet Party!</h1>
         </header>
         <main>
