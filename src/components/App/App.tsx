@@ -3,6 +3,7 @@ import { PlanetBio, AllData } from '../../interface';
 import { discoverPlanets } from '../../apiCalls.js';
 import planetData from '../../data/planetData.js';
 import Planetarium from '../Planetarium/Planetarium';
+import PlanetInfo from '../PlanetInfo/PlanetInfo';
 import Header from '../Header/Header';
 import './App.css';
 import SortBox from '../SortBox/SortBox';
