@@ -6,8 +6,6 @@ import Planetarium from '../Planetarium/Planetarium';
 import PlanetInfo from '../PlanetInfo/PlanetInfo';
 import './App.css';
 
-console.log(discoverPlanets())
-
 class App extends React.Component<{}, AllData> {
   constructor(props: any) {
     super(props);
@@ -18,7 +16,7 @@ class App extends React.Component<{}, AllData> {
 
   componentDidMount = () => {
     discoverPlanets()
-      .then(info => this.setState({ allPlanets: info }))
+      .then(result => this.setState({ allPlanets: result }))
   }
 
   render() {
