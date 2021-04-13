@@ -9,7 +9,7 @@ const SortBox: React.FC<Props> = ({ updateSort }) => {
   return (
     <div>
       <h2>Sort planets by:</h2>
-      <input type="radio" onClick={updateSort} id="distance" name="sortCriteria" value="distance" defaultChecked></input>
+      <input type="radio" onClick={updateSort} id="distance" name="sortCriteria" value="distance_from_sun" defaultChecked></input>
       <label htmlFor="distance">Distance from sun</label>
       <input type="radio" onClick={updateSort} id="mass" name="sortCriteria" value="mass"></input>
       <label htmlFor="mass">Mass</label>
@@ -17,11 +17,11 @@ const SortBox: React.FC<Props> = ({ updateSort }) => {
       <label htmlFor="diameter">Diameter</label>
       <input type="radio" onClick={updateSort} id="gravity" name="sortCriteria" value="gravity"></input>
       <label htmlFor="gravity">Gravity</label>
-      <input type="radio" onClick={updateSort} id="lengthOfDay" name="sortCriteria" value="lengthOfDay"></input>
+      <input type="radio" onClick={updateSort} id="lengthOfDay" name="sortCriteria" value="length_of_day"></input>
       <label htmlFor="lengthOfDay">Length of day</label>
-      <input type="radio" onClick={updateSort} id="meanTemperature" name="sortCriteria" value="meanTemperature"></input>
+      <input type="radio" onClick={updateSort} id="meanTemperature" name="sortCriteria" value="mean_temperature"></input>
       <label htmlFor="meanTemperature">Average Temperature</label>
-      <input type="radio" onClick={updateSort} id="numberOfMoons" name="sortCriteria" value="numberOfMoons"></input>
+      <input type="radio" onClick={updateSort} id="numberOfMoons" name="sortCriteria" value="number_of_moons"></input>
       <label htmlFor="numberOfMoons">Number of moons</label>
     </div>
   )
