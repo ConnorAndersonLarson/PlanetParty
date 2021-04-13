@@ -6,7 +6,7 @@ interface PlanetFacts {
   id: number;
   mass: number;
   distance_from_sun: number;
-  mean_temperature: number;
+  length_of_year: number;
   number_of_moons: number;
   gravity: number;
 }
@@ -17,7 +17,7 @@ interface InfoProps {
 
 const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet }): JSX.Element => {
 
-  const { name, mass, distance_from_sun, number_of_moons, mean_temperature, gravity } = currentPlanet;
+  const { name, mass, distance_from_sun, number_of_moons, length_of_year, gravity } = currentPlanet;
   return (
     <section className='planet-info-view'>
       <h2>{name}</h2>
@@ -28,7 +28,7 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet }): JSX.Element => {
           <li><b>Mass: {mass}</b> </li>
           <li><b>Distance from the sun: {distance_from_sun}</b></li>
           <li><b>Number of Moons: {number_of_moons}</b></li>
-          <li><b>Average Temperature: {mean_temperature}</b></li>
+          <li><b>Length of year: {length_of_year}</b></li>
           <li><b>Gravity: {gravity}</b></li>
         </ul>
       </article>

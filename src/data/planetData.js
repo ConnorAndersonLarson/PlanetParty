@@ -8,7 +8,7 @@ const planetData =
       "gravity": 3.7,
       "length_of_day": 4222.6,
       "distance_from_sun": 57.9,
-      "mean_temperature": 167,
+      "length_of_year": 167,
       "number_of_moons": 6
     },
     {
@@ -19,7 +19,7 @@ const planetData =
       "gravity": 859,
       "length_of_day": 12346,
       "distance_from_sun": 90,
-      "mean_temperature": 150,
+      "length_of_year": 150,
       "number_of_moons": 0
     },
     {
@@ -30,7 +30,7 @@ const planetData =
       "gravity": 1,
       "length_of_day": 24,
       "distance_from_sun": 100,
-      "mean_temperature": 35,
+      "length_of_year": 35,
       "number_of_moons": 1
     },
     {
@@ -41,7 +41,7 @@ const planetData =
       "gravity": 134,
       "length_of_day": 4222.6,
       "distance_from_sun": 120,
-      "mean_temperature": 82,
+      "length_of_year": 82,
       "number_of_moons": 1
     }
 

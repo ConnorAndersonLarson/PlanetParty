@@ -17,7 +17,7 @@ export const discoverPlanets = () => {
   //     }
   //   }))
   //   .then(response => response.filter(planet => (planet.name !== 'Moon' && planet.name !== 'Pluto')))
-  return fetch('https://api.le-systeme-solaire.net/rest.php/bodies?data=id%2C%20englishName%2C%20moons%2C%20mass%2C%20gravity%2C%20massValue%2C%20massExponent%2C%20moon&filter%5B%5D=isPlanet%2Cneq%2Ctrue&filter%5B%5D=')
+  return fetch('https://api.le-systeme-solaire.net/rest.php/bodies?data=%20id%2C%20englishName%2C%20moons%2C%20mass%2C%20gravity%2C%20massValue%2C%20massExponent%2C%20moon%2C%20meanRadius%2C%20sideralOrbit%2C%20sideralRotation%2C%20semimajorAxis&filter%5B%5D=isPlanet%2Cneq%2Ctrue&filter%5B%5D=')
     .then(response => response.json())
 
     .then(response => response.bodies.filter(planet => (planet.id !== 'ceres' && planet.id !== 'pluton' && planet.id !== 'haumea' && planet.id !== 'makemake' && planet.id !== 'eris')))
@@ -27,14 +27,14 @@ export const discoverPlanets = () => {
         id: info.id,
         name: info.englishName,
         mass: info.mass.massValue,
-        diameter: 0,
+        diameter: (info.meanRadius * 2),
         gravity: info.gravity,
-        length_of_day: 0,
-        distance_from_sun: 0,
-        mean_temperature: 0,
-        number_of_moons: 0
+        length_of_day: Math.abs(info.sideralRotation),
+        distance_from_sun: info.semimajorAxis,
+        length_of_year: info.sideralOrbit,
+        number_of_moons: info.moons?.length || 0
       }
     }))
 }
 
-// id, englishName, moons, mass, gravity, massValue, massExponent, moon
+// id, englishName, moons, mass, gravity, massValue, massExponent, moon, meanRadius, sideralOrbit, sideralRotation, semimajorAxis
