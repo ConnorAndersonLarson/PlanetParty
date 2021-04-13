@@ -1,7 +1,7 @@
 .planet-card {
   display: flex;
   flex-direction: column;
-  width: 18%;
+  width: 20%;
   margin: 10px 15px;
 }
 
