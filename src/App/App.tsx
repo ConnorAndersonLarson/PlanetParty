@@ -26,7 +26,6 @@ class App extends React.Component<{}, AllData> {
       <div className="App">
         <Header />
         <main>
-
           <h2>SortBox</h2>
           <Planetarium allPlanets={this.state.allPlanets} />
         </main>
