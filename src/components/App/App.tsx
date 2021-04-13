@@ -1,13 +1,12 @@
 import React from 'react';
-import {PlanetBio, AllData} from '../../interface';
-import {discoverPlanets} from '../../apiCalls.js';
+import { PlanetBio, AllData } from '../../interface';
+import { discoverPlanets } from '../../apiCalls.js';
 import planetData from '../../data/planetData.js';
 import Planetarium from '../Planetarium/Planetarium';
+import PlanetInfo from '../PlanetInfo/PlanetInfo';
 import Header from '../Header/Header';
 import './App.css';
 import SortBox from '../SortBox/SortBox';
-
-console.log(discoverPlanets())
 
 class App extends React.Component<{}, AllData> {
   constructor(props: any) {
@@ -30,7 +29,7 @@ class App extends React.Component<{}, AllData> {
 
   componentDidMount = () => {
     discoverPlanets()
-      .then(result => this.setState({allPlanets: result}))
+      .then(result => this.setState({ allPlanets: result }))
   }
 
   render() {
@@ -40,6 +39,7 @@ class App extends React.Component<{}, AllData> {
         <main>
           <SortBox updateSort={this.updateSort} />
           <Planetarium allPlanets={this.state.allPlanets} />
+          <PlanetInfo currentPlanet={this.state.allPlanets[2]} />
         </main>
         <footer>
           <p className="credits">Icons made by <a href="https://www.flaticon.com/authors/monkik" title="monkik">monkik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>

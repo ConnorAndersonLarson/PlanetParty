@@ -6,7 +6,7 @@ export interface PlanetBio {
   gravity: number,
   length_of_day: number,
   distance_from_sun: number,
-  mean_temperature: number,
+  length_of_year: number,
   number_of_moons: number,
 }
 

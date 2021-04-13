@@ -19,8 +19,8 @@ const SortBox: React.FC<Props> = ({ updateSort }) => {
       <label htmlFor="gravity">Gravity</label>
       <input type="radio" onClick={updateSort} id="lengthOfDay" name="sortCriteria" value="length_of_day"></input>
       <label htmlFor="lengthOfDay">Length of day</label>
-      <input type="radio" onClick={updateSort} id="meanTemperature" name="sortCriteria" value="mean_temperature"></input>
-      <label htmlFor="meanTemperature">Average Temperature</label>
+      <input type="radio" onClick={updateSort} id="lengthOfYear" name="sortCriteria" value="length_of_year"></input>
+      <label htmlFor="lengthOfYear">Length of year</label>
       <input type="radio" onClick={updateSort} id="numberOfMoons" name="sortCriteria" value="number_of_moons"></input>
       <label htmlFor="numberOfMoons">Number of moons</label>
     </div>

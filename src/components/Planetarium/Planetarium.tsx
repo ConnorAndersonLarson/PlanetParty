@@ -1,5 +1,5 @@
 import React from 'react';
-import {PlanetBio, AllData} from '../../interface';
+import { PlanetBio, AllData } from '../../interface';
 import './planetarium.css';
 import Planet from '../Planet/Planet';
 
@@ -11,7 +11,7 @@ const Planetarium: React.FC<AllData> = ({ allPlanets }): JSX.Element => {
         name={planet.name}
         id={planet.id}
         key={planet.id}
-        planetFact={planet.distance_from_sun}
+        planetFact={planet.mass}
       />
     )
   })

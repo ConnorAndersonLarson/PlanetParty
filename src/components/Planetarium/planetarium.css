@@ -1,7 +1,7 @@
 .planets-view {
   display: flex;
-  justify-content: space-evenly;
   flex-wrap: wrap;
+  justify-content: space-evenly;
   margin: 3% 0;
   background-color: black;
 }

@@ -1,0 +1,15 @@
+.planet-info-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.planet-info-img {
+  width: 200px;
+  align-self: center;
+}
+
+.planet-info-list {
+  list-style: none;
+  padding: 0;
+}
