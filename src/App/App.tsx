@@ -3,6 +3,7 @@ import {PlanetBio, AllData} from '../interface';
 import {discoverPlanets} from '../apiCalls.js';
 import planetData from '../data/planetData.js';
 import Planetarium from '../Planetarium/Planetarium';
+import Header from '../Header/Header';
 import './App.css';
 
 console.log(discoverPlanets())
@@ -23,10 +24,7 @@ class App extends React.Component<{}, AllData> {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <iframe src="https://giphy.com/embed/VI2UC13hwWin1MIfmi" className="giphy-embed"></iframe>
-          <h1 className="title">Planet Party!</h1>
-        </header>
+        <Header />
         <main>
 
           <h2>SortBox</h2>

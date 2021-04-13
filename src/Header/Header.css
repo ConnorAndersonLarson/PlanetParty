@@ -1,0 +1,13 @@
+.App-header {
+  background-color: #071927;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  color: #D0D7DF;
+}
+
+.giphy-embed {
+  height: 320;
+  border: 0;
+}
