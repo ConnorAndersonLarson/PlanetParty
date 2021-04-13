@@ -1,11 +1,11 @@
 import React from 'react';
-import {PlanetBio, AllData} from '../interface';
-import {discoverPlanets} from '../apiCalls.js';
-import planetData from '../data/planetData.js';
+import {PlanetBio, AllData} from '../../interface';
+import {discoverPlanets} from '../../apiCalls.js';
+import planetData from '../../data/planetData.js';
 import Planetarium from '../Planetarium/Planetarium';
 import Header from '../Header/Header';
 import './App.css';
-import SortBox from './components/SortBox/SortBox';
+import SortBox from '../SortBox/SortBox';
 
 console.log(discoverPlanets())
 
