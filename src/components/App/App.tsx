@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 import { PlanetBio, AllData } from '../../interface';
 import { discoverPlanets } from '../../apiCalls.js';
 import planetData from '../../data/planetData.js';
