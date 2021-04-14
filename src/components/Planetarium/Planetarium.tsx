@@ -5,7 +5,23 @@ import Planet from '../Planet/Planet';
 
 const Planetarium: React.FC<AllData> = ({ allPlanets, sortKey }): JSX.Element => {
 
-
+  const addDescriptor = (data: any, key: any) => {
+    let descriptor: string = '';
+    if (key === 'distance_from_sun' || key === 'diameter') {
+      descriptor = 'kilometers';
+    } else if ( key === 'mass') {
+      descriptor = 'kilograms';
+    } else if ( key === 'length_of_day') {
+      descriptor = 'hours';
+    } else if ( key === 'length_of_year') {
+      descriptor = 'days'
+    } else if ( key === 'number_of_moons') {
+      descriptor = 'moons'
+    } else if ( key === 'gravity') {
+      descriptor = 'metres per second squared'
+    }
+    return (`${data} ${descriptor}`)
+  }
 
   const planetCards = allPlanets.map(planet => {
     const factData:any = planet[sortKey as keyof PlanetBio]
@@ -14,7 +30,7 @@ const Planetarium: React.FC<AllData> = ({ allPlanets, sortKey }): JSX.Element =>
         name={planet.name}
         id={planet.id}
         key={planet.id}
-        planetFact={factData}
+        planetFact={addDescriptor(factData, sortKey)}
       />
     )
   })
