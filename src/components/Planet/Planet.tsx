@@ -4,7 +4,7 @@ import './planet.css';
 interface PlanetProps {
   name: string,
   id: number,
-  planetFact: number
+  planetFact: string
 }
 
 
