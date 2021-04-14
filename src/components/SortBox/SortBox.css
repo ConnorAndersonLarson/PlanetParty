@@ -8,6 +8,10 @@
   align-items: center;
 }
 
+.sort-icon {
+  width: 50px;
+}
+
 .sort-options {
   display: flex;
   justify-content: center;
@@ -23,10 +27,15 @@
 
 .sort-options label {
   display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
   margin: 5px;
   padding: 10px;
   border: 2px solid #288FDE;
   border-radius: 5px;
+  overflow-wrap: break-word;
+  width: 10%;
 }
 
 .sort-options input[type="radio"]:checked + label {
