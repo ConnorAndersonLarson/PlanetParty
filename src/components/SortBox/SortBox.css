@@ -48,6 +48,18 @@
   border: 2px solid #D0D7DF;
 }
 
+@media only screen and (max-width: 800px) {
+  .sort-options label {
+    width: 20%;
+    /* padding: 2px; */
+    font-size: 15px;
+  }
+
+  .sort-icon {
+    width: 40px;
+  }
+}
+
 /* 
 Dark Blue: #71927
 Large Font/Accent Colors :
