@@ -6,20 +6,11 @@ import { PlanetBio } from '../../interface';
 interface InfoProps {
   currentPlanet: PlanetBio;
 }
-  // id: number,
-  // name: string,
-  // mass: number,
-  // diameter: number,
-  // gravity: number,
-  // length_of_day: number,
-  // distance_from_sun: number,
-  // length_of_year: number,
-  // number_of_moons: number,
 
 const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet }): JSX.Element => {
 
   const {name, mass, diameter, gravity, length_of_day, distance_from_sun, length_of_year, number_of_moons } = currentPlanet;
-  // const { name, mass, distance_from_sun, number_of_moons, length_of_year, gravity } = currentPlanet;
+
   return (
     <section className='planet-info-view'>
       <Link to="/" className='back'>⬅ Back to all planets</Link>
