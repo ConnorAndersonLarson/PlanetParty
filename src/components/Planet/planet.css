@@ -18,7 +18,8 @@
 
 .planet-icon:hover ~ .Earth,
 .planet-icon:hover ~ .Neptune,
-.planet-icon:hover ~ .Uranus {
+.planet-icon:hover ~ .Uranus,
+.planet-icon:hover ~ .Mercury {
   color: #68CCD7;
 }
 

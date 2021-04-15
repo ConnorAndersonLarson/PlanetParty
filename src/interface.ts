@@ -1,5 +1,4 @@
 export interface PlanetBio {
-  data?: any;
   id: number,
   name: string,
   mass: number,
@@ -15,5 +14,5 @@ export interface PlanetBio {
 
 export interface AllData {
   allPlanets: Array<PlanetBio>,
-  sortKey?: any;
+  sortKey: string;
 }
