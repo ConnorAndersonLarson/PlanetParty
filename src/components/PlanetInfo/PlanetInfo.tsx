@@ -20,9 +20,9 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet }): JSX.Element => {
   const { name, mass, distance_from_sun, number_of_moons, length_of_year, gravity } = currentPlanet;
   return (
     <section className='planet-info-view'>
-      <h2>{name}</h2>
+      <h2 className='planet-info-title' >{name}</h2>
       <img className='planet-info-img' src={`../planets/${name}.png`}></img>
-      <article>
+      <article className='planet-info-box'>
         <h3>Planet Fun Facts:</h3>
         <ul className='planet-info-list'>
           <li><b>Mass: {mass}</b> </li>
