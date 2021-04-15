@@ -37,9 +37,9 @@ class App extends React.Component<{}, AllData> {
       <div className="App">
         <Header />
         <main>
-          <SortBox updateSort={this.updateSort} />
-          <Planetarium allPlanets={this.state.allPlanets} />
-          {/* <PlanetInfo currentPlanet={this.state.allPlanets[2]} /> */}
+          {/* <SortBox updateSort={this.updateSort} /> */}
+          {/* <Planetarium allPlanets={this.state.allPlanets} /> */}
+          <PlanetInfo currentPlanet={this.state.allPlanets[2]} />
         </main>
         <footer>
           <p className="credits">Icons made by <a href="https://www.flaticon.com/authors/monkik" title="monkik">monkik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
