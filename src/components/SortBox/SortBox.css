@@ -1,7 +1,3 @@
-* {
-  color: white
-}
-
 .sort-box {
   display: flex;
   flex-direction: column;
@@ -14,7 +10,7 @@
 
 .sort-options {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   font-size: 20px;
 }
@@ -49,7 +45,7 @@
 }
 
 .sort-options input[type="radio"]:focus + label {
-  border: 2px dashed #D0D7DF;
+  border: 2px solid #D0D7DF;
 }
 
 /* 
