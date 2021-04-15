@@ -15,7 +15,7 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet }): JSX.Element => {
     <section className='planet-info-view'>
       <Link to="/" className='back'>⬅ Back to all planets</Link>
       <h2>{name}</h2>
-      <img className='planet-info-img' src={`../planet-pics/${name}-pic.jpg`}></img>
+      <img className='planet-info-img' src={`../planet-pics/${name}-pic.jpg`} alt={name}></img>
       <article>
         <h3>Fun Facts:</h3>
         <ul className='planet-info-list'>

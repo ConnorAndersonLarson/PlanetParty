@@ -5,7 +5,9 @@ import './Header.css';
 const Header: React.FC = () => {
   return (
     <header className="App-header">
-      <iframe src="https://giphy.com/embed/VI2UC13hwWin1MIfmi" className="giphy-embed"></iframe>
+      <Link to="/">
+        <img src="https://media.giphy.com/media/VI2UC13hwWin1MIfmi/source.gif" alt="Animated drawing of spinning Earth with Moon orbiting" className="giphy-embed" />
+      </Link>
       <Link to="/" className="title">Planet Party!</Link>
     </header>
   )
