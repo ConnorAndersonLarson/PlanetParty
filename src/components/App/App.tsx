@@ -78,6 +78,3 @@ class App extends React.Component<{}, AllData> {
 }
 
 export default App;
-function planet(planet: any, arg1: (any: any) => boolean): any {
-  throw new Error('Function not implemented.');
-}
