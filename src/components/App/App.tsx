@@ -13,6 +13,7 @@ class App extends React.Component<{}, AllData> {
     super(props);
     this.state = {
       allPlanets: planetData,
+      sortKey: 'distance_from_sun'
     };
   }
 
@@ -23,8 +24,7 @@ class App extends React.Component<{}, AllData> {
 
     sortedPlanets.sort((a: PlanetBio, b: PlanetBio) => ((a[sortKey] as number) - (b[sortKey] as number)));
 
-    console.log(sortedPlanets);
-    this.setState({ allPlanets: [...sortedPlanets] });
+    this.setState({ allPlanets: [...sortedPlanets], sortKey: sortKey });
   }
 
   componentDidMount = () => {
@@ -38,7 +38,7 @@ class App extends React.Component<{}, AllData> {
         <Header />
         <main>
           <SortBox updateSort={this.updateSort} />
-          <Planetarium allPlanets={this.state.allPlanets} />
+          <Planetarium allPlanets={this.state.allPlanets} sortKey={this.state.sortKey} />
           <PlanetInfo currentPlanet={this.state.allPlanets[2]} />
         </main>
         <footer>
