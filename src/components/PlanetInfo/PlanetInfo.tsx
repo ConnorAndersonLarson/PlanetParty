@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './planetInfo.css';
 import { PlanetBio } from '../../interface';
 
@@ -21,6 +22,7 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet }): JSX.Element => {
   // const { name, mass, distance_from_sun, number_of_moons, length_of_year, gravity } = currentPlanet;
   return (
     <section className='planet-info-view'>
+      <Link to="/" className='back'>⬅ Back to all planets</Link>
       <h2>{name}</h2>
       <img className='planet-info-img' src={`../planets/${name}.png`}></img>
       <article>
