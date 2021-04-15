@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route} from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { PlanetBio, AllData } from '../../interface';
 import { discoverPlanets } from '../../apiCalls.js';
 import planetData from '../../data/planetData.js';
@@ -37,17 +37,17 @@ class App extends React.Component<{}, AllData> {
     return (
       <div className="App">
         <Header />
-        
-        <Route exact path="/" render={ () => {
+
+        <Route exact path="/" render={() => {
           return (
             <main>
               <SortBox updateSort={this.updateSort} />
-              <Planetarium allPlanets={this.state.allPlanets} />
+              <Planetarium allPlanets={this.state.allPlanets} sortKey={this.state.sortKey} />
             </main>
           )
         }} />
 
-        <Route path="/:name" render={ ({ match }) => {
+        <Route path="/:name" render={({ match }) => {
           const foundPlanet = this.state.allPlanets.find(planet => {
             return planet.name.toLowerCase() === match.params.name.toLowerCase()
           });
@@ -56,10 +56,10 @@ class App extends React.Component<{}, AllData> {
             return (
               <main>
                 <SortBox updateSort={this.updateSort} />
-                <Planetarium allPlanets={this.state.allPlanets} />
+                <Planetarium allPlanets={this.state.allPlanets} sortKey={this.state.sortKey} />
               </main>
             )
-          } 
+          }
 
           return (
             <main>
