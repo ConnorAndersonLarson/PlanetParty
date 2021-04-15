@@ -1,18 +1,9 @@
 import React from 'react';
 import './planetInfo.css';
-
-interface PlanetFacts {
-  name: string;
-  id: number;
-  mass: number;
-  distance_from_sun: number;
-  length_of_year: number;
-  number_of_moons: number;
-  gravity: number;
-}
+import { PlanetBio } from '../../interface';
 
 interface InfoProps {
-  currentPlanet: PlanetFacts;
+  currentPlanet: PlanetBio;
 }
 
 const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet }): JSX.Element => {

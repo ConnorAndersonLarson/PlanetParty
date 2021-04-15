@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route} from 'react-router-dom';
 import { PlanetBio, AllData } from '../../interface';
 import { discoverPlanets } from '../../apiCalls.js';
 import planetData from '../../data/planetData.js';
@@ -37,6 +37,7 @@ class App extends React.Component<{}, AllData> {
     return (
       <div className="App">
         <Header />
+
         <Route exact path="/" render={ () => {
           return (
             <main>
@@ -45,13 +46,28 @@ class App extends React.Component<{}, AllData> {
             </main>
           )
         }} />
-        <Route path="/planet" render={ () => {
+
+        <Route path="/:name" render={ ({ match }) => {
+          const foundPlanet = this.state.allPlanets.find(planet => {
+            return planet.name.toLowerCase() === match.params.name.toLowerCase()
+          });
+
+          if (!foundPlanet) {
+            return (
+              <main>
+                <SortBox updateSort={this.updateSort} />
+                <Planetarium allPlanets={this.state.allPlanets} />
+              </main>
+            )
+          } 
+
           return (
             <main>
-              <PlanetInfo currentPlanet={this.state.allPlanets[2]} />
+              <PlanetInfo currentPlanet={foundPlanet} />
             </main>
           )
         }} />
+
         <footer>
           <p className="credits">Icons made by <a href="https://www.flaticon.com/authors/monkik" title="monkik">monkik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
           <p className="credits">Gif made by <a href="https://www.catchmaj.com/">Cat Chmaj</a> at <a href="https://giphy.com/gifs/VI2UC13hwWin1MIfmi">GIPHY</a></p>
