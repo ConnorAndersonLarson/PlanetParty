@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route} from 'react-router-dom';
 import { PlanetBio, AllData } from '../../interface';
 import { discoverPlanets } from '../../apiCalls.js';
 import planetData from '../../data/planetData.js';
@@ -36,11 +37,36 @@ class App extends React.Component<{}, AllData> {
     return (
       <div className="App">
         <Header />
-        <main>
-          <SortBox updateSort={this.updateSort} />
-          <Planetarium allPlanets={this.state.allPlanets} sortKey={this.state.sortKey} />
-          <PlanetInfo currentPlanet={this.state.allPlanets[2]} />
-        </main>
+        
+        <Route exact path="/" render={ () => {
+          return (
+            <main>
+              <SortBox updateSort={this.updateSort} />
+              <Planetarium allPlanets={this.state.allPlanets} />
+            </main>
+          )
+        }} />
+
+        <Route path="/:name" render={ ({ match }) => {
+          const foundPlanet = this.state.allPlanets.find(planet => {
+            return planet.name.toLowerCase() === match.params.name.toLowerCase()
+          });
+
+          if (!foundPlanet) {
+            return (
+              <main>
+                <SortBox updateSort={this.updateSort} />
+                <Planetarium allPlanets={this.state.allPlanets} />
+              </main>
+            )
+          } 
+
+          return (
+            <main>
+              <PlanetInfo currentPlanet={foundPlanet} />
+            </main>
+          )
+        }} />
         <footer>
           <p className="credits">Icons made by <a href="https://www.flaticon.com/authors/monkik" title="monkik">monkik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
           <p className="credits">Gif made by <a href="https://www.catchmaj.com/">Cat Chmaj</a> at <a href="https://giphy.com/gifs/VI2UC13hwWin1MIfmi">GIPHY</a></p>
@@ -51,6 +77,3 @@ class App extends React.Component<{}, AllData> {
 }
 
 export default App;
-function planet(planet: any, arg1: (any: any) => boolean): any {
-  throw new Error('Function not implemented.');
-}

@@ -4,6 +4,12 @@
   justify-content: center;
 }
 
+.back {
+  text-decoration: none;
+  padding: 20px 0 0 20px;
+  align-self: flex-start;
+}
+
 .planet-info-title {
   font-size: 40px;
 }
