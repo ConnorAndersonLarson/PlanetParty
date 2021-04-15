@@ -14,18 +14,18 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet }): JSX.Element => {
   return (
     <section className='planet-info-view'>
       <Link to="/" className='back'>⬅ Back to all planets</Link>
-      <h2>{name}</h2>
+      <h2 className='planet-info-title' >{name}</h2>
       <img className='planet-info-img' src={`../planet-pics/${name}-pic.jpg`} alt={name}></img>
-      <article>
-        <h3>Fun Facts:</h3>
+      <article className='planet-info-box'>
+        <h3>{name} Fun Facts:</h3>
         <ul className='planet-info-list'>
-          <li><b>Distance from the sun: {distance_from_sun}</b></li>
-          <li><b>Mass: {mass}</b> </li>
-          <li><b>Diameter: {diameter}</b> </li>
-          <li><b>Gravity: {gravity}</b> </li>
-          <li><b>Length of day: {length_of_day}</b></li>
-          <li><b>Length of year: {length_of_year}</b></li>
-          <li><b>Number of moons: {number_of_moons}</b></li>
+          <li><b>Distance from the sun:</b> {distance_from_sun}</li>
+          <li><b>Mass:</b> {mass} </li>
+          <li><b>Diameter:</b> {diameter} </li>
+          <li><b>Gravity:</b> {gravity} </li>
+          <li><b>Length of day:</b> {length_of_day}</li>
+          <li><b>Length of year:</b> {length_of_year}</li>
+          <li><b>Number of moons:</b> {number_of_moons}</li>
         </ul>
       </article>
     </section>

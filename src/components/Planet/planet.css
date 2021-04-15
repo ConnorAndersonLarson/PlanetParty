@@ -1,3 +1,7 @@
+.planet-card-name, .planet-card-fact{
+  transition: color 1s
+}
+
 .planet-card {
   display: flex;
   flex-direction: column;
@@ -9,8 +13,31 @@
   height: 200px;
   width: 200px;
   align-self: center;
+  cursor: pointer;
 }
 
-.planet-icon:hover {
-  cursor: pointer;
+.planet-icon:hover ~ .Earth,
+.planet-icon:hover ~ .Neptune,
+.planet-icon:hover ~ .Uranus,
+.planet-icon:hover ~ .Mercury {
+  color: #68CCD7;
+}
+
+.planet-icon:hover ~ .Venus,
+.planet-icon:hover ~ .Mars,
+.planet-icon:hover ~ .Jupiter,
+.planet-icon:hover ~ .Saturn {
+  color: #F5AE45;
+}
+
+@media only screen and (max-width: 850px) {
+  .planet-card {
+    width: 30%;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .planet-card {
+    width: 60%;
+  }
 }

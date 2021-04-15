@@ -14,6 +14,7 @@ class App extends React.Component<{}, AllData> {
     super(props);
     this.state = {
       allPlanets: planetData,
+      sortKey: 'distance_from_sun'
     };
   }
 
@@ -24,8 +25,7 @@ class App extends React.Component<{}, AllData> {
 
     sortedPlanets.sort((a: PlanetBio, b: PlanetBio) => ((a[sortKey] as number) - (b[sortKey] as number)));
 
-    console.log(sortedPlanets);
-    this.setState({ allPlanets: [...sortedPlanets] });
+    this.setState({ allPlanets: [...sortedPlanets], sortKey: sortKey });
   }
 
   componentDidMount = () => {
@@ -37,7 +37,7 @@ class App extends React.Component<{}, AllData> {
     return (
       <div className="App">
         <Header />
-
+        
         <Route exact path="/" render={ () => {
           return (
             <main>
@@ -67,7 +67,6 @@ class App extends React.Component<{}, AllData> {
             </main>
           )
         }} />
-
         <footer>
           <p className="credits">Icons made by <a href="https://www.flaticon.com/authors/monkik" title="monkik">monkik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
           <p className="credits">Gif made by <a href="https://www.catchmaj.com/">Cat Chmaj</a> at <a href="https://giphy.com/gifs/VI2UC13hwWin1MIfmi">GIPHY</a></p>

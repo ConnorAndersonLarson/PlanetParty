@@ -10,6 +10,9 @@ export interface PlanetBio {
   number_of_moons: number,
 }
 
+
+
 export interface AllData {
-  allPlanets: Array<PlanetBio>
+  allPlanets: Array<PlanetBio>,
+  sortKey: string;
 }

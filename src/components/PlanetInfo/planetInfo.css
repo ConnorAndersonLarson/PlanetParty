@@ -10,9 +10,20 @@
   align-self: flex-start;
 }
 
+.planet-info-title {
+  font-size: 40px;
+}
+
 .planet-info-img {
   width: 200px;
   align-self: center;
+}
+
+.planet-info-box {
+  border: 5px solid #D0D7DF;
+  width: 70%;
+  align-self: center;
+  margin-top: 20px;
 }
 
 .planet-info-list {
