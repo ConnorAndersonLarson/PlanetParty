@@ -1,5 +1,5 @@
 import React from 'react';
-import { AllData } from '../../interface';
+import { AllData, PlanetBio } from '../../interface';
 import './planetarium.css';
 import Planet from '../Planet/Planet';
 
@@ -9,15 +9,15 @@ const Planetarium: React.FC<AllData> = ({ allPlanets, sortKey }): JSX.Element =>
     let descriptor: string = '';
     if (key === 'distance_from_sun' || key === 'diameter') {
       descriptor = 'kilometers';
-    } else if ( key === 'mass') {
+    } else if (key === 'mass') {
       descriptor = 'kilograms';
-    } else if ( key === 'length_of_day') {
+    } else if (key === 'length_of_day') {
       descriptor = 'hours';
-    } else if ( key === 'length_of_year') {
+    } else if (key === 'length_of_year') {
       descriptor = 'days'
-    } else if ( key === 'number_of_moons') {
+    } else if (key === 'number_of_moons') {
       descriptor = 'moons'
-    } else if ( key === 'gravity') {
+    } else if (key === 'gravity') {
       descriptor = 'metres per second squared'
     }
     return (`${data} ${descriptor}`)
