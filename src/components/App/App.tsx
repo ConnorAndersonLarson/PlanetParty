@@ -37,8 +37,8 @@ class App extends React.Component<{}, AllData> {
       <div className="App">
         <Header />
         <main>
-          {/* <SortBox updateSort={this.updateSort} /> */}
-          {/* <Planetarium allPlanets={this.state.allPlanets} /> */}
+          <SortBox updateSort={this.updateSort} />
+          <Planetarium allPlanets={this.state.allPlanets} />
           <PlanetInfo currentPlanet={this.state.allPlanets[2]} />
         </main>
         <footer>

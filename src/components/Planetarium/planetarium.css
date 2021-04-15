@@ -2,6 +2,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  margin: 2% 0;
+  margin: 10px 0;
   background-color: black;
 }
