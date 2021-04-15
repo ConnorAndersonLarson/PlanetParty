@@ -60,6 +60,27 @@
   }
 }
 
+@media only screen and (max-width: 580px) {
+  .sort-options label {
+    width: 20%;
+    padding: 5px;
+    font-size: 15px;
+  }
+
+  .sort-options {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    /* justify-content: space-evenly;
+    flex-wrap: wrap;
+    font-size: 20px; */
+  }
+
+  .sort-icon {
+    display: none;
+  }
+}
+
 /* 
 Dark Blue: #71927
 Large Font/Accent Colors :
