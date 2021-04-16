@@ -10,7 +10,7 @@ const SortBox: React.FC<Props> = ({ updateSort }) => {
     <section className='sort-box'>
       <h2>Sort planets by:</h2>
       <div className='sort-options'>
-        <input type="radio" onClick={updateSort} id="distance" name="sortCriteria" value="distance_from_sun" defaultChecked></input>
+        <input type="radio" onClick={updateSort} id="distance" name="sortCriteria" value="distance_from_sun"></input>
         <label htmlFor="distance"><img className='sort-icon' alt='astronaut icon' src='../space/sun.png'></img>Distance from sun</label>
         <input type="radio" onClick={updateSort} id="mass" name="sortCriteria" value="mass"></input>
         <label htmlFor="mass"><img className='sort-icon' alt='astronaut icon' src='../space/asteroid.png'></img>Mass</label>

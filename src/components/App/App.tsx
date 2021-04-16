@@ -2,7 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import { PlanetBio, AllData } from '../../interface';
 import { discoverPlanets } from '../../apiCalls.js';
-import planetData from '../../data/planetData.js';
+// import planetData from '../../data/planetData.js';
 import Planetarium from '../Planetarium/Planetarium';
 import PlanetInfo from '../PlanetInfo/PlanetInfo';
 import Header from '../Header/Header';
@@ -13,8 +13,8 @@ class App extends React.Component<{}, AllData> {
   constructor(props: any) {
     super(props);
     this.state = {
-      allPlanets: planetData,
-      sortKey: 'distance_from_sun'
+      allPlanets: [],
+      sortKey: ''
     };
   }
 
@@ -37,11 +37,11 @@ class App extends React.Component<{}, AllData> {
     return (
       <div className="App">
         <Header />
-
         <Route exact path="/" render={() => {
           return (
             <main>
               <SortBox updateSort={this.updateSort} />
+              {!this.state.allPlanets.length && <h2>Loading...</h2>}
               <Planetarium allPlanets={this.state.allPlanets} sortKey={this.state.sortKey} />
             </main>
           )
