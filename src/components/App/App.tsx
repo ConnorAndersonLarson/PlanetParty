@@ -13,7 +13,7 @@ class App extends React.Component<{}, AllData> {
   constructor(props: any) {
     super(props);
     this.state = {
-      allPlanets: planetData,
+      allPlanets: [],
       sortKey: 'distance_from_sun'
     };
   }
@@ -37,11 +37,11 @@ class App extends React.Component<{}, AllData> {
     return (
       <div className="App">
         <Header />
-
         <Route exact path="/" render={() => {
           return (
             <main>
               <SortBox updateSort={this.updateSort} />
+              {!this.state.allPlanets.length && <h2>Loading...</h2>}
               <Planetarium allPlanets={this.state.allPlanets} sortKey={this.state.sortKey} />
             </main>
           )
