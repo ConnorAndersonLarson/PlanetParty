@@ -2,7 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import { PlanetBio, AllData } from '../../interface';
 import { discoverPlanets } from '../../apiCalls.js';
-import planetData from '../../data/planetData.js';
+// import planetData from '../../data/planetData.js';
 import Planetarium from '../Planetarium/Planetarium';
 import PlanetInfo from '../PlanetInfo/PlanetInfo';
 import Header from '../Header/Header';
@@ -14,7 +14,7 @@ class App extends React.Component<{}, AllData> {
     super(props);
     this.state = {
       allPlanets: [],
-      sortKey: 'distance_from_sun'
+      sortKey: ''
     };
   }
 
