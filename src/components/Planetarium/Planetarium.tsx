@@ -10,7 +10,7 @@ const Planetarium: React.FC<AllData> = ({ allPlanets, sortKey }): JSX.Element =>
     if (key === 'distance_from_sun' || key === 'diameter') {
       descriptor = 'km';
     } else if (key === 'mass') {
-      descriptor = 'kg';
+      descriptor = 'quintillion kg';
     } else if (key === 'length_of_day') {
       descriptor = 'hours';
     } else if (key === 'length_of_year') {

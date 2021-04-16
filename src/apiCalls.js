@@ -26,7 +26,7 @@ export const discoverPlanets = () => {
       return {
         id: info.id,
         name: info.englishName,
-        mass: info.mass.massValue,
+        mass: parseMass(info.mass.massValue, info.mass.massExponent),
         diameter: (info.meanRadius * 2),
         gravity: info.gravity,
         length_of_day: Math.abs(info.sideralRotation),
@@ -35,6 +35,11 @@ export const discoverPlanets = () => {
         number_of_moons: info.moons?.length || 0
       }
     }))
+}
+
+const parseMass = (value, exponent) => {
+  const delta = exponent - 18; //to find exponent beyone 10^18 (quintillion)
+  return (value * Math.pow(10, delta));
 }
 
 // id, englishName, moons, mass, gravity, massValue, massExponent, moon, meanRadius, sideralOrbit, sideralRotation, semimajorAxis
