@@ -6,7 +6,8 @@
   display: flex;
   flex-direction: column;
   width: 20%;
-  margin: 10px 15px;
+  margin: 10px 15px 40px 15px;
+  text-decoration: none;
 }
 
 .planet-icon {
@@ -29,6 +30,16 @@
 .planet-icon:hover ~ .Saturn {
   color: #F5AE45;
 }
+
+.planet-card-name {
+  margin: 20px 10px 10px 10px;
+}
+
+.planet-card-fact {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
 
 @media only screen and (max-width: 850px) {
   .planet-card {
