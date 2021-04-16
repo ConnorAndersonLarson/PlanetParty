@@ -15,7 +15,7 @@
 }
 
 .planet-info-img {
-  width: 200px;
+  width: 400px;
   align-self: center;
 }
 
@@ -38,4 +38,16 @@
 
 .planet-info-list li {
   margin: 10px;
+}
+
+@media only screen and (max-width: 850px) {
+  .planet-info-img {
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .planet-info-img {
+    width: 200px;
+  }
 }
