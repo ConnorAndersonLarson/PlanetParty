@@ -27,11 +27,11 @@ export const discoverPlanets = () => {
         id: info.id,
         name: info.englishName,
         mass: parseMass(info.mass.massValue, info.mass.massExponent),
-        diameter: (info.meanRadius * 2),
-        gravity: info.gravity,
-        length_of_day: Math.abs(info.sideralRotation),
+        diameter: Math.round(info.meanRadius * 2),
+        gravity: info.gravity.toFixed(2),
+        length_of_day: Math.abs(info.sideralRotation).toFixed(1),
         distance_from_sun: info.semimajorAxis,
-        length_of_year: info.sideralOrbit,
+        length_of_year: (info.sideralOrbit.toFixed(2) * 100)/100,
         number_of_moons: info.moons?.length || 0
       }
     }))
