@@ -25,7 +25,7 @@ const Planetarium: React.FC<AllData> = ({ allPlanets, sortKey }): JSX.Element =>
 
   const planetCards = allPlanets.map(planet => {
     let factData: string | number = planet[sortKey as keyof PlanetBio];
-    if (!factData) {
+    if (factData === undefined) {
       factData = '';
     }
     return (
