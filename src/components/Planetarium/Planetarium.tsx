@@ -8,9 +8,9 @@ const Planetarium: React.FC<AllData> = ({ allPlanets, sortKey }): JSX.Element =>
   const addDescriptor = (data: number, key: string) => {
     let descriptor: string = '';
     if (key === 'distance_from_sun' || key === 'diameter') {
-      descriptor = 'kilometers';
+      descriptor = 'km';
     } else if (key === 'mass') {
-      descriptor = 'kilograms';
+      descriptor = 'kg';
     } else if (key === 'length_of_day') {
       descriptor = 'hours';
     } else if (key === 'length_of_year') {
@@ -18,7 +18,7 @@ const Planetarium: React.FC<AllData> = ({ allPlanets, sortKey }): JSX.Element =>
     } else if (key === 'number_of_moons') {
       descriptor = 'moons'
     } else if (key === 'gravity') {
-      descriptor = 'meters per second squared'
+      descriptor = 'm/s²'
     }
     return (`${data} ${descriptor}`)
   }
