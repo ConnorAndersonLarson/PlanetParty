@@ -23,10 +23,19 @@
   border: 5px solid #D0D7DF;
   width: 70%;
   align-self: center;
-  margin-top: 20px;
+  margin-top: 30px;
+}
+
+.fun-fact-header {
+  margin: 10px 10px 25px 10px;
+  font-size: 2rem;
 }
 
 .planet-info-list {
   list-style: none;
   padding: 0;
+}
+
+.planet-info-list li {
+  margin: 10px;
 }
