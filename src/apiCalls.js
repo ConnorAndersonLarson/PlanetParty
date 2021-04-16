@@ -26,15 +26,20 @@ export const discoverPlanets = () => {
       return {
         id: info.id,
         name: info.englishName,
-        mass: info.mass.massValue,
-        diameter: (info.meanRadius * 2),
-        gravity: info.gravity,
-        length_of_day: Math.abs(info.sideralRotation),
+        mass: parseMass(info.mass.massValue, info.mass.massExponent),
+        diameter: Math.round(info.meanRadius * 2),
+        gravity: info.gravity.toFixed(2),
+        length_of_day: Math.abs(info.sideralRotation).toFixed(1),
         distance_from_sun: info.semimajorAxis,
-        length_of_year: info.sideralOrbit,
+        length_of_year: (info.sideralOrbit.toFixed(2) * 100)/100,
         number_of_moons: info.moons?.length || 0
       }
     }))
+}
+
+const parseMass = (value, exponent) => {
+  const delta = exponent - 18; //to find exponent beyone 10^18 (quintillion)
+  return (value * Math.pow(10, delta));
 }
 
 // id, englishName, moons, mass, gravity, massValue, massExponent, moon, meanRadius, sideralOrbit, sideralRotation, semimajorAxis
