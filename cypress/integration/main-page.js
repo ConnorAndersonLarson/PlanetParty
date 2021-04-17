@@ -11,22 +11,22 @@ describe('Home View Testing', () => {
     cy.visit(`${baseURL}`);
   });
   it('Should display site name', () => {
-    cy.get('h1').should('contain', 'Planet Party!')
+    cy.get('.title').should('contain', 'Planet Party!')
   })
   it('Should have alt text on header gif', () => {
-    cy.get('.giphy-embed').should('have.attr', 'data-alt')
+    cy.get('.giphy-embed').should('have.attr', 'alt')
       .then(alttext => {
-        expect(alttext).to.equal('Gif of a cartoon Earth spinning; the Moon is spinning with it.')
+        expect(alttext).to.equal('Animated drawing of spinning Earth with Moon orbiting')
       })
   })
   it('Should show eight planets', () => {
     cy.get('.planet-card').should('have.length', 8)
   })
   it('Should have planets in order based on distance from sun to start', () => {
-    cy.get('.planet-card').eq(0).should('contain', 'Mercury')
-    cy.get('.planet-card').eq(1).should('contain', 'Venus')
-    cy.get('.planet-card').eq(4).should('contain', 'Jupiter')
-    cy.get('.planet-card').eq(5).should('contain', 'Saturn')
-    cy.get('.planet-card').eq(7).should('contain', 'Neptune')
+    cy.get('.planet-card').should('contain', 'Mercury')
+    cy.get('.planet-card').should('contain', 'Venus')
+    cy.get('.planet-card').should('contain', 'Jupiter')
+    cy.get('.planet-card').should('contain', 'Saturn')
+    cy.get('.planet-card').should('contain', 'Neptune')
   })
 })
