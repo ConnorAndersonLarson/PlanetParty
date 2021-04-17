@@ -1,4 +1,4 @@
-describe('Home View Testing', () => {
+describe('Sort Testing', () => {
   const baseURL = 'http://localhost:3000/'
 
   beforeEach(() => {

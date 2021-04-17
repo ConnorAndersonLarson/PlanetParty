@@ -29,4 +29,14 @@ describe('Home View Testing', () => {
     cy.get('.planet-card').should('contain', 'Saturn')
     cy.get('.planet-card').should('contain', 'Neptune')
   })
+  it('Should be able to visit planets from home view', () => {
+    cy.get('#venus').click()
+      .get('.planet-info-view').get('.planet-info-title').should('contain', 'Venus')
+    cy.visit(`${baseURL}`).wait(500);
+    cy.get('#terre').click()
+      .get('.planet-info-view').get('.planet-info-title').should('contain', 'Earth')
+    cy.visit(`${baseURL}`).wait(500);
+    cy.get('#neptune').click()
+      .get('.planet-info-view').get('.planet-info-title').should('contain', 'Neptune')
+  })
 })
