@@ -37,38 +37,40 @@ class App extends React.Component<{}, AllData> {
     return (
       <div className="App">
         <Header />
-        <Switch >
-          <Route exact path="/" render={() => {
-            return (
-              <main>
-                <SortBox updateSort={this.updateSort} />
-                {!this.state.allPlanets.length && <h2>Loading...</h2>}
-                <Planetarium allPlanets={this.state.allPlanets} sortKey={this.state.sortKey} />
-              </main>
-            )
-          }} />
+        <main>
+          <Switch >
+            <Route exact path="/" render={() => {
+              return (
+                <>
+                  <SortBox updateSort={this.updateSort} />
+                  {!this.state.allPlanets.length && <h2>Loading...</h2>}
+                  <Planetarium allPlanets={this.state.allPlanets} sortKey={this.state.sortKey} />
+                </>
+              )
+            }} />
 
-          <Route exact path="/:name" render={({ match }) => {
-            const foundPlanet = this.state.allPlanets.find(planet => {
-              return planet.name.toLowerCase() === match.params.name.toLowerCase()
-            })!;
-            return (
-              <main>
-                <PlanetInfo currentPlanet={foundPlanet} />
-              </main>
-            )
-          }} />
-          <Route path='*' render={() => {
-            return (
-              <main>
-                <SortBox updateSort={this.updateSort} />
-                <Planetarium allPlanets={this.state.allPlanets} sortKey={this.state.sortKey} />
-              </main>
-            )
-          }}
-
-          />
-        </Switch>
+            <Route exact path="/:name" render={({ match }) => {
+              //this ! is weird
+              const foundPlanet = this.state.allPlanets.find(planet => planet.name.toLowerCase() === match.params.name.toLowerCase())!;
+              console.log(foundPlanet);
+              return (
+                <>
+                  {!foundPlanet && <h2>Opps, looks like that planet is out of our solar system</h2>}
+                  {foundPlanet && <PlanetInfo currentPlanet={foundPlanet} />}
+                </>
+              )
+            }} />
+            <Route path='*' render={() => {
+              return (
+                <>
+                  <SortBox updateSort={this.updateSort} />
+                  <Planetarium allPlanets={this.state.allPlanets} sortKey={this.state.sortKey} />
+                </>
+              )
+            }}
+            />
+          </Switch>
+        </main>
         <footer>
           <p className="credits">Icons made by <a href="https://www.flaticon.com/authors/monkik" title="monkik">monkik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
           <p className="credits">Gif made by <a href="https://www.catchmaj.com/">Cat Chmaj</a> at <a href="https://giphy.com/gifs/VI2UC13hwWin1MIfmi">GIPHY</a></p>
