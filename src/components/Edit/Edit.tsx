@@ -9,6 +9,7 @@ const Edit: React.FC<any> = ({ data }): JSX.Element => {
       value={input}
       onChange={event => setInput(event.target.value)}
       placeholder={data}
+      type='text'
     />
   )
 }
