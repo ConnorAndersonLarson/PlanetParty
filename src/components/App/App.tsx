@@ -11,7 +11,7 @@ import SortBox from '../SortBox/SortBox';
 
 
 const parseMass = (value: number, exponent: number) => {
-  const delta = exponent - 18; //to find exponent beyone 10^18 (quintillion)
+  const delta = exponent - 18; //to find exponent beyond 10^18 (quintillion)
   return (value * Math.pow(10, delta));
 }
 class App extends React.Component<{}, AllData> {
@@ -36,22 +36,28 @@ class App extends React.Component<{}, AllData> {
 
   componentDidMount = () => {
     discoverPlanets()
-    .then(response => response.json())
-    .then(response => response.bodies.filter((planet: IncomingData) => (planet.id !== 'ceres' && planet.id !== 'pluton' && planet.id !== 'haumea' && planet.id !== 'makemake' && planet.id !== 'eris')))
-    .then(planets => planets.map((info: IncomingData) => {
-      return {
-        id: info.id,
-        name: info.englishName,
-        mass: parseMass(info.mass.massValue, info.mass.massExponent),
-        diameter: Math.round(info.meanRadius * 2),
-        gravity: info.gravity.toFixed(2),
-        length_of_day: Math.abs(info.sideralRotation).toFixed(1),
-        distance_from_sun: info.semimajorAxis,
-        length_of_year: Math.round(info.sideralOrbit),
-        number_of_moons: info.moons?.length || 0
-      }
-    }))
+      .then(response => {
+        if (!response.ok) {
+          throw new Error();
+        }
+        return response.json();
+      })
+      .then(response => response.bodies.filter((planet: IncomingData) => (planet.id !== 'ceres' && planet.id !== 'pluton' && planet.id !== 'haumea' && planet.id !== 'makemake' && planet.id !== 'eris')))
+      .then(planets => planets.map((info: IncomingData) => {
+        return {
+          id: info.id,
+          name: info.englishName,
+          mass: parseMass(info.mass.massValue, info.mass.massExponent),
+          diameter: Math.round(info.meanRadius * 2),
+          gravity: info.gravity.toFixed(2),
+          length_of_day: Math.abs(info.sideralRotation).toFixed(1),
+          distance_from_sun: info.semimajorAxis,
+          length_of_year: Math.round(info.sideralOrbit),
+          number_of_moons: info.moons?.length || 0
+        }
+      }))
       .then(result => this.setState({ allPlanets: result }))
+      .catch(err => this.setState({ error: 'Oh no! Something went wrong with the data launch!' }))
   }
 
   render() {
