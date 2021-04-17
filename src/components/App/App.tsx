@@ -31,6 +31,7 @@ class App extends React.Component<{}, AllData> {
   componentDidMount = () => {
     discoverPlanets()
       .then(result => this.setState({ allPlanets: result }))
+      .then(() => console.log('fetched'))
   }
 
   render() {
@@ -48,27 +49,16 @@ class App extends React.Component<{}, AllData> {
                 </>
               )
             }} />
-
             <Route exact path="/:name" render={({ match }) => {
-              //this ! is weird
-              const foundPlanet = this.state.allPlanets.find(planet => planet.name.toLowerCase() === match.params.name.toLowerCase())!;
-              console.log(foundPlanet);
+              const foundPlanet = this.state.allPlanets.find(planet => planet.name.toLowerCase() === match.params.name.toLowerCase());
               return (
                 <>
-                  {!foundPlanet && <h2>Opps, looks like that planet is out of our solar system</h2>}
+                  {!foundPlanet && <h2>Oops, looks like that planet is out of our solar system</h2>}
                   {foundPlanet && <PlanetInfo currentPlanet={foundPlanet} />}
                 </>
               )
             }} />
-            <Route path='*' render={() => {
-              return (
-                <>
-                  <SortBox updateSort={this.updateSort} />
-                  <Planetarium allPlanets={this.state.allPlanets} sortKey={this.state.sortKey} />
-                </>
-              )
-            }}
-            />
+            <Route path='*' render={() => <h2>Oops, looks like that planet is out of our solar system</h2>} />
           </Switch>
         </main>
         <footer>
