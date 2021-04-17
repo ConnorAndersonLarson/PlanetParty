@@ -68,7 +68,8 @@ class App extends React.Component<{}, AllData> {
           return (
             <main>
               <SortBox updateSort={this.updateSort} />
-              {!this.state.allPlanets.length && <h2>Loading...</h2>}
+              {this.state.error && <h2>{this.state.error}</h2>}
+              {!this.state.error && !this.state.allPlanets.length && <h2>Loading...</h2>}
               <Planetarium allPlanets={this.state.allPlanets} sortKey={this.state.sortKey} error={this.state.error} />
             </main>
           )
@@ -83,6 +84,8 @@ class App extends React.Component<{}, AllData> {
             return (
               <main>
                 <SortBox updateSort={this.updateSort} />
+                {this.state.error && <h2>{this.state.error}</h2>}
+                {!this.state.error && !this.state.allPlanets.length && <h2>Loading...</h2>}
                 <Planetarium allPlanets={this.state.allPlanets} sortKey={this.state.sortKey} error={this.state.error}/>
               </main>
             )
