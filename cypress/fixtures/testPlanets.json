@@ -1,4 +1,4 @@
-[
+{ "bodies": [
   {
   "id": "ceres",
   "englishName": "1 Ceres",
@@ -581,4 +581,4 @@
   "meanRadius": 6051.80000,
   "sideralOrbit": 224.70100,
   "sideralRotation": -5832.50000
-}]
+}]}
