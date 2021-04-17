@@ -23,9 +23,13 @@ Light Gray: #D0D7DF */
 .planet-info-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
-.column {
+.planet-info-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   width: 30%;
   min-width: 300px;
 }
@@ -43,8 +47,12 @@ Light Gray: #D0D7DF */
 }
 
 .planet-info-img {
-  width: 400px;
+  width: 100%;
   align-self: center;
+}
+
+.info-icon {
+  width: 50px;
 }
 
 .planet-info-box {
