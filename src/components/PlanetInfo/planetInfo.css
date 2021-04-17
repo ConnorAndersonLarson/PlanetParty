@@ -1,3 +1,13 @@
+/* 
+Dark Blue: #71927
+Large Font/Accent Colors :
+Mid Blue: #288FDE
+Red: #F04528
+All Font/Accent Colors :
+Light Blue: #68CCD7
+Yellow: #F5AE45
+Light Gray: #D0D7DF */
+
 .planet-info-view {
   display: flex;
   flex-direction: column;
@@ -8,6 +18,24 @@
   text-decoration: none;
   padding: 20px 0 0 20px;
   align-self: flex-start;
+}
+
+.planet-info-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column {
+  width: 30%;
+  min-width: 300px;
+}
+
+.planet-info-card {
+  width: 100%;
+}
+
+.planet-info-card > h2 {
+  color: #D0D7DF;
 }
 
 .planet-info-title {
