@@ -52,16 +52,6 @@ class App extends React.Component<{}, AllData> {
             const foundPlanet = this.state.allPlanets.find(planet => {
               return planet.name.toLowerCase() === match.params.name.toLowerCase()
             })!;
-
-            // if (!foundPlanet) {
-            //   return (
-            //     <main>
-            //       <SortBox updateSort={this.updateSort} />
-            //       <Planetarium allPlanets={this.state.allPlanets} sortKey={this.state.sortKey} />
-            //     </main>
-            //   )
-            // }
-
             return (
               <main>
                 <PlanetInfo currentPlanet={foundPlanet} />
