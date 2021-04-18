@@ -273,6 +273,36 @@ Light Gray: #D0D7DF */
   font-weight: bold;
 }
 
+/******* Length of day *******/
+.info-icon__length-of-day {
+  width: 80px;
+  float: left;
+}
+
+.planet-info-text__length-of-day {
+  text-align: right;
+}
+
+.length-of-day-multiplier {
+  color: #68CCD7;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.length-of-day-words {
+  color: #68CCD7;
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.length-of-day-earth {
+  display: block;
+  color: #68CCD7;
+  font-size: 1.75rem;
+  font-weight: bold;
+  text-align: right;
+}
+
 /******* Media queries *******/
 @media only screen and (max-width: 850px) {
   .planet-info-img {

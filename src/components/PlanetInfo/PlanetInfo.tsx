@@ -169,8 +169,32 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
           </div>
           <div className='planet-info-card planet-info-card__day'>
             <img className='info-icon info-icon__length-of-day' alt='spinning planet icon' src='../space/orbit-fill.svg'></img>
-            <h2 className='planet-info-title planet-info-title__length-of-day'>Length of day</h2>
-            <h3 className='planet-info-length-of-day'>{length_of_day} hours</h3>
+            {name === 'Earth' && 
+              <>
+                <h2 className='planet-info-title planet-info-title__length-of-day'>Length of day</h2>
+                <p className='planet-info-text planet-info-text__length-of-day'>
+                  <span className='length-of-day-earth'>{length_of_day} hours</span>
+                </p>
+              </>
+            }
+            {name !== 'Earth' && 
+              <p className='planet-info-text planet-info-text__length-of-day'>
+                Compared to kids on Earth, kids on {name} would have {' '}
+                {(name === 'Mars' || name === 'Mercury' || name === 'Venus') && 
+                  <>
+                    <span className='length-of-day-multiplier'>{(length_of_day - 23.9).toFixed(1)}</span> 
+                    <span className='length-of-day-words'> extra hours </span> 
+                  </>
+                }
+                {(name === 'Jupiter' || name === 'Saturn' || name === 'Neptune' || name === 'Uranus') && 
+                  <>
+                    <span className='length-of-day-multiplier'>{(23.9 - length_of_day).toFixed(1)}</span> 
+                    <span className='length-of-day-words'> fewer hours </span> 
+                  </>
+                }
+                to play every day
+              </p>
+            }
           </div>
         </div>
       </div>
