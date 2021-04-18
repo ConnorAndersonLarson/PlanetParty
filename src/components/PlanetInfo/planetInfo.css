@@ -50,7 +50,6 @@ Light Gray: #D0D7DF */
 
 .planet-info-title__name {
   font-size: 4rem;
-  margin-top: 15px;
 }
 
 .planet-info-img {
@@ -72,20 +71,59 @@ Light Gray: #D0D7DF */
   margin-top: 30px;
 }
 
-.fun-fact-header {
-  margin: 10px 10px 25px 10px;
+.planet-info-text {
+  font-size: 1.5rem;
+}
+
+/******* Mass *******/
+.info-icon__mass {
+  width: 80px;
+  margin-left: 20px;
+  vertical-align: baseline;
+}
+
+.planet-info-text__mass {
+  display: inline;
+  line-height: 2.5rem;
+}
+
+.mass-multiplier {
+  color: #F04528;
   font-size: 2rem;
+  font-weight: bold;
 }
 
-.planet-info-list {
-  list-style: none;
-  padding: 0;
+.mass-words {
+  color: #F04528;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-.planet-info-list li {
-  margin: 10px;
+.mass-earth {
+  display: block;
+  color: #F04528;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
+/******* Moons *******/
+.info-icon__moons {
+  width: 100px;
+}
+
+.moon-count {
+  color: #288FDE;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.moon-word {
+  color: #288FDE;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/******* Media queries *******/
 @media only screen and (max-width: 850px) {
   .planet-info-img {
     width: 300px;
