@@ -30,6 +30,7 @@ class App extends React.Component<{}, AllData> {
     };
   }
 
+
   updateSort = (event: React.MouseEvent<HTMLInputElement>): void => {
     const sortedPlanets = [...this.state.allPlanets];
     const input = event.target as HTMLInputElement;
@@ -39,6 +40,10 @@ class App extends React.Component<{}, AllData> {
 
     this.setState({ allPlanets: [...sortedPlanets], sortKey: sortKey });
   };
+
+  resetSort = (): void => {
+    this.setState({ sortKey: '' })
+  }
 
   componentDidMount = () => {
     discoverPlanets()
@@ -87,7 +92,7 @@ class App extends React.Component<{}, AllData> {
               return (
                 <>
                   {!foundPlanet && <h2>Oops, looks like that planet is out of our solar system</h2>}
-                  {foundPlanet && <PlanetInfo currentPlanet={foundPlanet} />}
+                  {foundPlanet && <PlanetInfo currentPlanet={foundPlanet} resetSort={this.resetSort} />}
                 </>
               )
             }} />

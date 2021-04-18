@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './planetInfo.css';
 import { InfoProps } from '../../interface';
 
-const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet }): JSX.Element => {
+const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Element => {
   const [input, setInput] = useState('100');
 
   const { name, mass, diameter, gravity, length_of_day, distance_from_sun, length_of_year, number_of_moons } = currentPlanet;
@@ -15,7 +15,7 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet }): JSX.Element => {
 
   return (
     <section className='planet-info-view'>
-      <Link to="/" className='back'>⬅ Back to all planets</Link>
+      <Link to="/" onClick={() => resetSort()} className='back'>⬅ Back to all planets</Link>
       <h2 className='planet-info-title' >{name}</h2>
       <img className='planet-info-img' src={`../planet-pics/${name}-pic.jpg`} alt={name}></img>
       <article className='planet-info-box'>

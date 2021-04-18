@@ -3,6 +3,7 @@ import { Props } from '../../interface';
 import './SortBox.css';
 
 const SortBox: React.FC<Props> = ({ updateSort }) => {
+
   return (
     <section className='sort-box'>
       <h2>Sort planets by:</h2>
