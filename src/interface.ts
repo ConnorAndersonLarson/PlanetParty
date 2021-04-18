@@ -16,15 +16,24 @@ export interface AllData {
   error: string
 }
 
+export interface PlanetProps {
+  name: string,
+  id: number,
+  planetFact: string
+}
+
+export interface InfoProps {
+  currentPlanet: PlanetBio;
+}
+
+export interface Props {
+  updateSort: (event: React.MouseEvent<HTMLInputElement>) => void
+}
 
 interface Moons {
   moon: string
 }
 
-// interface Masses {
-//   massValue: number,
-//   massExponent: number
-// }
 export interface IncomingData {
   id: string,
   englishName: string,
