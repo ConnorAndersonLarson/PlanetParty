@@ -1,15 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './planetInfo.css';
-import { PlanetBio, InfoProps } from '../../interface';
+import { InfoProps } from '../../interface';
 
 const getMoonWord = (moonCount: number) => {
   return moonCount === 1 ? 'moon' : 'moons';
 }
 
 const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet }): JSX.Element => {
+  const [input, setInput] = useState('100');
 
   const { name, mass, diameter, gravity, length_of_day, distance_from_sun, length_of_year, number_of_moons } = currentPlanet;
+
+  const gravityConversion = (planetGravity: number | string): number => {
+    const weightOnPlanet = Math.round((Number(planetGravity) / 9.807) * Number(input));
+    return weightOnPlanet;
+  }
 
   return (
     <section className='planet-info-view'>
@@ -39,6 +45,14 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet }): JSX.Element => {
             <h2 className='planet-info-title planet-info-title__gravity'>Gravity</h2>
             <img className='info-icon info-icon__gravity' alt='comet icon' src='../space/comet-fill.svg'></img>
             <h3 className='planet-info-gravity'>{gravity} m/s²</h3>
+          <b>Gravity:</b><input
+            className='gravity-input'
+            value={input}
+            onChange={event => setInput(event.target.value)}
+            min='0'
+            type='number'
+            aria-label='Weight on Earth'
+          /> lbs on earth would weigh {input && gravityConversion(gravity)}{!input && gravityConversion(input)} lbs on {name}
           </div>
           <div className='planet-info-card planet-info-card__diameter'>
             <img className='info-icon info-icon__diameter' alt='astronaut on orb icon' src='../space/visitor-fill.svg'></img>
