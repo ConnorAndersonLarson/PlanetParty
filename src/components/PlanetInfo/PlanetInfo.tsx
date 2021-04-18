@@ -142,8 +142,18 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
             {name !== 'Earth' && 
               <p className='planet-info-text planet-info-text__distance'>
                 The sun appears  {' '}
-                <span className='distance-multiplier'>{ (diameter / 149598262).toFixed(2)}</span> 
-                <span className='distance-from-sun-words'> times larger </span>
+                {(name === 'Mercury' || name === 'Venus') &&
+                  <>
+                    <span className='distance-multiplier'>{ (149598262 / distance_from_sun).toFixed(2)}</span> 
+                    <span className='distance-words'> times larger </span>
+                  </>
+                }
+                {(name === 'Mars' || name === 'Jupiter' || name === 'Saturn' || name === 'Uranus' || name === 'Neptune') &&
+                  <>
+                    <span className='distance-multiplier'>{ (distance_from_sun / 149598262).toFixed(2)}</span> 
+                    <span className='distance-words'> times smaller </span>
+                  </>
+                }
                 {' '} from {name} 
               </p>
             }
