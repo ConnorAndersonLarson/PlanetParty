@@ -17,6 +17,11 @@
   cursor: pointer;
 }
 
+.planet-icon:hover {
+  transform: scale(1.05);
+  transition: transform 1s ease-in-out;
+}
+
 .planet-icon:hover ~ .Earth,
 .planet-icon:hover ~ .Neptune,
 .planet-icon:hover ~ .Uranus,
@@ -30,6 +35,7 @@
 .planet-icon:hover ~ .Saturn {
   color: #F5AE45;
 }
+
 
 .planet-card-name {
   margin: 20px 10px 10px 10px;
