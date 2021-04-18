@@ -1,5 +1,5 @@
 /* 
-Dark Blue: #71927
+Dark Blue: #071927
 Large Font/Accent Colors :
 Mid Blue: #288FDE
 Red: #F04528
@@ -104,6 +104,36 @@ Light Gray: #D0D7DF */
   color: #F04528;
   font-size: 1.5rem;
   font-weight: bold;
+}
+
+/******* Length of year *******/
+.info-icon__length-of-year {
+  width: 80px;
+  margin-left: 20px;
+  vertical-align: top;
+  float: right;
+  display: block;
+}
+
+.length-of-year-multiplier {
+  color: #68CCD7;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.length-of-year-words {
+  color: #68CCD7;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.length-of-year-earth {
+  display: block;
+  color: #68CCD7;
+  font-size: 2.25rem;
+  font-weight: bold;
+  text-align: end;
+  padding-right: 10px;
 }
 
 /******* Gravity *******/
