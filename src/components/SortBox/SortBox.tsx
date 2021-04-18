@@ -12,7 +12,7 @@ const SortBox: React.FC<Props> = ({ updateSort }) => {
         <input type="radio" onClick={updateSort} id="mass" name="sortCriteria" value="mass"></input>
         <label htmlFor="mass"><img className='sort-icon' alt='asteroid icon' src='../space/asteroid.png'></img>Mass</label>
         <input type="radio" onClick={updateSort} id="diameter" name="sortCriteria" value="diameter"></input>
-        <label htmlFor="diameter"><img className='sort-icon' alt='line drawing of astronaut on orb' src='../space/visiter.png'></img>Diameter</label>
+        <label htmlFor="diameter"><img className='sort-icon' alt='astronaut on orb icon' src='../space/visitor.png'></img>Diameter</label>
         <input type="radio" onClick={updateSort} id="gravity" name="sortCriteria" value="gravity"></input>
         <label htmlFor="gravity"><img className='sort-icon' alt='comet icon' src='../space/comet.png'></img>Gravity</label>
         <input type="radio" onClick={updateSort} id="lengthOfDay" name="sortCriteria" value="length_of_day"></input>
