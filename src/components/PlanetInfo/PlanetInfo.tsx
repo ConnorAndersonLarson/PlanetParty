@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './planetInfo.css';
-import { PlanetBio } from '../../interface';
-
-interface InfoProps {
-  currentPlanet: PlanetBio;
-}
+import { PlanetBio, InfoProps } from '../../interface';
 
 const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet }): JSX.Element => {
   const [isInputActive, setIsInputActive] = useState(false);

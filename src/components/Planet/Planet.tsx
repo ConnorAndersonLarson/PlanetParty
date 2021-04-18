@@ -1,12 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { PlanetProps } from '../../interface';
 import './planet.css';
-
-interface PlanetProps {
-  name: string,
-  id: number,
-  planetFact: string
-}
 
 const Planet: React.FC<PlanetProps> = ({ id, name, planetFact }): JSX.Element => {
 
