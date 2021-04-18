@@ -5,7 +5,7 @@ import Planet from '../Planet/Planet';
 
 const Planetarium: React.FC<AllData> = ({ allPlanets, sortKey }): JSX.Element => {
 
-  const addDescriptor = (data: number, key: string) => {
+  const addDescriptor = (data: number, key: string): string => {
     let descriptor: string = '';
     if (key === 'distance_from_sun' || key === 'diameter') {
       descriptor = 'km';
