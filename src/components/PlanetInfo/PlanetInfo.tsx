@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './planetInfo.css';
 import { PlanetBio } from '../../interface';
-// import Edit from '../Edit/Edit'
 
 interface InfoProps {
   currentPlanet: PlanetBio;
