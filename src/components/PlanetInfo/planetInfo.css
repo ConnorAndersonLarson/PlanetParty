@@ -223,6 +223,13 @@ Light Gray: #D0D7DF */
   text-align: center;
 }
 
+/******* Distance from sun *******/
+.info-icon__distance {
+  width: 100px;
+  vertical-align: bottom;
+  float: right;
+}
+
 /******* Moons *******/
 .info-icon__moons {
   width: 100px;

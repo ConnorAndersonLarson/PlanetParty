@@ -92,8 +92,9 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet }): JSX.Element => {
         <div className='planet-info-column planet-info-column-3'>
           <div className='planet-info-card planet-info-card__distance'>
             <img className='info-icon info-icon__distance' alt='sun icon' src='../space/sun-fill.svg'></img>
-            <h2 className='planet-info-title planet-info-title__distance-from-sun'>Distance from sun</h2>
-            <h3 className='planet-info-distance-from-sun'>{distance_from_sun} km</h3>
+            {name === 'Earth' && <h2 className='planet-info-title planet-info-title__distance'>Distance from sun</h2>}
+            {name !== 'Earth' && <p className='planet-info-text planet-info-text__distance'>The sun appears <span className='distance-multiplier'>{(diameter / 149598262).toFixed(2)}</span> <span className='distance-from-sun-words'> times larger </span> from {name} </p>}
+            {name === 'Earth' && <p className='planet-info-text planet-info-text__distance'><span className='distance-earth'>{distance_from_sun} km</span></p>}
           </div>
           <div className='planet-info-card planet-info-card__moons'>
             <img className='info-icon info-icon__moons' alt='eclipse icon' src='../space/eclipse-fill.svg'></img>
