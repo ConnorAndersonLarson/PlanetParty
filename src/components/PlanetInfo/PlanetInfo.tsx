@@ -35,9 +35,10 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet }): JSX.Element => {
             value={input}
             onChange={event => setInput(event.target.value)}
             placeholder='100'
+            min='0'
             type='number'
             aria-label='Weight on Earth'
-          /> lbs on earth would weigh {input && gravityConversion(gravity)}{!input && gravityConversion(input)} lbs</li>
+          /> lbs on earth would weigh {input && gravityConversion(gravity)}{!input && gravityConversion(input)} lbs on {name}</li>
           <li><b>Length of day:</b> {length_of_day} hours</li>
           <li><b>Length of year:</b> {length_of_year} days</li>
           <li><b>Number of moons:</b> {number_of_moons}</li>
