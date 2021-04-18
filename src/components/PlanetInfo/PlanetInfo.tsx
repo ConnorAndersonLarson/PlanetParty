@@ -169,7 +169,7 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
             </p>
           </div>
           <div className='planet-info-card planet-info-card__day'>
-            <img className='info-icon info-icon__length-of-day' alt='spinning planet icon' src='../space/orbit-fill.svg'></img>
+            <img className='info-icon info-icon__length-of-day' alt='spinning planet icon' src='../space/planet-fill.svg'></img>
             {name === 'Earth' && 
               <>
                 <h2 className='planet-info-title planet-info-title__length-of-day'>Length of day</h2>
