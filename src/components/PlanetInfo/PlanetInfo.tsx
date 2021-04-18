@@ -7,7 +7,7 @@ const getMoonWord = (moonCount: number) => {
   return moonCount === 1 ? 'moon' : 'moons';
 }
 
-const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet }): JSX.Element => {
+const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Element => {
   const [input, setInput] = useState('100');
 
   const { name, mass, diameter, gravity, length_of_day, distance_from_sun, length_of_year, number_of_moons } = currentPlanet;
@@ -19,7 +19,7 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet }): JSX.Element => {
 
   return (
     <section className='planet-info-view'>
-      <Link to="/" className='back'>⬅ Back to all planets</Link>
+      <Link to="/" onClick={() => resetSort()} className='back'>⬅ Back to all planets</Link>
       <div className='planet-info-container'>
         <div className='planet-info-column planet-info-column-1'>
           <div className='planet-info-card planet-info-card__name'>

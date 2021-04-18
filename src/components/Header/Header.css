@@ -18,3 +18,18 @@
   text-decoration: none;
   margin-left: 15px;
 }
+
+@media only screen and (max-width: 850px) {
+  .App-header {
+    justify-content: space-between;
+  }
+  .title {
+    margin: 0 50px 0 0 ;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .title {
+    margin: 7.5px;
+  }
+}

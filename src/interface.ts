@@ -24,6 +24,7 @@ export interface PlanetProps {
 
 export interface InfoProps {
   currentPlanet: PlanetBio;
+  resetSort: () => void
 }
 
 export interface Props {
