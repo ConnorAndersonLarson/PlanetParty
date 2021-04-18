@@ -2,7 +2,6 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { PlanetBio, AllData, IncomingData } from '../../interface';
 import { discoverPlanets } from '../../apiCalls.js';
-// import planetData from '../../data/planetData.js';
 import Planetarium from '../Planetarium/Planetarium';
 import PlanetInfo from '../PlanetInfo/PlanetInfo';
 import Header from '../Header/Header';
@@ -32,7 +31,7 @@ class App extends React.Component<{}, AllData> {
     sortedPlanets.sort((a: PlanetBio, b: PlanetBio) => ((a[sortKey] as number) - (b[sortKey] as number)));
 
     this.setState({ allPlanets: [...sortedPlanets], sortKey: sortKey });
-  }
+  };
 
   componentDidMount = () => {
     discoverPlanets()
@@ -58,7 +57,7 @@ class App extends React.Component<{}, AllData> {
       }))
       .then(result => this.setState({ allPlanets: result }))
       .catch(err => this.setState({ error: 'Oh no! Something went wrong with the data launch!' }))
-  }
+  };
 
   render() {
     return (

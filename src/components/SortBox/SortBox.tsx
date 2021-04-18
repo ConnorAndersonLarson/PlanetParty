@@ -1,9 +1,6 @@
 import React from 'react';
+import { Props } from '../../interface';
 import './SortBox.css';
-
-interface Props {
-  updateSort: (event: React.MouseEvent<HTMLInputElement>) => void
-}
 
 const SortBox: React.FC<Props> = ({ updateSort }) => {
   return (
