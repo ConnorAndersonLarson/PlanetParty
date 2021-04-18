@@ -14,8 +14,8 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet }): JSX.Element => {
 
   const { name, mass, diameter, gravity, length_of_day, distance_from_sun, length_of_year, number_of_moons } = currentPlanet;
 
-  const gravityConversion: any = (planetGravity: number): number => {
-    const weightOnPlanet = Math.round((planetGravity / 9.807) * Number(input));
+  const gravityConversion = (planetGravity: number | string): number => {
+    const weightOnPlanet = Math.round((Number(planetGravity) / 9.807) * Number(input));
     return weightOnPlanet;
   }
 
@@ -31,11 +31,13 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet }): JSX.Element => {
           <li><b>Mass:</b> {mass} kg</li>
           <li><b>Diameter:</b> {diameter} km</li>
           <li><b>Gravity:</b><input
+            className='gravity-input'
             value={input}
             onChange={event => setInput(event.target.value)}
             placeholder='100'
             type='number'
-          /> lbs on earth would weigh {input && gravityConversion(gravity)}{!input && gravity} lbs</li>
+            aria-label='Weight on Earth'
+          /> lbs on earth would weigh {input && gravityConversion(gravity)}{!input && gravityConversion(input)} lbs</li>
           <li><b>Length of day:</b> {length_of_day} hours</li>
           <li><b>Length of year:</b> {length_of_year} days</li>
           <li><b>Number of moons:</b> {number_of_moons}</li>
