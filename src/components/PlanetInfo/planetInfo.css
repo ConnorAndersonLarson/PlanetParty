@@ -35,6 +35,8 @@
   cursor: pointer;
   padding: 8px 0;
   text-align: center;
+  box-sizing: border-box;
+  border: 5px solid black;
   width: 10%;
   margin: 0 5px;
   color: black;
@@ -43,7 +45,6 @@
 
 .gravity-input:hover {
   border: 5px solid #288FDE;
-  border-color: #288FDE;
 }
 
 /* Chrome, Safari, Edge, Opera */

@@ -28,7 +28,6 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet }): JSX.Element => {
             className='gravity-input'
             value={input}
             onChange={event => setInput(event.target.value)}
-            placeholder='100'
             min='0'
             type='number'
             aria-label='Weight on Earth'
