@@ -10,9 +10,14 @@ interface InfoProps {
 
 const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet }): JSX.Element => {
   const [isInputActive, setIsInputActive] = useState(false);
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState('100');
 
   const { name, mass, diameter, gravity, length_of_day, distance_from_sun, length_of_year, number_of_moons } = currentPlanet;
+
+  const gravityConversion: any = (planetGravity: number): number => {
+    const weightOnPlanet = Math.round((planetGravity / 9.807) * Number(input));
+    return weightOnPlanet;
+  }
 
   return (
     <section className='planet-info-view'>
@@ -30,7 +35,7 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet }): JSX.Element => {
             onChange={event => setInput(event.target.value)}
             placeholder='100'
             type='number'
-          /> lbs on earth would weigh {input && input}{!input && gravity} m/s²</li>
+          /> lbs on earth would weigh {input && gravityConversion(gravity)}{!input && gravity} lbs</li>
           <li><b>Length of day:</b> {length_of_day} hours</li>
           <li><b>Length of year:</b> {length_of_year} days</li>
           <li><b>Number of moons:</b> {number_of_moons}</li>
