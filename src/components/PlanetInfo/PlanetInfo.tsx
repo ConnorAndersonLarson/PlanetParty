@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './planetInfo.css';
 import { InfoProps } from '../../interface';
+import { formatLargeNumbers } from '../../utilities';
 
 const getMoonWord = (moonCount: number) => {
   return moonCount === 1 ? 'moon' : 'moons';
@@ -34,7 +35,7 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
               <>
                 <h2 className='planet-info-title planet-info-title__mass'>Mass</h2>
                 <p className='planet-info-text planet-info-text__mass'>
-                  <span className='mass-earth'>{mass} quintillion kg</span>
+                  <span className='mass-earth'>{formatLargeNumbers(mass)} quintillion kg</span>
                 </p>
               </>
             }
@@ -104,7 +105,7 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
               <>
                 <h2 className='planet-info-title planet-info-title__diameter'>Diameter</h2>
                 <p className='planet-info-text planet-info-text__diameter'>
-                  <span className='diameter-earth'>{diameter} km</span>
+                  <span className='diameter-earth'>{formatLargeNumbers(diameter)} km</span>
                 </p>
               </>
             }
@@ -135,7 +136,7 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
               <>
                 <h2 className='planet-info-title planet-info-title__distance'>Distance from sun</h2>
                 <p className='planet-info-text planet-info-text__distance'>
-                  <span className='distance-earth'>{distance_from_sun} km</span>
+                  <span className='distance-earth'>{formatLargeNumbers(distance_from_sun)} km</span>
                 </p>
               </>
             }

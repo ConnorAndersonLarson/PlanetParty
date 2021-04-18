@@ -110,7 +110,6 @@ Light Gray: #D0D7DF */
 .info-icon__length-of-year {
   width: 80px;
   margin-left: 20px;
-  vertical-align: top;
   float: right;
   display: block;
 }
@@ -140,7 +139,6 @@ Light Gray: #D0D7DF */
 .info-icon__gravity {
   width: 100px;
   margin-right: 20px;
-  vertical-align: bottom;
   float: left;
   display: block;
 }
@@ -304,6 +302,16 @@ Light Gray: #D0D7DF */
 }
 
 /******* Media queries *******/
+@media only screen and (max-width: 900px) {
+  .planet-info-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 60%;
+    /* min-width: 500px; */
+  }
+}
+
 @media only screen and (max-width: 850px) {
   .planet-info-img {
     width: 300px;
