@@ -26,7 +26,7 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
             <h2 className='planet-info-title__name'>{name}</h2>
           </div>
           <div className='planet-info-card planet-info-card__image'>
-            <img className='planet-info-img' src={`/planet-pics/${name}-pic.jpg`} alt={name}></img>
+            <img className='planet-info-img' src={`/planet-pics/${name.toLowerCase()}-pic.jpg`} alt={name}></img>
           </div>
           <div className='planet-info-card planet-info-card__mass'>
             <img className='info-icon info-icon__mass' alt='asteroid icon' src='/space/asteroid-fill.svg'></img>
