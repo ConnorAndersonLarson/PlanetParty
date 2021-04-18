@@ -43,19 +43,27 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet }): JSX.Element => {
             {name === 'Earth' && <p className='planet-info-text planet-info-text__length-of-year'><span className='length-of-year-earth'>{length_of_year} days</span></p>}
           </div>
           <div className='planet-info-card planet-info-card__gravity'>
-            <h2 className='planet-info-title planet-info-title__gravity'>Gravity</h2>
             <img className='info-icon info-icon__gravity' alt='comet icon' src='../space/comet-fill.svg'></img>
-            <h3 className='planet-info-gravity'>{gravity} m/s²</h3>
-            Something that weighs
-              <input
-                className='gravity-input'
-                value={input}
-                onChange={event => setInput(event.target.value)}
-                min='0'
-                type='number'
-                aria-label='Weight on Earth'
-              /> 
-            lbs on earth would weigh {input && gravityConversion(gravity)}{!input && gravityConversion(input)} lbs on {name}
+            {name === 'Earth' && <h2 className='planet-info-title planet-info-title__gravity'>Gravity</h2>}
+            {name !== 'Earth' && 
+              <p className='planet-info-text planet-info-text__gravity'>
+                Something that weighs 
+                <input
+                  className='gravity-input'
+                  value={input}
+                  onChange={event => setInput(event.target.value)}
+                  min='0'
+                  type='number'
+                  aria-label='Weight on Earth'
+                /> 
+                <span className='earth-pounds'>pounds</span> on Earth would weigh 
+                <span className='gravity-words'>
+                  {input && ' ' + gravityConversion(gravity)}{!input && gravityConversion(input)} pounds 
+                </span> 
+                {' '} on {name}
+              </p>
+            }
+            {name === 'Earth' && <p className='planet-info-text planet-info-text__gravity'><span className='gravity-earth'>{gravity} m/s²</span></p>}
           </div>
           <div className='planet-info-card planet-info-card__diameter'>
             <img className='info-icon info-icon__diameter' alt='astronaut on orb icon' src='../space/visitor-fill.svg'></img>
