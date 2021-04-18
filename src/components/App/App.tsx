@@ -13,6 +13,13 @@ const parseMass = (value: number, exponent: number) => {
   const delta = exponent - 18; //to find exponent beyond 10^18 (quintillion)
   return (value * Math.pow(10, delta));
 }
+
+const formateLargeNumbers = (number: number): string => {
+  let totalFormatted = number.toString().split('.');
+  totalFormatted[0] = totalFormatted[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  return (totalFormatted.join('.'));
+}
+
 class App extends React.Component<{}, AllData> {
   constructor(props: any) {
     super(props);
@@ -46,11 +53,11 @@ class App extends React.Component<{}, AllData> {
         return {
           id: info.id,
           name: info.englishName,
-          mass: parseMass(info.mass.massValue, info.mass.massExponent),
-          diameter: Math.round(info.meanRadius * 2),
+          mass: formateLargeNumbers(parseMass(info.mass.massValue, info.mass.massExponent)),
+          diameter: formateLargeNumbers(Math.round(info.meanRadius * 2)),
           gravity: info.gravity.toFixed(2),
           length_of_day: Math.abs(info.sideralRotation).toFixed(1),
-          distance_from_sun: info.semimajorAxis,
+          distance_from_sun: formateLargeNumbers(info.semimajorAxis),
           length_of_year: Math.round(info.sideralOrbit),
           number_of_moons: info.moons?.length || 0
         }
@@ -69,9 +76,9 @@ class App extends React.Component<{}, AllData> {
               return (
                 <>
                   <SortBox updateSort={this.updateSort} />
-                    {this.state.error && <h2>{this.state.error}</h2>}
-                    {!this.state.error && !this.state.allPlanets.length && <h2>Loading...</h2>}
-                  <Planetarium allPlanets={this.state.allPlanets} sortKey={this.state.sortKey} error={this.state.error}/>
+                  {this.state.error && <h2>{this.state.error}</h2>}
+                  {!this.state.error && !this.state.allPlanets.length && <h2>Loading...</h2>}
+                  <Planetarium allPlanets={this.state.allPlanets} sortKey={this.state.sortKey} error={this.state.error} />
                 </>
               )
             }} />
