@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './planetInfo.css';
-import { PlanetBio, InfoProps } from '../../interface';
+import { InfoProps } from '../../interface';
 
 const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet }): JSX.Element => {
-  const [isInputActive, setIsInputActive] = useState(false);
   const [input, setInput] = useState('100');
 
   const { name, mass, diameter, gravity, length_of_day, distance_from_sun, length_of_year, number_of_moons } = currentPlanet;
