@@ -198,6 +198,30 @@ Light Gray: #D0D7DF */
   padding-right: 10px;
 }
 
+/******* Diameter *******/
+.info-icon__diameter {
+  width: 100px;
+}
+
+.diameter-multiplier {
+  color: #288FDE;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.diameter-words {
+  color: #288FDE;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.diameter-earth {
+  display: block;
+  color: #288FDE;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
 
 /******* Moons *******/
 .info-icon__moons {

@@ -67,8 +67,26 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet }): JSX.Element => {
           </div>
           <div className='planet-info-card planet-info-card__diameter'>
             <img className='info-icon info-icon__diameter' alt='astronaut on orb icon' src='../space/visitor-fill.svg'></img>
-            <h2 className='planet-info-title planet-info-title__diameter'>Diameter</h2>
-            <h3 className='planet-info-diameter'>{diameter} km</h3>
+            {name === 'Earth' && <h2 className='planet-info-title planet-info-title__diameter'>Diameter</h2>}
+            {name !== 'Earth' && 
+              <p className='planet-info-text planet-info-text__diameter'>
+                If Earth suddenly became the size of {name}, your friends would live {' '} 
+                {(name === 'Mercury' || name === 'Venus' || name === 'Mars') &&
+                  <>
+                    <span className='diameter-multiplier'>{(12742 / diameter).toFixed(2)}</span> 
+                    <span className='diameter-words'> times closer </span>
+                    to you
+                  </>
+                }
+                {(name === 'Jupiter' || name === 'Saturn' || name === 'Uranus' || name === 'Neptune') &&
+                  <>
+                    <span className='diameter-multiplier'>{(diameter / 12742).toFixed(2)}</span> 
+                    <span className='diameter-words'> times farther away </span>
+                    from you
+                  </>
+                }
+              </p>}
+            {name === 'Earth' && <p className='planet-info-text planet-info-text__diameter'><span className='diameter-earth'>{diameter} km</span></p>}
           </div>
         </div>
         <div className='planet-info-column planet-info-column-3'>
