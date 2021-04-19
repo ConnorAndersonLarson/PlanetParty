@@ -31,12 +31,12 @@ describe('Home View Testing', () => {
   })
   it('Should be able to visit planets from home view', () => {
     cy.get('#venus').click()
-      .get('.planet-info-view').get('.planet-info-title').should('contain', 'Venus')
-    cy.visit(`${baseURL}`).wait(500);
+      .get('.planet-info-card__name').should('contain', 'Venus')
+    cy.visit(`${baseURL}`).wait(250);
     cy.get('#terre').click()
-      .get('.planet-info-view').get('.planet-info-title').should('contain', 'Earth')
-    cy.visit(`${baseURL}`).wait(500);
+      .get('.planet-info-card__name').should('contain', 'Earth')
+    cy.visit(`${baseURL}`).wait(250);
     cy.get('#neptune').click()
-      .get('.planet-info-view').get('.planet-info-title').should('contain', 'Neptune')
+      .get('.planet-info-card__name').should('contain', 'Neptune')
   })
 })
