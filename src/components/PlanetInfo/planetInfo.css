@@ -8,6 +8,10 @@ Light Blue: #68CCD7
 Yellow: #F5AE45
 Light Gray: #D0D7DF */
 
+* {
+  background-color: black;
+}
+
 .planet-info-view {
   display: flex;
   flex-direction: column;
@@ -31,11 +35,12 @@ Light Gray: #D0D7DF */
   flex-direction: column;
   justify-content: space-evenly;
   width: 30%;
-  min-width: 300px;
+  min-width: 360px;
 }
 
 .planet-info-card {
   width: 100%;
+  margin: 20px 0;
 }
 
 .planet-info-card > h2 {
@@ -149,16 +154,17 @@ Light Gray: #D0D7DF */
 }
 
 .gravity-input {
+  background-color: #D0D7DF;
   cursor: pointer;
   padding: 8px 0;
   text-align: center;
   box-sizing: border-box;
   border: 5px solid black;
   border-radius: 5px;
-  width: 155px;
+  width: 200px;
   margin: 0 5px;
-  color: #071927;
-  font-size: 1.5rem;
+  color: black;
+  font-size: 2rem;
 }
 
 .gravity-input:hover {
@@ -178,8 +184,9 @@ Light Gray: #D0D7DF */
 }
 
 .earth-pounds {
-  color: white;
-  font-size: 1.5rem;
+  color: #F5AE45;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .gravity-words {
@@ -301,13 +308,12 @@ Light Gray: #D0D7DF */
 }
 
 /******* Media queries *******/
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1125px) {
   .planet-info-column {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     width: 60%;
-    /* min-width: 500px; */
   }
 }
 

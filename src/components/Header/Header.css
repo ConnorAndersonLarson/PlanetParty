@@ -8,28 +8,38 @@
 }
 
 .giphy-embed {
-  height: 180px;
+  width: 270px;
   border: 0;
 }
 
 .title {
+  background-color: #071927;
   font-size: 2rem;
   font-weight: bold;
   text-decoration: none;
-  margin-left: 15px;
+  margin: 0 25px;
 }
 
 @media only screen and (max-width: 850px) {
   .App-header {
     justify-content: space-between;
   }
+
   .title {
     margin: 0 50px 0 0 ;
+  }
+
+  .giphy-embed {
+    width: 210px;
   }
 }
 
 @media only screen and (max-width: 580px) {
   .title {
-    margin: 7.5px;
+    margin: 10px;
+  }
+
+  .giphy-embed {
+    width: 150px;
   }
 }
