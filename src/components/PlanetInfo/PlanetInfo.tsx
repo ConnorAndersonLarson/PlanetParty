@@ -32,10 +32,10 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
             <h2 className='planet-info-title__name'>{name}</h2>
           </div>
           <div className='planet-info-card planet-info-card__image'>
-            <img className='planet-info-img' src={`../planet-pics/${name}-pic.jpg`} alt={name}></img>
+            <img className='planet-info-img' src={`/planet-pics/${name.toLowerCase()}-pic.jpg`} alt={name}></img>
           </div>
           <div className='planet-info-card planet-info-card__mass'>
-            <img className='info-icon info-icon__mass' alt='asteroid icon' src='../space/asteroid-fill.svg'></img>
+            <img className='info-icon info-icon__mass' alt='asteroid icon' src='/space/asteroid-fill.svg'></img>
             {name === 'Earth' && 
               <>
                 <h2 className='planet-info-title planet-info-title__mass'>Mass</h2>
@@ -49,7 +49,7 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
         </div>
         <div className='planet-info-column planet-info-column-2'>
           <div className='planet-info-card planet-info-card__year'>
-            <img className='info-icon info-icon__length-of-year' alt='solar system icon' src='../space/solar-system-fill.svg'></img>
+            <img className='info-icon info-icon__length-of-year' alt='solar system icon' src='/space/solar-system-fill.svg'></img>
             {name === 'Earth' && 
               <>
                 <h2 className='planet-info-title planet-info-title__length-of-year'>Length of year</h2>
@@ -61,7 +61,7 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
             {name !== 'Earth' && formatLengthOfYear(name, length_of_year)}
           </div>
           <div className='planet-info-card planet-info-card__gravity'>
-            <img className='info-icon info-icon__gravity' alt='comet icon' src='../space/comet-fill.svg'></img>
+            <img className='info-icon info-icon__gravity' alt='comet icon' src='/space/comet-fill.svg'></img>
             {name === 'Earth' && 
               <>
                 <h2 className='planet-info-title planet-info-title__gravity'>Gravity</h2>
@@ -72,7 +72,7 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
             }
             {name !== 'Earth' && 
               <p className='planet-info-text planet-info-text__gravity'>
-                Something that weighs 
+                Something that weighs
                 <input
                   className='gravity-input'
                   value={input}
@@ -91,7 +91,7 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
             }
           </div>
           <div className='planet-info-card planet-info-card__diameter'>
-            <img className='info-icon info-icon__diameter' alt='astronaut on orb icon' src='../space/visitor-fill.svg'></img>
+            <img className='info-icon info-icon__diameter' alt='astronaut on orb icon' src='/space/visitor-fill.svg'></img>
             {name === 'Earth' && 
               <>
                 <h2 className='planet-info-title planet-info-title__diameter'>Diameter</h2>
@@ -105,7 +105,7 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
         </div>
         <div className='planet-info-column planet-info-column-3'>
           <div className='planet-info-card planet-info-card__distance'>
-            <img className='info-icon info-icon__distance' alt='sun icon' src='../space/sun-fill.svg'></img>
+            <img className='info-icon info-icon__distance' alt='sun icon' src='/space/sun-fill.svg'></img>
             {name === 'Earth' && 
               <>
                 <h2 className='planet-info-title planet-info-title__distance'>Distance from sun</h2>
@@ -117,11 +117,11 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
             {name !== 'Earth' && formatDistance(name, distance_from_sun)}
           </div>
           <div className='planet-info-card planet-info-card__moons'>
-            <img className='info-icon info-icon__moons' alt='eclipse icon' src='../space/eclipse-fill.svg'></img>
+            <img className='info-icon info-icon__moons' alt='eclipse icon' src='/space/eclipse-fill.svg'></img>
             {formatMoons(name, number_of_moons)}
           </div>
           <div className='planet-info-card planet-info-card__day'>
-            <img className='info-icon info-icon__length-of-day' alt='spinning planet icon' src='../space/planet-fill.svg'></img>
+            <img className='info-icon info-icon__length-of-day' alt='spinning planet icon' src='/space/planet-fill.svg'></img>
             {name === 'Earth' && 
               <>
                 <h2 className='planet-info-title planet-info-title__length-of-day'>Length of day</h2>
