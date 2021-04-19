@@ -89,6 +89,7 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
                 Something that weighs
                 <input
                   className='gravity-input'
+                  name='weight'
                   value={input}
                   onChange={event => handleChange(event)}
                   onKeyDown={e => handleInput(e)}
