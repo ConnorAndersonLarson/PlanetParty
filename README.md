@@ -2,11 +2,11 @@
 
 <p align="center">
   <a href="https://planet-party.herokuapp.com/">
-    <img src="https://media.giphy.com/media/VI2UC13hwWin1MIfmi/source.gif" alt="Spinning Earth with moon" width="200" height='150'>
+    <img src="https://media.giphy.com/media/VI2UC13hwWin1MIfmi/source.gif" alt="Spinning Earth with moon" width="200" height='auto'>
   </a>
     <p align="center">
     <br />
-    <a href="https://planet-party.herokuapp.com//"><strong>Explore the app »</strong></a>
+    <a href="https://planet-party.herokuapp.com/"><strong>Explore the app »</strong></a>
     <br />
     <br />
     </p>
@@ -21,13 +21,13 @@
 * [Learning Goals](#learning-goals)
 * [Future Iterations](#future-iterations)
 * [Technologies Used](#technologies-used)
-* [Contributers](#contributers)
+* [Contributors](#contributors)
 * [Contact](#contact)
 
 
 ## About the Project
 
-Planet Party is an application designed for kids to learn more about planets in our solar system. We implemented the Solar System OpenData API [(view documentation)](https://api.le-systeme-solaire.net/en/) to display each planet and relevant planet facts. Users have the ability to sort planets by different criteria and click on a planet to view more information. In the single planet view, a user can view different fun facts about the planet compared to earth and input a weight on earth to see how it would compare to that planet. We were given 8 days to complete this project while learning and implementing TypeScript from scratch. The the project specs and rubic are from the Turing School of Software and Design and can be seen [here](https://frontend.turing.io/projects/module-3/stretch.html).
+Planet Party is an application designed for kids to learn more about planets in our solar system. We implemented the Solar System OpenData API [(view documentation)](https://api.le-systeme-solaire.net/en/) to display each planet and relevant planet facts. Users have the ability to sort planets by different criteria and click on a planet to view more information. In the single planet view, a user can view different fun facts about the planet compared to Earth and input a weight on Earth to see how it would compare to that planet. We were given 8 days to complete this project while learning and implementing TypeScript from scratch. The project specs and rubic are from the Turing School of Software and Design and can be seen [here](https://frontend.turing.io/projects/module-3/stretch.html).
 
 View the deployed site: [here](https://planet-party.herokuapp.com/)
 
@@ -100,6 +100,7 @@ Here is some of the feedback we received from actual kids:
 ## Technologies Used
 
 - ![React](https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB)
+- ![ReactRouter](https://camo.githubusercontent.com/4f9d20f3a284d2f6634282f61f82a62e99ee9906537dc9859decfdc9efbb51ec/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f52656163745f526f757465722d4341343234353f7374796c653d666f722d7468652d6261646765266c6f676f3d72656163742d726f75746572266c6f676f436f6c6f723d7768697465)
 - ![TypeScript](https://img.shields.io/badge/typescript%20-%23007ACC.svg?&style=for-the-badge&logo=typescript&logoColor=white)
 - ![JavaScript](https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 - ![HTML5](https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white)
@@ -107,7 +108,7 @@ Here is some of the feedback we received from actual kids:
 - ![Webpack](https://img.shields.io/badge/webpack%20-%238DD6F9.svg?&style=for-the-badge&logo=webpack&logoColor=black)
 - ![Cypress](https://img.shields.io/badge/cypress%20-%2317202C.svg?&style=for-the-badge&logo=cypress&logoColor=white)
 
-## Contributers
+## Contributors
 * [Katie B](https://github.com/knees4bees) - Application Creator
 * [Alex Thompson](https://github.com/alexthompson207) - Application Creator
 * [Connor Anderson-Larson](https://github.com/ConnorAndersonLarson) - Application Creator
@@ -121,8 +122,8 @@ Here is some of the feedback we received from actual kids:
 [<img src="https://img.shields.io/badge/LinkedIn-Katie--B-informational?style=for-the-badge&labelColor=black&logo=linkedin&logoColor=0077b5&&color=0077b5"/>][linkedin2]
 [<img src="https://img.shields.io/badge/Github-KatieB-informational?style=for-the-badge&labelColor=black&logo=github&color=8B0BD5"/>][github2]
 
-[<img src="https://img.shields.io/badge/LinkedIn-connor--anersonlarson-informational?style=for-the-badge&labelColor=black&logo=linkedin&logoColor=0077b5&&color=0077b5"/>][linkedin3]
-[<img src="https://img.shields.io/badge/Github-ConnorAndersonLarson-informational?style=for-the-badge&labelColor=black&logo=github&color=8B0BD5"/>][github3]
+[<img src="https://img.shields.io/badge/LinkedIn-connor--andersonlarson-informational?style=for-the-badge&labelColor=black&logo=linkedin&logoColor=0077b5&&color=0077b5"/>][linkedin3]
+[<img src="https://img.shields.io/badge/Github-ConnorAnderson-Larson-informational?style=for-the-badge&labelColor=black&logo=github&color=8B0BD5"/>][github3]
 
 
 <!-- Personal Definitions  -->
