@@ -12,16 +12,16 @@ describe('Single Planet Testing', () => {
   });
   it('Should show a Name and Image for planet being visited', () => {
     cy.visit(`${baseURL}mercury`)
-      .get('.planet-info-title').should('contain', 'Mercury')
+      .get('.planet-info-card__name').should('contain', 'Mercury')
       .get('.planet-info-img').should('have.attr', 'src')
         .then(alttext => {
-          expect(alttext).to.equal('../planet-pics/Mercury-pic.jpg')
+          expect(alttext).to.equal('/planet-pics/mercury-pic.jpg')
         })
     cy.visit(`${baseURL}saturn`)
-      .get('.planet-info-title').should('contain', 'Saturn')
+      .get('.planet-info-card__name').should('contain', 'Saturn')
       .get('.planet-info-img').should('have.attr', 'src')
         .then(alttext => {
-          expect(alttext).to.equal('../planet-pics/Saturn-pic.jpg')
+          expect(alttext).to.equal('/planet-pics/saturn-pic.jpg')
         })
   })
   it('Should show fun facts for each planet being visited', () => {
