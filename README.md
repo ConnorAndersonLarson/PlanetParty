@@ -17,6 +17,7 @@
 * [About the Project](#about-the-project)
 * [Installation](#installation)
 * [Functionality](#functionality)
+* [User Feedback](#user-feedback)
 * [Learning Goals](#learning-goals)
 * [Future Iterations](#future-iterations)
 * [Technologies Used](#technologies-used)
@@ -26,7 +27,7 @@
 
 ## About the Project
 
-Planet Party Description.....
+Planet Party is an application designed for kids to learn more about planets in our solar system. We implemented the Solar System OpenData API [(view documentation)](https://api.le-systeme-solaire.net/en/) to display each planet and relevant planet facts. Users have the ability to sort planets by different criteria and click on a planet to view more information. In the single planet view, a user can view different fun facts about the planet compared to earth and input a weight on earth to see how it would compare to that planet. We were given 8 days to complete this project while learning and implementing TypeScript from scratch. The the project specs and rubic are from the Turing School of Software and Design and can be seen [here](https://frontend.turing.io/projects/module-3/stretch.html).
 
 View the deployed site: [here](https://planet-party.herokuapp.com/)
 
@@ -38,7 +39,7 @@ View the deployed site: [here](https://planet-party.herokuapp.com/)
 4. Run `npm install` to compile the React application.
 5. Run `npm start` to see the app running locally.
 6. Run `<your text editor> .` to see the code in your text editor.
-7. Run `npm run cypress` to see open Cypress and see all the tests.
+7. Run `npm run cypress` to open Cypress and see all the tests.
 
 
 ## Functionality
@@ -50,14 +51,13 @@ View the deployed site: [here](https://planet-party.herokuapp.com/)
 * [Loading Screen](#loading-screen)
 
 #### All Planets View 
-  - When a user lands on the..
-
-<img src="" width="1440">
+  - When a user visits the site they should be able to see all planets in the solar system, and sort planets by sort options. 
+<img src="https://media.giphy.com/media/IZ0Taem6JhG0VJYQQl/giphy.gif" width="1440">
 
 #### Planet Info
-  - When a user clicks on a planet.. 
+  - When a user clicks on a planet they should see a single planet view with various fun facts about the planet. 
 
-<img src="" width="1440">
+<img src="https://media.giphy.com/media/zVXMeEDnLV1jW0zZ95/giphy.gif" width="1440">
 
 #### Responsive Design
  - Responsiveness was a consideration while designing this application. Our application viewed from a mobile device:
@@ -65,7 +65,7 @@ View the deployed site: [here](https://planet-party.herokuapp.com/)
 
 #### Accessibility 
 
-We made accessibility a priority in our application. Rancid Tomatillos recieved a 97% acecessibility audit from Chrome's Lighthouse tool. Also using the Wave extension, our application has zero errors and contrast errors. 
+We made accessibility a priority in our application. Planet Party recieved a 100% acecessibility audit from Chrome's Lighthouse tool. Also using the Wave extension, our application has zero errors and zero contrast errors. 
 
 #### Error Handling
 To maintain a better user experience, we implemented dynamic error handling, so that a user will receive a unique error message based on the type of error.
@@ -73,15 +73,28 @@ To maintain a better user experience, we implemented dynamic error handling, so 
 #### Loading Screen
 To create a more positive user experience, we implemented a loading message that will display while information is being retrieved from the API.
 
+
+## User Feedback
+For this project we sent our deployed app out to kids to test out the functionality and used their feedback to improve the user experience.
+Here is some of the feedback we received from actual kids:
+- "I love it! The only thing that is weird is when I click on a planet, it sends me to that page but as far down as the planet itself was on the homepage."
+- "I think it needs like some changing maybe, it's like when you have 82 moons you can tell which one's identical and then you can put them together and like stick them together `more like a game`. The overall look was really, I liked it, really good. It's like the whole like earthy thing, it kept my attention, it looked really good. Just that one thing needs to be changed."
+- "I 💙  it soooooooooo much! It's the best app/website ever! Love you! Bye 🌏 🪐"
+- "This is fantastic. Isaac loved it so much. We had a lot of fun talking about how old we would be on different planets or how long a day is, and how much we would weigh on different plants. It was a lot of fun! ... Isaac really loved that feature `for how many pounds something weighs on earth`."
+
+
 ## Learning Goals
 
-- TypeScript, interfaces....more
-- Create a multi-page UX using React Router
-- Testing User Stories using `Cypress`
+- To learn and implement TypeScript; types, interfaces, and understanding type errors.
+- Create an accessible app that has a clean UI and simple UX.
+- Create a multi-page UX using React Router.
+- Testing User Stories using `Cypress`.
+- Get real user feedback, and adjust our application based on feedback.
 
 ## Future Iterations
 
--Space Weather
+- Create some type of game with data we have, maybe matching mass to each planet.
+- Add a new view to learn about space weather, incorporating NASA's [DONKI](https://ccmc.gsfc.nasa.gov/donki/) API.
 
 
 ## Technologies Used
