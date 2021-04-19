@@ -8,6 +8,10 @@ Light Blue: #68CCD7
 Yellow: #F5AE45
 Light Gray: #D0D7DF */
 
+* {
+  background-color: black;
+}
+
 .planet-info-view {
   display: flex;
   flex-direction: column;
