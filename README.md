@@ -1,49 +1,122 @@
-# PlanetParty
-Stretch Project in Mod 3 of Turing, learn/utilize Typescript
+<h1 align="left">Planet Party</h1>
 
-# Getting Started with Create React App
+<p align="center">
+  <a href="https://planet-party.herokuapp.com/">
+    <img src="https://media.giphy.com/media/VI2UC13hwWin1MIfmi/source.gif" alt="Spinning Earth with moon" width="200" height='150'>
+  </a>
+    <p align="center">
+    <br />
+    <a href="https://planet-party.herokuapp.com//"><strong>Explore the app »</strong></a>
+    <br />
+    <br />
+    </p>
+  </p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+* [About the Project](#about-the-project)
+* [Installation](#installation)
+* [Functionality](#functionality)
+* [Learning Goals](#learning-goals)
+* [Future Iterations](#future-iterations)
+* [Technologies Used](#technologies-used)
+* [Contributers](#contributers)
+* [Contact](#contact)
 
-In the project directory, you can run:
 
-### `npm start`
+## About the Project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Planet Party Description.....
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+View the deployed site: [here](https://planet-party.herokuapp.com/)
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Fork this repository.
+2. Clone it down to your local machine with `git clone <your SSH Key>`.
+3. Navigate into this directory with `cd Planet-Party`.
+4. Run `npm install` to compile the React application.
+5. Run `npm start` to see the app running locally.
+6. Run `<your text editor> .` to see the code in your text editor.
+7. Run `npm run cypress` to see open Cypress and see all the tests.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Functionality
+* [All Planets View](#all-planets-view)
+* [Planet Info](#planet-info)
+* [Responsive Design](#responsive-design)
+* [Accessibility](#accessibility)
+* [Error Handling](#error-handling)
+* [Loading Screen](#loading-screen)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### All Planets View 
+  - When a user lands on the..
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<img src="" width="1440">
 
-### `npm run eject`
+#### Planet Info
+  - When a user clicks on a planet.. 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<img src="" width="1440">
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Responsive Design
+ - Responsiveness was a consideration while designing this application. Our application viewed from a mobile device:
+ <img src="" width="1440">
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### Accessibility 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+We made accessibility a priority in our application. Rancid Tomatillos recieved a 97% acecessibility audit from Chrome's Lighthouse tool. Also using the Wave extension, our application has zero errors and contrast errors. 
 
-## Learn More
+#### Error Handling
+To maintain a better user experience, we implemented dynamic error handling, so that a user will receive a unique error message based on the type of error.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Loading Screen
+To create a more positive user experience, we implemented a loading message that will display while information is being retrieved from the API.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Learning Goals
+
+- TypeScript, interfaces....more
+- Create a multi-page UX using React Router
+- Testing User Stories using `Cypress`
+
+## Future Iterations
+
+-Space Weather
+
+
+## Technologies Used
+
+- ![React](https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB)
+- ![TypeScript](https://img.shields.io/badge/typescript%20-%23007ACC.svg?&style=for-the-badge&logo=typescript&logoColor=white)
+- ![JavaScript](https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+- ![HTML5](https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white)
+- ![CSS3](https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white)
+- ![Webpack](https://img.shields.io/badge/webpack%20-%238DD6F9.svg?&style=for-the-badge&logo=webpack&logoColor=black)
+- ![Cypress](https://img.shields.io/badge/cypress%20-%2317202C.svg?&style=for-the-badge&logo=cypress&logoColor=white)
+
+## Contributers
+* [Katie B](https://github.com/knees4bees) - Application Creator
+* [Alex Thompson](https://github.com/alexthompson207) - Application Creator
+* [Connor Anderson-Larson](https://github.com/ConnorAndersonLarson) - Application Creator
+
+
+## Contact
+
+[<img src="https://img.shields.io/badge/LinkedIn-alex--thompson-informational?style=for-the-badge&labelColor=black&logo=linkedin&logoColor=0077b5&&color=0077b5"/>][linkedin]
+[<img src="https://img.shields.io/badge/Github-AlexThompson207-informational?style=for-the-badge&labelColor=black&logo=github&color=8B0BD5"/>][github]
+
+[<img src="https://img.shields.io/badge/LinkedIn-Katie--B-informational?style=for-the-badge&labelColor=black&logo=linkedin&logoColor=0077b5&&color=0077b5"/>][linkedin2]
+[<img src="https://img.shields.io/badge/Github-KatieB-informational?style=for-the-badge&labelColor=black&logo=github&color=8B0BD5"/>][github2]
+
+[<img src="https://img.shields.io/badge/LinkedIn-connor--anersonlarson-informational?style=for-the-badge&labelColor=black&logo=linkedin&logoColor=0077b5&&color=0077b5"/>][linkedin3]
+[<img src="https://img.shields.io/badge/Github-ConnorAndersonLarson-informational?style=for-the-badge&labelColor=black&logo=github&color=8B0BD5"/>][github3]
+
+
+<!-- Personal Definitions  -->
+
+[linkedin]: https://www.linkedin.com/in/alex-thompson-he-him/
+[github]: https://github.com/alexthompson207
+[linkedin2]: https://www.linkedin.com/in/katie-b-dev/
+[github2]: https://github.com/knees4bees
+[linkedin3]: https://www.linkedin.com/in/connor-anderson-larson/
+[github3]: https://github.com/ConnorAndersonLarson
