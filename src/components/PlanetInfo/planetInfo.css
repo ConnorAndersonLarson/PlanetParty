@@ -1,3 +1,13 @@
+/* 
+Dark Blue: #071927
+Large Font/Accent Colors :
+Mid Blue: #288FDE
+Red: #F04528
+All Font/Accent Colors :
+Light Blue: #68CCD7
+Yellow: #F5AE45
+Light Gray: #D0D7DF */
+
 .planet-info-view {
   display: flex;
   flex-direction: column;
@@ -10,13 +20,48 @@
   align-self: flex-start;
 }
 
+.planet-info-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.planet-info-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 30%;
+  min-width: 300px;
+}
+
+.planet-info-card {
+  width: 100%;
+}
+
+.planet-info-card > h2 {
+  color: #D0D7DF;
+}
+
 .planet-info-title {
-  font-size: 40px;
+  display: inline;
+  font-size: 2.5rem;
+  vertical-align: middle;
+}
+
+.planet-info-title__name {
+  font-size: 4rem;
 }
 
 .planet-info-img {
-  width: 400px;
+  width: 100%;
   align-self: center;
+}
+
+.info-icon {
+  width: 50px;
+  display: inline;
+  vertical-align: middle;
+  padding: 20px;
 }
 
 .planet-info-box {
@@ -26,20 +71,183 @@
   margin-top: 30px;
 }
 
-.fun-fact-header {
-  margin: 10px 10px 25px 10px;
+.planet-info-text {
+  font-size: 1.5rem;
+}
+
+/******* Mass *******/
+.info-icon__mass {
+  width: 80px;
+  margin-left: 20px;
+  vertical-align: baseline;
+}
+
+.planet-info-text__mass {
+  display: inline;
+  line-height: 2.5rem;
+}
+
+.mass-multiplier {
+  color: #F04528;
   font-size: 2rem;
+  font-weight: bold;
 }
 
-.planet-info-list {
-  list-style: none;
-  padding: 0;
+.mass-words {
+  color: #F04528;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-.planet-info-list li {
-  margin: 10px;
+.mass-earth {
+  display: block;
+  color: #F04528;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
+/******* Length of year *******/
+.info-icon__length-of-year {
+  width: 80px;
+  margin-left: 20px;
+  vertical-align: top;
+  float: right;
+  display: block;
+}
+
+.length-of-year-multiplier {
+  color: #68CCD7;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.length-of-year-words {
+  color: #68CCD7;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.length-of-year-earth {
+  display: block;
+  color: #68CCD7;
+  font-size: 2.25rem;
+  font-weight: bold;
+  text-align: end;
+  padding-right: 10px;
+}
+
+/******* Gravity *******/
+.info-icon__gravity {
+  width: 100px;
+  margin-right: 20px;
+  vertical-align: bottom;
+  float: left;
+  display: block;
+}
+
+.planet-info-text__gravity {
+  line-height: 3rem;
+  text-align: left;
+}
+
+.gravity-input {
+  cursor: pointer;
+  padding: 8px 0;
+  text-align: center;
+  box-sizing: border-box;
+  border: 5px solid black;
+  border-radius: 5px;
+  width: 125px;
+  margin: 0 5px;
+  color: #071927;
+  font-size: 1.5rem;
+}
+
+.gravity-input:hover {
+  border: 5px solid #288FDE;
+}
+
+/* Chrome, Safari, Edge, Opera */
+.gravity-input::-webkit-outer-spin-button,
+.gravity-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.gravity-input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.earth-pounds {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.gravity-words {
+  color: #F5AE45; 
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.gravity-earth {
+  display: block;
+  color: #F5AE45; 
+  font-size: 2rem;
+  font-weight: bold;
+  padding-right: 10px;
+}
+
+/******* Diameter *******/
+.info-icon__diameter {
+  width: 100px;
+}
+
+.diameter-multiplier {
+  color: #288FDE;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.diameter-words {
+  color: #288FDE;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.diameter-earth {
+  display: block;
+  color: #288FDE;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/******* Distance from sun *******/
+.info-icon__distance {
+  width: 100px;
+  vertical-align: bottom;
+  float: right;
+}
+
+/******* Moons *******/
+.info-icon__moons {
+  width: 100px;
+}
+
+.moon-count {
+  color: #288FDE;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.moon-word {
+  color: #288FDE;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/******* Media queries *******/
 @media only screen and (max-width: 850px) {
   .planet-info-img {
     width: 300px;

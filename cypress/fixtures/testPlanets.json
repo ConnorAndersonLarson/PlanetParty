@@ -1,172 +1,584 @@
-[
-    {
-        "id": 1,
-        "name": "Mercury",
-        "mass": "0.33",
-        "diameter": 4879,
-        "density": 5427,
-        "gravity": "3.7",
-        "rotation_period": "1407.6",
-        "length_of_day": "4222.6",
-        "distance_from_sun": "57.9",
-        "orbital_period": "88.0",
-        "orbital_velocity": "47.4",
-        "mean_temperature": 167,
-        "number_of_moons": 0,
-        "created_at": "2017-11-12T22:46:36.587Z",
-        "updated_at": "2017-11-12T22:46:36.587Z"
-    },
-    {
-        "id": 2,
-        "name": "Venus",
-        "mass": "4.87",
-        "diameter": 12,
-        "density": 5243,
-        "gravity": "8.9",
-        "rotation_period": "-5832.5",
-        "length_of_day": "2802.0",
-        "distance_from_sun": "108.2",
-        "orbital_period": "224.7",
-        "orbital_velocity": "35.0",
-        "mean_temperature": 464,
-        "number_of_moons": 0,
-        "created_at": "2017-11-12T22:46:36.592Z",
-        "updated_at": "2017-11-12T22:46:36.592Z"
-    },
-    {
-        "id": 3,
-        "name": "Earth",
-        "mass": "5.97",
-        "diameter": 12,
-        "density": 5514,
-        "gravity": "9.8",
-        "rotation_period": "23.9",
-        "length_of_day": "24.0",
-        "distance_from_sun": "149.6",
-        "orbital_period": "365.2",
-        "orbital_velocity": "29.8",
-        "mean_temperature": 15,
-        "number_of_moons": 1,
-        "created_at": "2017-11-12T22:46:36.595Z",
-        "updated_at": "2017-11-12T22:46:36.595Z"
-    },
-    {
-        "id": 4,
-        "name": "Moon",
-        "mass": "0.073",
-        "diameter": 3475,
-        "density": 3340,
-        "gravity": "1.6",
-        "rotation_period": "655.7",
-        "length_of_day": "708.7",
-        "distance_from_sun": "0.384",
-        "orbital_period": "27.3",
-        "orbital_velocity": "1.0",
-        "mean_temperature": -20,
-        "number_of_moons": 0,
-        "created_at": "2017-11-12T22:46:36.599Z",
-        "updated_at": "2017-11-12T22:46:36.599Z"
-    },
-    {
-        "id": 5,
-        "name": "Mars",
-        "mass": "0.642",
-        "diameter": 6792,
-        "density": 3933,
-        "gravity": "3.7",
-        "rotation_period": "24.6",
-        "length_of_day": "24.7",
-        "distance_from_sun": "227.9",
-        "orbital_period": "687.0",
-        "orbital_velocity": "24.1",
-        "mean_temperature": -65,
-        "number_of_moons": 2,
-        "created_at": "2017-11-12T22:46:36.602Z",
-        "updated_at": "2017-11-12T22:46:36.602Z"
-    },
-    {
-        "id": 6,
-        "name": "Jupiter",
-        "mass": "1898.0",
-        "diameter": 142,
-        "density": 1326,
-        "gravity": "23.1",
-        "rotation_period": "9.9",
-        "length_of_day": "9.9",
-        "distance_from_sun": "778.6",
-        "orbital_period": "4331.0",
-        "orbital_velocity": "13.1",
-        "mean_temperature": -110,
-        "number_of_moons": 67,
-        "created_at": "2017-11-12T22:46:36.605Z",
-        "updated_at": "2017-11-12T22:46:36.605Z"
-    },
-    {
-        "id": 7,
-        "name": "Saturn",
-        "mass": "568.0",
-        "diameter": 120,
-        "density": 687,
-        "gravity": "9.0",
-        "rotation_period": "10.7",
-        "length_of_day": "10.7",
-        "distance_from_sun": "1433.5",
-        "orbital_period": "10.0",
-        "orbital_velocity": "9.7",
-        "mean_temperature": -140,
-        "number_of_moons": 62,
-        "created_at": "2017-11-12T22:46:36.608Z",
-        "updated_at": "2017-11-12T22:46:36.608Z"
-    },
-    {
-        "id": 8,
-        "name": "Uranus",
-        "mass": "86.8",
-        "diameter": 51,
-        "density": 1271,
-        "gravity": "8.7",
-        "rotation_period": "-17.2",
-        "length_of_day": "17.2",
-        "distance_from_sun": "2872.5",
-        "orbital_period": "30.0",
-        "orbital_velocity": "6.8",
-        "mean_temperature": -195,
-        "number_of_moons": 27,
-        "created_at": "2017-11-12T22:46:36.611Z",
-        "updated_at": "2017-11-12T22:46:36.611Z"
-    },
-    {
-        "id": 9,
-        "name": "Neptune",
-        "mass": "102.0",
-        "diameter": 49,
-        "density": 1638,
-        "gravity": "11.0",
-        "rotation_period": "16.1",
-        "length_of_day": "16.1",
-        "distance_from_sun": "4495.1",
-        "orbital_period": "59.0",
-        "orbital_velocity": "5.4",
-        "mean_temperature": -200,
-        "number_of_moons": 14,
-        "created_at": "2017-11-12T22:46:36.614Z",
-        "updated_at": "2017-11-12T22:46:36.614Z"
-    },
-    {
-        "id": 10,
-        "name": "Pluto",
-        "mass": "0.0146",
-        "diameter": 2370,
-        "density": 2095,
-        "gravity": "0.7",
-        "rotation_period": "-153.3",
-        "length_of_day": "153.3",
-        "distance_from_sun": "5906.4",
-        "orbital_period": "90.0",
-        "orbital_velocity": "4.7",
-        "mean_temperature": -225,
-        "number_of_moons": 5,
-        "created_at": "2017-11-12T22:46:36.617Z",
-        "updated_at": "2017-11-12T22:46:36.617Z"
-    }
-]
+{ "bodies": [
+  {
+  "id": "ceres",
+  "englishName": "1 Ceres",
+  "moons": null,
+  "semimajorAxis": 413690250,
+  "mass": {
+    "massValue": 9.39300,
+    "massExponent": 20
+  },
+  "gravity": 0.28000,
+  "meanRadius": 476.20000,
+  "sideralOrbit": 1681.63000,
+  "sideralRotation": 9.07000
+}, {
+  "id": "uranus",
+  "englishName": "Uranus",
+  "moons": [{
+    "moon": "Ariel"
+  }, {
+    "moon": "Umbriel"
+  }, {
+    "moon": "Titania"
+  }, {
+    "moon": "Obéron"
+  }, {
+    "moon": "Miranda"
+  }, {
+    "moon": "Cordélia"
+  }, {
+    "moon": "Ophélie"
+  }, {
+    "moon": "Bianca"
+  }, {
+    "moon": "Cressida"
+  }, {
+    "moon": "Desdémone"
+  }, {
+    "moon": "Juliette"
+  }, {
+    "moon": "Portia"
+  }, {
+    "moon": "Rosalinde"
+  }, {
+    "moon": "Belinda"
+  }, {
+    "moon": "Puck"
+  }, {
+    "moon": "Caliban"
+  }, {
+    "moon": "Sycorax"
+  }, {
+    "moon": "Prospero"
+  }, {
+    "moon": "Setebos"
+  }, {
+    "moon": "Stephano"
+  }, {
+    "moon": "Trinculo"
+  }, {
+    "moon": "Francisco"
+  }, {
+    "moon": "Margaret"
+  }, {
+    "moon": "Ferdinand"
+  }, {
+    "moon": "Perdita"
+  }, {
+    "moon": "Mab"
+  }, {
+    "moon": "Cupid"
+  }],
+  "semimajorAxis": 2870658186,
+  "mass": {
+    "massValue": 8.68127,
+    "massExponent": 25
+  },
+  "gravity": 8.87000,
+  "meanRadius": 25362.00000,
+  "sideralOrbit": 30685.40000,
+  "sideralRotation": -17.24000
+}, {
+  "id": "pluton",
+  "englishName": "Pluto",
+  "moons": [{
+    "moon": "Charon"
+  }, {
+    "moon": "Nix"
+  }, {
+    "moon": "Hydra"
+  }, {
+    "moon": "Kerberos"
+  }, {
+    "moon": "Styx"
+  }],
+  "semimajorAxis": 5906440628,
+  "mass": {
+    "massValue": 1.30300,
+    "massExponent": 22
+  },
+  "gravity": 0.62000,
+  "meanRadius": 1188.30000,
+  "sideralOrbit": 90465.00000,
+  "sideralRotation": -153.29280
+}, {
+  "id": "neptune",
+  "englishName": "Neptune",
+  "moons": [{
+    "moon": "Triton"
+  }, {
+    "moon": "Néreïde"
+  }, {
+    "moon": "Naïade"
+  }, {
+    "moon": "Thalassa"
+  }, {
+    "moon": "Despina"
+  }, {
+    "moon": "Galatée"
+  }, {
+    "moon": "Larissa"
+  }, {
+    "moon": "Protée"
+  }, {
+    "moon": "Halimède"
+  }, {
+    "moon": "Psamathée"
+  }, {
+    "moon": "Sao"
+  }, {
+    "moon": "Laomédie"
+  }, {
+    "moon": "Néso"
+  }, {
+    "moon": "Hippocampe"
+  }],
+  "semimajorAxis": 4498396441,
+  "mass": {
+    "massValue": 1.02413,
+    "massExponent": 26
+  },
+  "gravity": 11.15000,
+  "meanRadius": 24622.00000,
+  "sideralOrbit": 60189.00000,
+  "sideralRotation": 16.11000
+}, {
+  "id": "haumea",
+  "englishName": "136108 Haumea",
+  "moons": [{
+    "moon": "Namaka"
+  }, {
+    "moon": "Hi'iaka"
+  }],
+  "semimajorAxis": 6432011461,
+  "mass": {
+    "massValue": 4.00600,
+    "massExponent": 21
+  },
+  "gravity": 0.40100,
+  "meanRadius": 33.00000,
+  "sideralOrbit": 103774.00000,
+  "sideralRotation": 3.92000
+}, {
+  "id": "makemake",
+  "englishName": "136472 Makemake",
+  "moons": [{
+    "moon": "S/2015 (136472) 1"
+  }],
+  "semimajorAxis": 6783345606,
+  "mass": {
+    "massValue": 4.40000,
+    "massExponent": 21
+  },
+  "gravity": 0.50000,
+  "meanRadius": 725.00000,
+  "sideralOrbit": 112897.00000,
+  "sideralRotation": 0.00000
+}, {
+  "id": "jupiter",
+  "englishName": "Jupiter",
+  "moons": [{
+    "moon": "Io"
+  }, {
+    "moon": "Europe"
+  }, {
+    "moon": "Ganymède"
+  }, {
+    "moon": "Callisto"
+  }, {
+    "moon": "Amalthée"
+  }, {
+    "moon": "Himalia"
+  }, {
+    "moon": "Élara"
+  }, {
+    "moon": "Pasiphaé"
+  }, {
+    "moon": "Sinopé"
+  }, {
+    "moon": "Lysithéa"
+  }, {
+    "moon": "Carmé"
+  }, {
+    "moon": "Ananké"
+  }, {
+    "moon": "Léda"
+  }, {
+    "moon": "Thébé"
+  }, {
+    "moon": "Adrastée"
+  }, {
+    "moon": "Métis"
+  }, {
+    "moon": "Callirrhoé"
+  }, {
+    "moon": "Thémisto"
+  }, {
+    "moon": "Mégaclité"
+  }, {
+    "moon": "Taygété"
+  }, {
+    "moon": "Chaldéné"
+  }, {
+    "moon": "Harpalyké"
+  }, {
+    "moon": "Kalyké"
+  }, {
+    "moon": "Iocasté"
+  }, {
+    "moon": "Erinomé"
+  }, {
+    "moon": "Isonoé"
+  }, {
+    "moon": "Praxidyké"
+  }, {
+    "moon": "Autonoé"
+  }, {
+    "moon": "Thyoné"
+  }, {
+    "moon": "Hermippé"
+  }, {
+    "moon": "Aitné"
+  }, {
+    "moon": "Eurydomé"
+  }, {
+    "moon": "Euanthé"
+  }, {
+    "moon": "Euporie"
+  }, {
+    "moon": "Orthosie"
+  }, {
+    "moon": "Spondé"
+  }, {
+    "moon": "Calé"
+  }, {
+    "moon": "Pasithée"
+  }, {
+    "moon": "Hégémone"
+  }, {
+    "moon": "Mnémé"
+  }, {
+    "moon": "Aoedé"
+  }, {
+    "moon": "Thelxinoé"
+  }, {
+    "moon": "Arché"
+  }, {
+    "moon": "Callichore"
+  }, {
+    "moon": "Hélicé"
+  }, {
+    "moon": "Carpo"
+  }, {
+    "moon": "Eukéladé"
+  }, {
+    "moon": "Cyllène"
+  }, {
+    "moon": "Coré"
+  }, {
+    "moon": "Hersé"
+  }, {
+    "moon": "S/2003 J 2"
+  }, {
+    "moon": "Euphémé"
+  }, {
+    "moon": "S/2003 J 4"
+  }, {
+    "moon": "Eiréné"
+  }, {
+    "moon": "S/2003 J 9"
+  }, {
+    "moon": "S/2003 J 10"
+  }, {
+    "moon": "S/2003 J 12"
+  }, {
+    "moon": "Philophrosyne"
+  }, {
+    "moon": "S/2003 J 16"
+  }, {
+    "moon": "S/2003 J 18"
+  }, {
+    "moon": "S/2003 J 19"
+  }, {
+    "moon": "S/2003 J 23"
+  }, {
+    "moon": "Dia"
+  }, {
+    "moon": "S/2010 J 1"
+  }, {
+    "moon": "S/2010 J 2"
+  }, {
+    "moon": "S/2011 J 1"
+  }, {
+    "moon": "S/2011 J 2"
+  }, {
+    "moon": "S/2017 J 1"
+  }, {
+    "moon": "S/2016 J 1"
+  }, {
+    "moon": "Valétudo"
+  }, {
+    "moon": "S/2017 J 2"
+  }, {
+    "moon": "S/2017 J 3"
+  }, {
+    "moon": "Pandia"
+  }, {
+    "moon": "S/2017 J 5"
+  }, {
+    "moon": "S/2017 J 6"
+  }, {
+    "moon": "S/2017 J 7"
+  }, {
+    "moon": "S/2017 J 8"
+  }, {
+    "moon": "S/2017 J 9"
+  }, {
+    "moon": "Ersa"
+  }],
+  "semimajorAxis": 778340821,
+  "mass": {
+    "massValue": 1.89819,
+    "massExponent": 27
+  },
+  "gravity": 24.79000,
+  "meanRadius": 69911.00000,
+  "sideralOrbit": 4332.58900,
+  "sideralRotation": 9.92500
+}, {
+  "id": "mars",
+  "englishName": "Mars",
+  "moons": [{
+    "moon": "Phobos"
+  }, {
+    "moon": "Deïmos"
+  }],
+  "semimajorAxis": 227943824,
+  "mass": {
+    "massValue": 6.41712,
+    "massExponent": 23
+  },
+  "gravity": 3.71000,
+  "meanRadius": 3389.50000,
+  "sideralOrbit": 686.98000,
+  "sideralRotation": 24.62290
+}, {
+  "id": "mercure",
+  "englishName": "Mercury",
+  "moons": null,
+  "semimajorAxis": 57909227,
+  "mass": {
+    "massValue": 3.30114,
+    "massExponent": 23
+  },
+  "gravity": 3.70000,
+  "meanRadius": 2439.40000,
+  "sideralOrbit": 87.96900,
+  "sideralRotation": 1407.60000
+}, {
+  "id": "saturne",
+  "englishName": "Saturn",
+  "moons": [{
+    "moon": "Mimas"
+  }, {
+    "moon": "Encelade"
+  }, {
+    "moon": "Téthys"
+  }, {
+    "moon": "Dioné"
+  }, {
+    "moon": "Rhéa"
+  }, {
+    "moon": "Titan"
+  }, {
+    "moon": "Hypérion"
+  }, {
+    "moon": "Japet"
+  }, {
+    "moon": "Phœbé"
+  }, {
+    "moon": "Janus"
+  }, {
+    "moon": "Epiméthée"
+  }, {
+    "moon": "Hélène"
+  }, {
+    "moon": "Télesto"
+  }, {
+    "moon": "Calypso"
+  }, {
+    "moon": "Atlas"
+  }, {
+    "moon": "Prométhée"
+  }, {
+    "moon": "Pandore"
+  }, {
+    "moon": "Pan"
+  }, {
+    "moon": "Ymir"
+  }, {
+    "moon": "Paaliaq"
+  }, {
+    "moon": "Tarvos"
+  }, {
+    "moon": "Ijiraq"
+  }, {
+    "moon": "Suttungr"
+  }, {
+    "moon": "Kiviuq"
+  }, {
+    "moon": "Mundilfari"
+  }, {
+    "moon": "Albiorix"
+  }, {
+    "moon": "Skathi"
+  }, {
+    "moon": "Erriapo"
+  }, {
+    "moon": "Siarnaq"
+  }, {
+    "moon": "Thrymr"
+  }, {
+    "moon": "Narvi"
+  }, {
+    "moon": "Méthone"
+  }, {
+    "moon": "Pallène"
+  }, {
+    "moon": "Pollux"
+  }, {
+    "moon": "Daphnis"
+  }, {
+    "moon": "Aegir"
+  }, {
+    "moon": "Bebhionn"
+  }, {
+    "moon": "Bergelmir"
+  }, {
+    "moon": "Bestla"
+  }, {
+    "moon": "Farbauti"
+  }, {
+    "moon": "Fenrir"
+  }, {
+    "moon": "Fornjot"
+  }, {
+    "moon": "Hati"
+  }, {
+    "moon": "Hyrrokkin"
+  }, {
+    "moon": "Kari"
+  }, {
+    "moon": "Loge"
+  }, {
+    "moon": "Skoll"
+  }, {
+    "moon": "Surtur"
+  }, {
+    "moon": "Anthé"
+  }, {
+    "moon": "Jarnsaxa"
+  }, {
+    "moon": "Greip"
+  }, {
+    "moon": "Tarqeq"
+  }, {
+    "moon": "Égéon"
+  }, {
+    "moon": "S/2004 S 7"
+  }, {
+    "moon": "S/2004 S 12"
+  }, {
+    "moon": "S/2004 S 13"
+  }, {
+    "moon": "S/2004 S 17"
+  }, {
+    "moon": "S/2006 S 1"
+  }, {
+    "moon": "S/2006 S 3"
+  }, {
+    "moon": "S/2007 S 2"
+  }, {
+    "moon": "S/2007 S 3"
+  }, {
+    "moon": "S/2009 S 1"
+  }, {
+    "moon": "S/2004 S 22"
+  }, {
+    "moon": "S/2004 S 21"
+  }, {
+    "moon": "S/2004 S 20"
+  }, {
+    "moon": "S/2004 S 23"
+  }, {
+    "moon": "S/2004 S 24"
+  }, {
+    "moon": "S/2004 S 25"
+  }, {
+    "moon": "S/2004 S 26"
+  }, {
+    "moon": "S/2004 S 27"
+  }, {
+    "moon": "S/2004 S 28"
+  }, {
+    "moon": "S/2004 S 29"
+  }, {
+    "moon": "S/2004 S 30"
+  }, {
+    "moon": "S/2004 S 31"
+  }, {
+    "moon": "S/2004 S 32"
+  }, {
+    "moon": "S/2004 S 33"
+  }, {
+    "moon": "S/2004 S 34"
+  }, {
+    "moon": "S/2004 S 35"
+  }, {
+    "moon": "S/2004 S 36"
+  }, {
+    "moon": "S/2004 S 37"
+  }, {
+    "moon": "S/2004 S 38"
+  }, {
+    "moon": "S/2004 S 39"
+  }],
+  "semimajorAxis": 1426666422,
+  "mass": {
+    "massValue": 5.68336,
+    "massExponent": 26
+  },
+  "gravity": 10.44000,
+  "meanRadius": 58232.00000,
+  "sideralOrbit": 10759.22000,
+  "sideralRotation": 10.65600
+}, {
+  "id": "terre",
+  "englishName": "Earth",
+  "moons": [{
+    "moon": "La Lune"
+  }],
+  "semimajorAxis": 149598262,
+  "mass": {
+    "massValue": 5.97237,
+    "massExponent": 24
+  },
+  "gravity": 9.80000,
+  "meanRadius": 6371.00840,
+  "sideralOrbit": 365.25600,
+  "sideralRotation": 23.93450
+}, {
+  "id": "venus",
+  "englishName": "Venus",
+  "moons": null,
+  "semimajorAxis": 108208475,
+  "mass": {
+    "massValue": 4.86747,
+    "massExponent": 24
+  },
+  "gravity": 8.87000,
+  "meanRadius": 6051.80000,
+  "sideralOrbit": 224.70100,
+  "sideralRotation": -5832.50000
+}]}

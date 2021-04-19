@@ -17,6 +17,11 @@
   cursor: pointer;
 }
 
+.planet-icon:hover {
+  transform: scale(1.05);
+  transition: transform 1s ease-in-out;
+}
+
 .planet-icon:hover ~ .Earth,
 .planet-icon:hover ~ .Neptune,
 .planet-icon:hover ~ .Uranus,
@@ -31,6 +36,7 @@
   color: #F5AE45;
 }
 
+
 .planet-card-name {
   margin: 20px 10px 10px 10px;
 }
@@ -44,6 +50,20 @@
 @media only screen and (max-width: 850px) {
   .planet-card {
     width: 30%;
+    padding: 10px;
+    border-radius: 35px;
+  }
+  #terre,
+  #neptune,
+  #uranus,
+  #mercure {
+    border: 2px solid #288FDE;
+  }
+  #venus,
+  #mars,
+  #jupiter,
+  #saturne {
+    border: 2px solid #F04528;
   }
 }
 

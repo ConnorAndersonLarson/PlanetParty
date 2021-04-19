@@ -12,5 +12,40 @@ export interface PlanetBio {
 
 export interface AllData {
   allPlanets: Array<PlanetBio>,
-  sortKey: string;
+  sortKey: string,
+  error: string
+}
+
+export interface PlanetProps {
+  name: string,
+  id: number,
+  planetFact: string
+}
+
+export interface InfoProps {
+  currentPlanet: PlanetBio;
+  resetSort: () => void
+}
+
+export interface Props {
+  updateSort: (event: React.MouseEvent<HTMLInputElement>) => void
+}
+
+interface Moons {
+  moon: string
+}
+
+export interface IncomingData {
+  id: string,
+  englishName: string,
+  moons: Moons[],
+  semimajorAxis: number,
+  mass: {
+    massValue: number,
+    massExponent: number
+  },
+  gravity: number,
+  meanRadius: number,
+  sideralOrbit: number,
+  sideralRotation: number
 }
