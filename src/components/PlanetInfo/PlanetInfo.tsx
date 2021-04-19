@@ -17,6 +17,12 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
     return weightOnPlanet;
   }
 
+  const handleInput = (e: React.KeyboardEvent<HTMLInputElement>): any => {
+    if (e.key === "e" || e.key === "." || e.key === "+" || e.key === "-" || e.key === "E") {
+      e.preventDefault();
+    }
+  }
+
   return (
     <section className='planet-info-view'>
       <Link to="/" onClick={() => resetSort()} className='back'>⬅ Back to all planets</Link>
@@ -52,7 +58,9 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
                   className='gravity-input'
                   value={input}
                   onChange={event => setInput(event.target.value)}
+                  onKeyDown={e => handleInput(e)}
                   min='0'
+                  max='9999999'
                   type='number'
                   aria-label='Weight on Earth'
                 />
