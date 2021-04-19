@@ -32,6 +32,7 @@
 
   .giphy-embed {
     width: 210px;
+    height: auto;
   }
 }
 
@@ -42,5 +43,6 @@
 
   .giphy-embed {
     width: 150px;
+    height: auto;
   }
 }
