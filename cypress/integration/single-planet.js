@@ -51,6 +51,8 @@ describe('Single Planet Testing', () => {
       .get('.gravity-words').should('contain', '114 pounds')
     cy.get('input[name="weight"]').clear().type('134as2f')
       .get('.gravity-words').should('contain', '1526 pounds')
+    cy.get('input[name="weight"]').clear().type('1342')
+      .get('.gravity-words').should('contain', '1526 pounds')
   })
   it('Should only allow seven numbers to be entered', () => {
     cy.visit(`${baseURL}mars`)
