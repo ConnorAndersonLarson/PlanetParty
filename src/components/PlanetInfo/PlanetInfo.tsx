@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './planetInfo.css';
 import { InfoProps } from '../../interface';
 import { formatLargeNumbers } from '../../utilities';
-import { 
+import {
   formatMass,
   formatLengthOfYear,
   formatDiameter,
@@ -23,6 +23,20 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
     return weightOnPlanet;
   }
 
+  const handleInput = (e: React.KeyboardEvent<HTMLInputElement>): void => {
+    if (e.key === "e" || e.key === "." || e.key === "+" || e.key === "-" || e.key === "E") {
+      e.preventDefault();
+    }
+  }
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    if (Number(event.target.value) > 9999999) {
+      event.preventDefault();
+    } else {
+      setInput(event.target.value)
+    }
+  }
+
   return (
     <section className='planet-info-view'>
       <Link to="/" onClick={() => resetSort()} className='back'>⬅ Back to all planets</Link>
@@ -36,7 +50,7 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
           </div>
           <div className='planet-info-card planet-info-card__mass'>
             <img className='info-icon info-icon__mass' alt='asteroid icon' src='/space/asteroid-fill.svg'></img>
-            {name === 'Earth' && 
+            {name === 'Earth' &&
               <>
                 <h2 className='planet-info-title planet-info-title__mass'>Mass</h2>
                 <p className='planet-info-text planet-info-text__mass'>
@@ -50,7 +64,7 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
         <div className='planet-info-column planet-info-column-2'>
           <div className='planet-info-card planet-info-card__year'>
             <img className='info-icon info-icon__length-of-year' alt='solar system icon' src='/space/solar-system-fill.svg'></img>
-            {name === 'Earth' && 
+            {name === 'Earth' &&
               <>
                 <h2 className='planet-info-title planet-info-title__length-of-year'>Length of year</h2>
                 <p className='planet-info-text planet-info-text__length-of-year'>
@@ -62,7 +76,7 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
           </div>
           <div className='planet-info-card planet-info-card__gravity'>
             <img className='info-icon info-icon__gravity' alt='comet icon' src='/space/comet-fill.svg'></img>
-            {name === 'Earth' && 
+            {name === 'Earth' &&
               <>
                 <h2 className='planet-info-title planet-info-title__gravity'>Gravity</h2>
                 <p className='planet-info-text planet-info-text__gravity'>
@@ -70,29 +84,31 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
                 </p>
               </>
             }
-            {name !== 'Earth' && 
+            {name !== 'Earth' &&
               <p className='planet-info-text planet-info-text__gravity'>
                 Something that weighs
                 <input
                   className='gravity-input'
                   value={input}
-                  onChange={event => setInput(event.target.value)}
+                  onChange={event => handleChange(event)}
+                  onKeyDown={e => handleInput(e)}
                   min='0'
+                  max='9999999'
                   type='number'
                   aria-label='Weight on Earth'
-                /> 
-                <span className='earth-pounds'>pounds</span> 
+                />
+                <span className='earth-pounds'>pounds</span>
                 {' '} on Earth would weigh  {' '}
                 <span className='gravity-words'>
-                  {input && gravityConversion(gravity)}{!input && gravityConversion(input)} pounds 
-                </span> 
+                  {input && gravityConversion(gravity)}{!input && gravityConversion(input)} pounds
+                </span>
                 {' '} on {name}
               </p>
             }
           </div>
           <div className='planet-info-card planet-info-card__diameter'>
             <img className='info-icon info-icon__diameter' alt='astronaut on orb icon' src='/space/visitor-fill.svg'></img>
-            {name === 'Earth' && 
+            {name === 'Earth' &&
               <>
                 <h2 className='planet-info-title planet-info-title__diameter'>Diameter</h2>
                 <p className='planet-info-text planet-info-text__diameter'>
@@ -106,7 +122,7 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
         <div className='planet-info-column planet-info-column-3'>
           <div className='planet-info-card planet-info-card__distance'>
             <img className='info-icon info-icon__distance' alt='sun icon' src='/space/sun-fill.svg'></img>
-            {name === 'Earth' && 
+            {name === 'Earth' &&
               <>
                 <h2 className='planet-info-title planet-info-title__distance'>Distance from sun</h2>
                 <p className='planet-info-text planet-info-text__distance'>
@@ -122,7 +138,7 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
           </div>
           <div className='planet-info-card planet-info-card__day'>
             <img className='info-icon info-icon__length-of-day' alt='spinning planet icon' src='/space/planet-fill.svg'></img>
-            {name === 'Earth' && 
+            {name === 'Earth' &&
               <>
                 <h2 className='planet-info-title planet-info-title__length-of-day'>Length of day</h2>
                 <p className='planet-info-text planet-info-text__length-of-day'>
