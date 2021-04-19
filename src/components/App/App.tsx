@@ -84,6 +84,7 @@ class App extends React.Component<{}, AllData> {
                   <SortBox updateSort={this.updateSort} />
                   {this.state.error && <h2>{this.state.error}</h2>}
                   {!this.state.error && !this.state.allPlanets.length && <h2>Loading...</h2>}
+                  {!this.state.error && !!this.state.allPlanets.length && <h2>Click on a planet to learn more!</h2>}
                   <Planetarium allPlanets={this.state.allPlanets} sortKey={this.state.sortKey} error={this.state.error} />
                 </>
               )
