@@ -3,10 +3,15 @@ import { Link } from 'react-router-dom';
 import './planetInfo.css';
 import { InfoProps } from '../../interface';
 import { formatLargeNumbers } from '../../utilities';
+import { 
+  formatMass,
+  formatLengthOfYear,
+  formatDiameter,
+  formatDistance,
+  formatMoons,
+  formatLengthOfDay
+} from '../../planetInfoHelpers';
 
-const getMoonWord = (moonCount: number) => {
-  return moonCount === 1 ? 'moon' : 'moons';
-}
 
 const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Element => {
   const [input, setInput] = useState('100');
@@ -39,14 +44,7 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
                 </p>
               </>
             }
-            {name !== 'Earth' && 
-              <p className='planet-info-text planet-info-text__mass'>
-                At {mass} quintillion kg, {name} is 
-                <span className='mass-multiplier'> {(mass / 5972370).toFixed(2) }</span> 
-                <span className='mass-words'> times as massive </span>
-                as Earth
-              </p>
-            }
+            {name !== 'Earth' && formatMass(name, mass)}
           </div>
         </div>
         <div className='planet-info-column planet-info-column-2'>
@@ -60,14 +58,7 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
                 </p>
               </>
             }
-            {name !== 'Earth' && 
-              <p className='planet-info-text planet-info-text__length-of-year'>
-                If you lived on {name}, you'd {(name === 'Mercury' || name === 'Venus') && 'only'} have to wait {' '}
-                <span className='length-of-year-multiplier'>{(length_of_year / 365).toFixed(2)}</span> 
-                <span className='length-of-year-words'> times as long </span> 
-                for your next birthday
-              </p>
-            }
+            {name !== 'Earth' && formatLengthOfYear(name, length_of_year)}
           </div>
           <div className='planet-info-card planet-info-card__gravity'>
             <img className='info-icon info-icon__gravity' alt='comet icon' src='../space/comet-fill.svg'></img>
@@ -109,24 +100,7 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
                 </p>
               </>
             }
-            {name !== 'Earth' && 
-              <p className='planet-info-text planet-info-text__diameter'>
-                If Earth suddenly became the size of {name}, your friends would live {' '} 
-                {(name === 'Mercury' || name === 'Venus' || name === 'Mars') &&
-                  <>
-                    <span className='diameter-multiplier'>{(12742 / diameter).toFixed(2)}</span> 
-                    <span className='diameter-words'> times closer </span>
-                    to you
-                  </>
-                }
-                {(name === 'Jupiter' || name === 'Saturn' || name === 'Uranus' || name === 'Neptune') &&
-                  <>
-                    <span className='diameter-multiplier'>{(diameter / 12742).toFixed(2)}</span> 
-                    <span className='diameter-words'> times farther away </span>
-                    from you
-                  </>
-                }
-              </p>}
+            {name !== 'Earth' && formatDiameter(name, diameter)}
           </div>
         </div>
         <div className='planet-info-column planet-info-column-3'>
@@ -140,33 +114,11 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
                 </p>
               </>
             }
-            {name !== 'Earth' && 
-              <p className='planet-info-text planet-info-text__distance'>
-                The sun appears  {' '}
-                {(name === 'Mercury' || name === 'Venus') &&
-                  <>
-                    <span className='distance-multiplier'>{ (149598262 / distance_from_sun).toFixed(2)}</span> 
-                    <span className='distance-words'> times larger </span>
-                  </>
-                }
-                {(name === 'Mars' || name === 'Jupiter' || name === 'Saturn' || name === 'Uranus' || name === 'Neptune') &&
-                  <>
-                    <span className='distance-multiplier'>{ (distance_from_sun / 149598262).toFixed(2)}</span> 
-                    <span className='distance-words'> times smaller </span>
-                  </>
-                }
-                {' '} from {name} 
-              </p>
-            }
+            {name !== 'Earth' && formatDistance(name, distance_from_sun)}
           </div>
           <div className='planet-info-card planet-info-card__moons'>
             <img className='info-icon info-icon__moons' alt='eclipse icon' src='../space/eclipse-fill.svg'></img>
-            <p className='planet-info-text planet-info-text__moons'>
-              On {name} you {name !== 'Earth' && 'would'} see {' '}
-              <span className='moon-count'>{number_of_moons}</span> 
-              <span className='moon-word'> {getMoonWord(number_of_moons)}</span> 
-              {' '} in the sky
-            </p>
+            {formatMoons(name, number_of_moons)}
           </div>
           <div className='planet-info-card planet-info-card__day'>
             <img className='info-icon info-icon__length-of-day' alt='spinning planet icon' src='../space/planet-fill.svg'></img>
@@ -178,24 +130,7 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
                 </p>
               </>
             }
-            {name !== 'Earth' && 
-              <p className='planet-info-text planet-info-text__length-of-day'>
-                Compared to kids on Earth, kids on {name} would have {' '}
-                {(name === 'Mars' || name === 'Mercury' || name === 'Venus') && 
-                  <>
-                    <span className='length-of-day-multiplier'>{(length_of_day - 23.9).toFixed(1)}</span> 
-                    <span className='length-of-day-words'> extra hours </span> 
-                  </>
-                }
-                {(name === 'Jupiter' || name === 'Saturn' || name === 'Neptune' || name === 'Uranus') && 
-                  <>
-                    <span className='length-of-day-multiplier'>{(23.9 - length_of_day).toFixed(1)}</span> 
-                    <span className='length-of-day-words'> fewer hours </span> 
-                  </>
-                }
-                to play every day
-              </p>
-            }
+            {name !== 'Earth' && formatLengthOfDay(name, length_of_day)}
           </div>
         </div>
       </div>
