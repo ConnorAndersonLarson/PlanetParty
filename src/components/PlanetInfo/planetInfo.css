@@ -153,6 +153,7 @@ Light Gray: #D0D7DF */
 }
 
 .gravity-input {
+  background-color: #D0D7DF;
   cursor: pointer;
   padding: 8px 0;
   text-align: center;

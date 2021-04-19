@@ -100,7 +100,7 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
                 <span className='earth-pounds'>pounds</span>
                 {' '} on Earth would weigh  {' '}
                 <span className='gravity-words'>
-                  {input && gravityConversion(gravity)}{!input && gravityConversion(input)} pounds
+                  {input && formatLargeNumbers(gravityConversion(gravity))}{!input && gravityConversion(input)} pounds
                 </span>
                 {' '} on {name}
               </p>
