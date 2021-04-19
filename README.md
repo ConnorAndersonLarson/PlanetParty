@@ -61,7 +61,7 @@ View the deployed site: [here](https://planet-party.herokuapp.com/)
 
 #### Responsive Design
  - Responsiveness was a consideration while designing this application. Our application viewed from a mobile device:
- <img src="" width="1440">
+ <img src="https://media.giphy.com/media/HWFo2llXGa7uugvvx6/giphy.gif" width="500" align="center">
 
 #### Accessibility 
 
