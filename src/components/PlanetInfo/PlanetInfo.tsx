@@ -2,10 +2,16 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './planetInfo.css';
 import { InfoProps } from '../../interface';
+import { formatLargeNumbers } from '../../utilities';
+import { 
+  formatMass,
+  formatLengthOfYear,
+  formatDiameter,
+  formatDistance,
+  formatMoons,
+  formatLengthOfDay
+} from '../../planetInfoHelpers';
 
-const getMoonWord = (moonCount: number) => {
-  return moonCount === 1 ? 'moon' : 'moons';
-}
 
 const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Element => {
   const [input, setInput] = useState('100');
@@ -30,22 +36,41 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
           </div>
           <div className='planet-info-card planet-info-card__mass'>
             <img className='info-icon info-icon__mass' alt='asteroid icon' src='/space/asteroid-fill.svg'></img>
-            {name === 'Earth' && <h2 className='planet-info-title planet-info-title__mass'>Mass</h2>}
-            {name !== 'Earth' && <p className='planet-info-text planet-info-text__mass'>At {mass} quintillion kg, {name} is <span className='mass-multiplier'>{(mass / 5972370).toFixed(2)}</span> <span className='mass-words'>times as massive as Earth</span></p>}
-            {name === 'Earth' && <p className='planet-info-text planet-info-text__mass'><span className='mass-earth'>{mass} quintillion kg</span></p>}
+            {name === 'Earth' && 
+              <>
+                <h2 className='planet-info-title planet-info-title__mass'>Mass</h2>
+                <p className='planet-info-text planet-info-text__mass'>
+                  <span className='mass-earth'>{formatLargeNumbers(mass)} quintillion kg</span>
+                </p>
+              </>
+            }
+            {name !== 'Earth' && formatMass(name, mass)}
           </div>
         </div>
         <div className='planet-info-column planet-info-column-2'>
           <div className='planet-info-card planet-info-card__year'>
             <img className='info-icon info-icon__length-of-year' alt='solar system icon' src='/space/solar-system-fill.svg'></img>
-            {name === 'Earth' && <h2 className='planet-info-title planet-info-title__length-of-year'>Length of year</h2>}
-            {name !== 'Earth' && <p className='planet-info-text planet-info-text__length-of-year'>If you lived on {name}, you'd {(name === 'Mercury' || name === 'Venus') && 'only'} have to wait <span className='length-of-year-multiplier'>{(length_of_year / 365).toFixed(2)}</span> <span className='length-of-year-words'>times as long </span> for your next birthday</p>}
-            {name === 'Earth' && <p className='planet-info-text planet-info-text__length-of-year'><span className='length-of-year-earth'>{length_of_year} days</span></p>}
+            {name === 'Earth' && 
+              <>
+                <h2 className='planet-info-title planet-info-title__length-of-year'>Length of year</h2>
+                <p className='planet-info-text planet-info-text__length-of-year'>
+                  <span className='length-of-year-earth'>{length_of_year} days</span>
+                </p>
+              </>
+            }
+            {name !== 'Earth' && formatLengthOfYear(name, length_of_year)}
           </div>
           <div className='planet-info-card planet-info-card__gravity'>
             <img className='info-icon info-icon__gravity' alt='comet icon' src='/space/comet-fill.svg'></img>
-            {name === 'Earth' && <h2 className='planet-info-title planet-info-title__gravity'>Gravity</h2>}
-            {name !== 'Earth' &&
+            {name === 'Earth' && 
+              <>
+                <h2 className='planet-info-title planet-info-title__gravity'>Gravity</h2>
+                <p className='planet-info-text planet-info-text__gravity'>
+                  <span className='gravity-earth'>{gravity} m/s²</span>
+                </p>
+              </>
+            }
+            {name !== 'Earth' && 
               <p className='planet-info-text planet-info-text__gravity'>
                 Something that weighs
                 <input
@@ -55,55 +80,57 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
                   min='0'
                   type='number'
                   aria-label='Weight on Earth'
-                />
-                <span className='earth-pounds'>pounds</span> on Earth would weigh
+                /> 
+                <span className='earth-pounds'>pounds</span> 
+                {' '} on Earth would weigh  {' '}
                 <span className='gravity-words'>
-                  {input && ' ' + gravityConversion(gravity)}{!input && gravityConversion(input)} pounds
-                </span>
+                  {input && gravityConversion(gravity)}{!input && gravityConversion(input)} pounds 
+                </span> 
                 {' '} on {name}
               </p>
             }
-            {name === 'Earth' && <p className='planet-info-text planet-info-text__gravity'><span className='gravity-earth'>{gravity} m/s²</span></p>}
           </div>
           <div className='planet-info-card planet-info-card__diameter'>
             <img className='info-icon info-icon__diameter' alt='astronaut on orb icon' src='/space/visitor-fill.svg'></img>
-            {name === 'Earth' && <h2 className='planet-info-title planet-info-title__diameter'>Diameter</h2>}
-            {name !== 'Earth' &&
-              <p className='planet-info-text planet-info-text__diameter'>
-                If Earth suddenly became the size of {name}, your friends would live {' '}
-                {(name === 'Mercury' || name === 'Venus' || name === 'Mars') &&
-                  <>
-                    <span className='diameter-multiplier'>{(12742 / diameter).toFixed(2)}</span>
-                    <span className='diameter-words'> times closer </span>
-                    to you
-                  </>
-                }
-                {(name === 'Jupiter' || name === 'Saturn' || name === 'Uranus' || name === 'Neptune') &&
-                  <>
-                    <span className='diameter-multiplier'>{(diameter / 12742).toFixed(2)}</span>
-                    <span className='diameter-words'> times farther away </span>
-                    from you
-                  </>
-                }
-              </p>}
-            {name === 'Earth' && <p className='planet-info-text planet-info-text__diameter'><span className='diameter-earth'>{diameter} km</span></p>}
+            {name === 'Earth' && 
+              <>
+                <h2 className='planet-info-title planet-info-title__diameter'>Diameter</h2>
+                <p className='planet-info-text planet-info-text__diameter'>
+                  <span className='diameter-earth'>{formatLargeNumbers(diameter)} km</span>
+                </p>
+              </>
+            }
+            {name !== 'Earth' && formatDiameter(name, diameter)}
           </div>
         </div>
         <div className='planet-info-column planet-info-column-3'>
           <div className='planet-info-card planet-info-card__distance'>
             <img className='info-icon info-icon__distance' alt='sun icon' src='/space/sun-fill.svg'></img>
-            {name === 'Earth' && <h2 className='planet-info-title planet-info-title__distance'>Distance from sun</h2>}
-            {name !== 'Earth' && <p className='planet-info-text planet-info-text__distance'>The sun appears <span className='distance-multiplier'>{(diameter / 149598262).toFixed(2)}</span> <span className='distance-from-sun-words'> times larger </span> from {name} </p>}
-            {name === 'Earth' && <p className='planet-info-text planet-info-text__distance'><span className='distance-earth'>{distance_from_sun} km</span></p>}
+            {name === 'Earth' && 
+              <>
+                <h2 className='planet-info-title planet-info-title__distance'>Distance from sun</h2>
+                <p className='planet-info-text planet-info-text__distance'>
+                  <span className='distance-earth'>{formatLargeNumbers(distance_from_sun)} km</span>
+                </p>
+              </>
+            }
+            {name !== 'Earth' && formatDistance(name, distance_from_sun)}
           </div>
           <div className='planet-info-card planet-info-card__moons'>
             <img className='info-icon info-icon__moons' alt='eclipse icon' src='/space/eclipse-fill.svg'></img>
-            <p className='planet-info-text planet-info-text__moons'>On {name} you {name !== 'Earth' && 'would'} see <span className='moon-count'>{number_of_moons}</span> <span className='moon-word'>{getMoonWord(number_of_moons)}</span> in the sky</p>
+            {formatMoons(name, number_of_moons)}
           </div>
           <div className='planet-info-card planet-info-card__day'>
-            <img className='info-icon info-icon__length-of-day' alt='spinning planet icon' src='/space/orbit-fill.svg'></img>
-            <h2 className='planet-info-title planet-info-title__length-of-day'>Length of day</h2>
-            <h3 className='planet-info-length-of-day'>{length_of_day} hours</h3>
+            <img className='info-icon info-icon__length-of-day' alt='spinning planet icon' src='/space/planet-fill.svg'></img>
+            {name === 'Earth' && 
+              <>
+                <h2 className='planet-info-title planet-info-title__length-of-day'>Length of day</h2>
+                <p className='planet-info-text planet-info-text__length-of-day'>
+                  <span className='length-of-day-earth'>{length_of_day} hours</span>
+                </p>
+              </>
+            }
+            {name !== 'Earth' && formatLengthOfDay(name, length_of_day)}
           </div>
         </div>
       </div>
