@@ -313,13 +313,18 @@ Light Gray: #D0D7DF */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    width: 60%;
+    width: 70%;
   }
 }
 
 @media only screen and (max-width: 850px) {
   .planet-info-img {
     width: 300px;
+  }
+
+  .planet-info-column {
+    width: 90%;
+    min-width: unset;
   }
 }
 
