@@ -17,7 +17,7 @@ const parseMass = (value: number, exponent: number) => {
 
 
 class App extends React.Component<{}, AllData> {
-  constructor(props: any) {
+  constructor(props: {}) {
     super(props);
     this.state = {
       allPlanets: [],
@@ -90,7 +90,7 @@ class App extends React.Component<{}, AllData> {
               return (
                 <>
                   {!foundPlanet && <h2>Oops, looks like that planet is out of our solar system</h2>}
-                  {foundPlanet && 
+                  {foundPlanet &&
                   <>
                       <ScrollToTopOnMount />
                       <PlanetInfo currentPlanet={foundPlanet} resetSort={this.resetSort} />
