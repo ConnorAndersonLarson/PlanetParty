@@ -29,8 +29,8 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
     }
   }
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    if (Number(event.target.value) > 9999999) {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>, limit: number): void => {
+    if (Number(event.target.value) > limit) {
       event.preventDefault();
     } else {
       setInput(event.target.value)
@@ -91,7 +91,7 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
                   className='gravity-input'
                   name='weight'
                   value={input}
-                  onChange={event => handleChange(event)}
+                  onChange={event => handleChange(event, 9999999)}
                   onKeyDown={e => handleInput(e)}
                   min='0'
                   max='9999999'
