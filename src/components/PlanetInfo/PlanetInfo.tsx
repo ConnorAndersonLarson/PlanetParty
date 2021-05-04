@@ -16,6 +16,7 @@ import {
 const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Element => {
   const [gravInput, setGravInput] = useState('100');
   const [yearInput, setYearInput] = useState('10');
+  const [diamInput, setDiamInput] = useState('5');
 
   const { name, mass, diameter, gravity, length_of_day, distance_from_sun, length_of_year, number_of_moons } = currentPlanet;
 
@@ -28,6 +29,12 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
     const yearOnPlanet = (365 / (Number(planetYear)) * Number(yearInput)).toFixed(2);
     return parseFloat(yearOnPlanet);
   }
+
+  const diamConversion = (planetDiam: number | string): number => {
+    const diamOfPlanet = ((Number(planetDiam) / 12742) * Number(diamInput)).toFixed(2);
+    return parseFloat(diamOfPlanet);
+  }
+
 
   const handleInput = (e: React.KeyboardEvent<HTMLInputElement>): void => {
     if (e.key === "e" || e.key === "." || e.key === "+" || e.key === "-" || e.key === "E") {
@@ -42,6 +49,8 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
       setGravInput(event.target.value)
     } else if (inputChange === 'year') {
       setYearInput(event.target.value)
+    } else if (inputChange === 'diameter') {
+      setDiamInput(event.target.value)
     }
   }
 
@@ -80,7 +89,6 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
                 </p>
               </>
             }
-
             {name !== 'Earth' &&
               <p className='planet-info-text planet-info-text__length-of-year'>
                 Something that is
@@ -95,9 +103,9 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
                   type='number'
                   aria-label='Length of year on Earth'
                 />
-                <span className='earth-pounds'>years old</span>
+                <span className='length-of-year-words'>years old</span>
                 {' '} on Earth would {(name !== 'Mercury' && name !== 'Venus') && 'only'} be  {' '}
-                <span className='gravity-words'>
+                <span className='length-of-year-words'>
                   {yearInput && formatLargeNumbers(yearConversion(length_of_year))}{!yearInput && '0'} years old
                 </span>
                 {' '} on {name}
@@ -147,7 +155,29 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
                 </p>
               </>
             }
-            {name !== 'Earth' && formatDiameter(name, diameter)}
+
+            {name !== 'Earth' &&
+              <p className='planet-info-text planet-info-text__diameter'>
+                A friend who lives
+                <input
+                  className='diameter-input input'
+                  name='diameter'
+                  value={diamInput}
+                  onChange={event => handleChange(event, 9999, 'diameter')}
+                  onKeyDown={e => handleInput(e)}
+                  min='0'
+                  max='9999'
+                  type='number'
+                  aria-label='Distance on Earth'
+                />
+                <span className='diameter-words'>miles</span>
+                {' '} away from you on Earth would {(name === 'Mercury' || name === 'Venus' || name === 'Mars') && 'only'} live {' '}
+                <span className='diameter-words'>
+                  {diamInput && formatLargeNumbers(diamConversion(diameter))}{!diamInput && diamConversion(diamInput)} miles
+                </span>
+                {' '} away on {name}!
+              </p>
+            }
           </div>
         </div>
         <div className='planet-info-column planet-info-column-3'>
