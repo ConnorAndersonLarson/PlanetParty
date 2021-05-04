@@ -48,6 +48,11 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
     }
   }
 
+  const formatWord = (word: string, input: number): string => {
+    const finalWord: string = input === 1 ? word : `${word}s`;
+    return finalWord;
+  }
+
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>, limit: number, inputChange: string): void => {
     if (Number(event.target.value) > limit) {
       event.preventDefault();
@@ -153,6 +158,56 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
               </p>
             }
           </div>
+
+          <div className='planet-info-card planet-info-card__distance'>
+            <img className='info-icon info-icon__distance' alt='sun icon' src='/space/sun-fill.svg'></img>
+            {name === 'Earth' &&
+              <>
+                <h2 className='planet-info-title planet-info-title__distance'>Distance from sun</h2>
+                <p className='planet-info-text planet-info-text__distance'>
+                  <span className='distance-earth'>{formatLargeNumbers(distance_from_sun)} km</span>
+                </p>
+              </>
+            }
+            {name !== 'Earth' && formatDistance(name, distance_from_sun)}
+          </div>
+        </div>
+        <div className='planet-info-column planet-info-column-3'>
+          <div className='planet-info-card planet-info-card__day'>
+            <img className='info-icon info-icon__length-of-day' alt='spinning planet icon' src='/space/planet-fill.svg'></img>
+            {name === 'Earth' &&
+              <>
+                <h2 className='planet-info-title planet-info-title__length-of-day'>Length of day</h2>
+                <p className='planet-info-text planet-info-text__length-of-day'>
+                  <span className='length-of-day-earth'>{length_of_day} hours</span>
+                </p>
+              </>
+            }
+
+            {name !== 'Earth' &&
+              <p className='planet-info-text planet-info-text__length-of-day'>
+                If you had
+                <input
+                  className='day-input input'
+                  name='day'
+                  value={dayInput}
+                  onChange={event => handleChange(event, 99, 'day')}
+                  onKeyDown={e => handleInput(e)}
+                  min='0'
+                  max='99'
+                  type='number'
+                  aria-label='Length of day on Earth'
+                />
+                <span className='length-of-day-words'>hours</span>
+                {' '} to play on Earth, you would {(name === 'Jupiter' || name === 'Saturn' || name === 'Neptune' || name === 'Uranus') && 'only'} get  {' '}
+                <span className='length-of-day-words'>
+                  {dayInput && formatLargeNumbers(dayConversion(length_of_day))}{!dayInput && '0'} hours
+                </span>
+                {' '} on {name}!
+              </p>
+            }
+          </div>
+
           <div className='planet-info-card planet-info-card__diameter'>
             <img className='info-icon info-icon__diameter' alt='astronaut on orb icon' src='/space/visitor-fill.svg'></img>
             {name === 'Earth' &&
@@ -187,57 +242,10 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
               </p>
             }
           </div>
-        </div>
-        <div className='planet-info-column planet-info-column-3'>
-          <div className='planet-info-card planet-info-card__distance'>
-            <img className='info-icon info-icon__distance' alt='sun icon' src='/space/sun-fill.svg'></img>
-            {name === 'Earth' &&
-              <>
-                <h2 className='planet-info-title planet-info-title__distance'>Distance from sun</h2>
-                <p className='planet-info-text planet-info-text__distance'>
-                  <span className='distance-earth'>{formatLargeNumbers(distance_from_sun)} km</span>
-                </p>
-              </>
-            }
-            {name !== 'Earth' && formatDistance(name, distance_from_sun)}
-          </div>
+
           <div className='planet-info-card planet-info-card__moons'>
             <img className='info-icon info-icon__moons' alt='eclipse icon' src='/space/eclipse-fill.svg'></img>
             {formatMoons(name, number_of_moons)}
-          </div>
-          <div className='planet-info-card planet-info-card__day'>
-            <img className='info-icon info-icon__length-of-day' alt='spinning planet icon' src='/space/planet-fill.svg'></img>
-            {name === 'Earth' &&
-              <>
-                <h2 className='planet-info-title planet-info-title__length-of-day'>Length of day</h2>
-                <p className='planet-info-text planet-info-text__length-of-day'>
-                  <span className='length-of-day-earth'>{length_of_day} hours</span>
-                </p>
-              </>
-            }
-
-            {name !== 'Earth' &&
-              <p className='planet-info-text planet-info-text__length-of-day'>
-                If you had
-                <input
-                  className='day-input input'
-                  name='day'
-                  value={dayInput}
-                  onChange={event => handleChange(event, 99, 'day')}
-                  onKeyDown={e => handleInput(e)}
-                  min='0'
-                  max='99'
-                  type='number'
-                  aria-label='Length of day on Earth'
-                />
-                <span className='length-of-day-words'>hours</span>
-                {' '} to play on Earth, you would {(name === 'Jupiter' || name === 'Saturn' || name === 'Neptune' || name === 'Uranus') && 'only'} get  {' '}
-                <span className='length-of-day-words'>
-                  {dayInput && formatLargeNumbers(dayConversion(length_of_day))}{!dayInput && '0'} hours
-                </span>
-                {' '} on {name}!
-              </p>
-            }
           </div>
         </div>
       </div>
