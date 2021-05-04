@@ -5,11 +5,8 @@ import { InfoProps } from '../../interface';
 import { formatLargeNumbers } from '../../utilities';
 import {
   formatMass,
-  formatLengthOfYear,
-  formatDiameter,
   formatDistance,
-  formatMoons,
-  formatLengthOfDay
+  formatMoons
 } from '../../planetInfoHelpers';
 
 
@@ -48,10 +45,10 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
     }
   }
 
-  const formatWord = (word: string, input: number): string => {
-    const finalWord: string = input === 1 ? word : `${word}s`;
-    return finalWord;
-  }
+  // const formatWord = (word: string, input: number): string => {
+  //   const finalWord: string = input === 1 ? word : `${word}s`;
+  //   return finalWord;
+  //}
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>, limit: number, inputChange: string): void => {
     if (Number(event.target.value) > limit) {
