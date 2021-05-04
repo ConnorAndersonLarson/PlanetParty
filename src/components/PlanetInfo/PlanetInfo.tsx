@@ -14,13 +14,19 @@ import {
 
 
 const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Element => {
-  const [input, setInput] = useState('100');
+  const [gravInput, setGravInput] = useState('100');
+  const [yearInput, setYearInput] = useState('10');
 
   const { name, mass, diameter, gravity, length_of_day, distance_from_sun, length_of_year, number_of_moons } = currentPlanet;
 
   const gravityConversion = (planetGravity: number | string): number => {
-    const weightOnPlanet = Math.round((Number(planetGravity) / 9.807) * Number(input));
+    const weightOnPlanet = Math.round((Number(planetGravity) / 9.807) * Number(gravInput));
     return weightOnPlanet;
+  }
+
+  const yearConversion = (planetYear: number | string): number => {
+    const yearOnPlanet = (365 / (Number(planetYear)) * Number(yearInput)).toFixed(2);
+    return parseFloat(yearOnPlanet);
   }
 
   const handleInput = (e: React.KeyboardEvent<HTMLInputElement>): void => {
@@ -29,11 +35,13 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
     }
   }
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>, limit: number): void => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>, limit: number, inputChange: string): void => {
     if (Number(event.target.value) > limit) {
       event.preventDefault();
-    } else {
-      setInput(event.target.value)
+    } else if (inputChange === 'gravity') {
+      setGravInput(event.target.value)
+    } else if (inputChange === 'year') {
+      setYearInput(event.target.value)
     }
   }
 
@@ -72,7 +80,29 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
                 </p>
               </>
             }
-            {name !== 'Earth' && formatLengthOfYear(name, length_of_year)}
+
+            {name !== 'Earth' &&
+              <p className='planet-info-text planet-info-text__length-of-year'>
+                Something that is
+                <input
+                  className='year-input input'
+                  name='year'
+                  value={yearInput}
+                  onChange={event => handleChange(event, 9999, 'year')}
+                  onKeyDown={e => handleInput(e)}
+                  min='0'
+                  max='9999'
+                  type='number'
+                  aria-label='Length of year on Earth'
+                />
+                <span className='earth-pounds'>years old</span>
+                {' '} on Earth would {(name !== 'Mercury' && name !== 'Venus') && 'only'} be  {' '}
+                <span className='gravity-words'>
+                  {yearInput && formatLargeNumbers(yearConversion(length_of_year))}{!yearInput && '0'} years old
+                </span>
+                {' '} on {name}
+              </p>
+            }
           </div>
           <div className='planet-info-card planet-info-card__gravity'>
             <img className='info-icon info-icon__gravity' alt='comet icon' src='/space/comet-fill.svg'></img>
@@ -88,10 +118,10 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
               <p className='planet-info-text planet-info-text__gravity'>
                 Something that weighs
                 <input
-                  className='gravity-input'
+                  className='gravity-input input'
                   name='weight'
-                  value={input}
-                  onChange={event => handleChange(event, 9999999)}
+                  value={gravInput}
+                  onChange={event => handleChange(event, 9999999, 'gravity')}
                   onKeyDown={e => handleInput(e)}
                   min='0'
                   max='9999999'
@@ -101,7 +131,7 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
                 <span className='earth-pounds'>pounds</span>
                 {' '} on Earth would weigh  {' '}
                 <span className='gravity-words'>
-                  {input && formatLargeNumbers(gravityConversion(gravity))}{!input && gravityConversion(input)} pounds
+                  {gravInput && formatLargeNumbers(gravityConversion(gravity))}{!gravInput && gravityConversion(gravInput)} pounds
                 </span>
                 {' '} on {name}
               </p>
