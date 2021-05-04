@@ -17,6 +17,7 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
   const [gravInput, setGravInput] = useState('100');
   const [yearInput, setYearInput] = useState('10');
   const [diamInput, setDiamInput] = useState('5');
+  const [dayInput, setDayInput] = useState('3');
 
   const { name, mass, diameter, gravity, length_of_day, distance_from_sun, length_of_year, number_of_moons } = currentPlanet;
 
@@ -35,6 +36,11 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
     return parseFloat(diamOfPlanet);
   }
 
+  const dayConversion = (planetDay: number | string): number => {
+    const dayPlanet = Math.round((Number(planetDay) / 23.9) * Number(dayInput));
+    return dayPlanet;
+  }
+
 
   const handleInput = (e: React.KeyboardEvent<HTMLInputElement>): void => {
     if (e.key === "e" || e.key === "." || e.key === "+" || e.key === "-" || e.key === "E") {
@@ -51,6 +57,8 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
       setYearInput(event.target.value)
     } else if (inputChange === 'diameter') {
       setDiamInput(event.target.value)
+    } else if (inputChange === 'day') {
+      setDayInput(event.target.value)
     }
   }
 
@@ -207,7 +215,29 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
                 </p>
               </>
             }
-            {name !== 'Earth' && formatLengthOfDay(name, length_of_day)}
+
+            {name !== 'Earth' &&
+              <p className='planet-info-text planet-info-text__length-of-day'>
+                If you had
+                <input
+                  className='day-input input'
+                  name='day'
+                  value={dayInput}
+                  onChange={event => handleChange(event, 99, 'day')}
+                  onKeyDown={e => handleInput(e)}
+                  min='0'
+                  max='99'
+                  type='number'
+                  aria-label='Length of day on Earth'
+                />
+                <span className='length-of-day-words'>hours</span>
+                {' '} to play on Earth, you would {(name === 'Jupiter' || name === 'Saturn' || name === 'Neptune' || name === 'Uranus') && 'only'} get  {' '}
+                <span className='length-of-day-words'>
+                  {dayInput && formatLargeNumbers(dayConversion(length_of_day))}{!dayInput && '0'} hours
+                </span>
+                {' '} on {name}!
+              </p>
+            }
           </div>
         </div>
       </div>
