@@ -115,7 +115,7 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
                 />
                 <span className='length-of-year-words'>years old</span>
                 {' '} on Earth would {(name !== 'Mercury' && name !== 'Venus') && 'only'} be  {' '}
-                <span className='length-of-year-words'>
+                <span className='length-of-year-words length-of-year-output'>
                   {yearInput && formatLargeNumbers(yearConversion(length_of_year))}{!yearInput && '0'} years old
                 </span>
                 {' '} on {name}
