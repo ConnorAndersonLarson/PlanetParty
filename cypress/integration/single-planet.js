@@ -28,7 +28,7 @@ describe('Single Planet Testing', () => {
     cy.visit(`${baseURL}venus`)
       .get('.mass-multiplier').should('contain', '0.81')
       .get('.length-of-year-output').should('contain', '16.22 years old')
-      .get('.length-of-day-multiplier').should('contain', '5808.6')
+      .get('.length-of-day-output').should('contain', '732 hours')
       .get('.moon-count').should('contain', '0')
     cy.visit(`${baseURL}uranus`)
       .get('.diameter-multiplier').should('contain', '3.98')

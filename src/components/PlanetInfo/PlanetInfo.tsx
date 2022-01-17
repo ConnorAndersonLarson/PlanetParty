@@ -197,7 +197,7 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
                 />
                 <span className='length-of-day-words'>hours</span>
                 {' '} to play on Earth, you would {(name === 'Jupiter' || name === 'Saturn' || name === 'Neptune' || name === 'Uranus') && 'only'} get  {' '}
-                <span className='length-of-day-words'>
+                <span className='length-of-day-words length-of-day-output'>
                   {dayInput && formatLargeNumbers(dayConversion(length_of_day))}{!dayInput && '0'} hours
                 </span>
                 {' '} on {name}!
