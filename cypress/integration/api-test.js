@@ -12,7 +12,7 @@ it('Should successfully GET planets from API server', () => {
 
 it('Should show an error message on failed load', () => {
     cy.intercept({
-      url: 'https://api.le-systeme-solaire.net/rest.php/bodies?data=%20id%2C%20englishName%2C%20moons%2C%20mass%2C%20gravity%2C%20massValue%2C%20massExponent%2C%20moon%2C%20meanRadius%2C%20sideralOrbit%2C%20sideralRotation%2C%20semimajorAxis&filter%5B%5D=isPlanet%2Cneq%2Ctrue&filter%5B%5D='
+      url: 'https://api.le-systeme-solaire.net/rest.php/bodies?data=id%2CenglishName%2Cmoons%2Cmass%2Cgravity%2CmassValue%2CmassExponent%2CmeanRadius%2CsideralOrbit%2CsideralRotation%2CsemimajorAxis%2CisPlanet&filter%5B%5D=isPlanet%2Ceq%2Ctrue&filter%5B%5D='
     }, {
       statusCode: 404,
       body: {
@@ -25,7 +25,7 @@ it('Should show an error message on failed load', () => {
 
   it('Should show an error message on server error', () => {
       cy.intercept({
-        url: 'https://api.le-systeme-solaire.net/rest.php/bodies?data=%20id%2C%20englishName%2C%20moons%2C%20mass%2C%20gravity%2C%20massValue%2C%20massExponent%2C%20moon%2C%20meanRadius%2C%20sideralOrbit%2C%20sideralRotation%2C%20semimajorAxis&filter%5B%5D=isPlanet%2Cneq%2Ctrue&filter%5B%5D='
+        url: 'https://api.le-systeme-solaire.net/rest.php/bodies?data=id%2CenglishName%2Cmoons%2Cmass%2Cgravity%2CmassValue%2CmassExponent%2CmeanRadius%2CsideralOrbit%2CsideralRotation%2CsemimajorAxis%2CisPlanet&filter%5B%5D=isPlanet%2Ceq%2Ctrue&filter%5B%5D='
       }, {
         statusCode: 500,
         body: {
@@ -38,7 +38,7 @@ it('Should show an error message on failed load', () => {
 
   it('Should show an error message when planet data is unavailable', () => {
       cy.intercept({
-        url: 'https://api.le-systeme-solaire.net/rest.php/bodies?data=%20id%2C%20englishName%2C%20moons%2C%20mass%2C%20gravity%2C%20massValue%2C%20massExponent%2C%20moon%2C%20meanRadius%2C%20sideralOrbit%2C%20sideralRotation%2C%20semimajorAxis&filter%5B%5D=isPlanet%2Cneq%2Ctrue&filter%5B%5D='
+        url: 'https://api.le-systeme-solaire.net/rest.php/bodies?data=id%2CenglishName%2Cmoons%2Cmass%2Cgravity%2CmassValue%2CmassExponent%2CmeanRadius%2CsideralOrbit%2CsideralRotation%2CsemimajorAxis%2CisPlanet&filter%5B%5D=isPlanet%2Ceq%2Ctrue&filter%5B%5D='
       }, {
         statusCode: 500,
         body: {

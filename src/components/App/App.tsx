@@ -63,8 +63,13 @@ class App extends React.Component<{}, AllData> {
           number_of_moons: info.moons?.length || 0
         }
       }))
-      .then(result => this.setState({ allPlanets: result }))
-      .catch(err => this.setState({ error: 'Oh no! Something went wrong with the data launch!' }))
+      .then(result => {
+         this.setState({ allPlanets: result })
+       })
+      .catch(err => {
+        console.log(err)
+        this.setState({ error: 'Oh no! Something went wrong with the data launch!' })
+      })
   };
 
   render() {

@@ -115,7 +115,7 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
                 />
                 <span className='length-of-year-words'>years old</span>
                 {' '} on Earth would {(name !== 'Mercury' && name !== 'Venus') && 'only'} be  {' '}
-                <span className='length-of-year-words'>
+                <span className='length-of-year-words length-of-year-output'>
                   {yearInput && formatLargeNumbers(yearConversion(length_of_year))}{!yearInput && '0'} years old
                 </span>
                 {' '} on {name}
@@ -197,7 +197,7 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
                 />
                 <span className='length-of-day-words'>hours</span>
                 {' '} to play on Earth, you would {(name === 'Jupiter' || name === 'Saturn' || name === 'Neptune' || name === 'Uranus') && 'only'} get  {' '}
-                <span className='length-of-day-words'>
+                <span className='length-of-day-words length-of-day-output'>
                   {dayInput && formatLargeNumbers(dayConversion(length_of_day))}{!dayInput && '0'} hours
                 </span>
                 {' '} on {name}!
@@ -232,7 +232,7 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
                 />
                 <span className='diameter-words'>miles</span>
                 {' '} away from you on Earth would {(name === 'Mercury' || name === 'Venus' || name === 'Mars') && 'only'} live {' '}
-                <span className='diameter-words'>
+                <span className='diameter-words diameter-output'>
                   {diamInput && formatLargeNumbers(diamConversion(diameter))}{!diamInput && diamConversion(diamInput)} miles
                 </span>
                 {' '} away on {name}!
