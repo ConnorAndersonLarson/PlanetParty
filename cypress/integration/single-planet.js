@@ -35,6 +35,16 @@ describe('Single Planet Testing', () => {
       .get('.distance-multiplier').should('contain', '19.19')
       .get('.gravity-words').should('contain', '90 pounds')
   })
+  it('Should be able to enter different ages and receive different outcomes based on that planet', () => {
+    cy.visit(`${baseURL}mercury`)
+      .get('.length-of-year-output').should('contain', '41.48 years old')
+    cy.get('input[name="year"]').clear().type('15')
+      .get('.length-of-year-output').should('contain', '62.22 years old')
+    cy.visit(`${baseURL}saturn`)
+      .get('.length-of-year-output').should('contain', '.34 years old')
+    cy.get('input[name="year"]').clear().type('88')
+      .get('.length-of-year-output').should('contain', '2.99 years old')
+  })
   it('Should be able to enter different weights and receive different outcomes based on that planet', () => {
     cy.visit(`${baseURL}jupiter`)
       .get('.gravity-words').should('contain', '253 pounds')
