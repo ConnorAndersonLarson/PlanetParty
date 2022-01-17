@@ -35,7 +35,7 @@ describe('Sort Testing', () => {
       .get('.planet-card').eq(1).should('not.contain', '108,208,475 km')
       .get('.planet-card').eq(4).should('not.contain', '778,340,821 km')
     cy.get('label').eq(0).click()
-      .get('.planet-card').eq(0).should('contain', '57,909,227 km')
+      .get('.planet-card').eq(0).should('contain', '57,909,050 km')
       .get('.planet-card').eq(1).should('contain', '108,208,475 km')
       .get('.planet-card').eq(4).should('contain', '778,340,821 km')
   })
