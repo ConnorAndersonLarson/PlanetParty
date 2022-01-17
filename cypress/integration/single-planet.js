@@ -31,7 +31,7 @@ describe('Single Planet Testing', () => {
       .get('.length-of-day-output').should('contain', '732 hours')
       .get('.moon-count').should('contain', '0')
     cy.visit(`${baseURL}uranus`)
-      .get('.diameter-multiplier').should('contain', '3.98')
+      .get('.diameter-output').should('contain', '19.9 miles')
       .get('.distance-multiplier').should('contain', '19.19')
       .get('.gravity-words').should('contain', '90 pounds')
   })

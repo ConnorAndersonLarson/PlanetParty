@@ -232,7 +232,7 @@ const PlanetInfo: React.FC<InfoProps> = ({ currentPlanet, resetSort }): JSX.Elem
                 />
                 <span className='diameter-words'>miles</span>
                 {' '} away from you on Earth would {(name === 'Mercury' || name === 'Venus' || name === 'Mars') && 'only'} live {' '}
-                <span className='diameter-words'>
+                <span className='diameter-words diameter-output'>
                   {diamInput && formatLargeNumbers(diamConversion(diameter))}{!diamInput && diamConversion(diamInput)} miles
                 </span>
                 {' '} away on {name}!
