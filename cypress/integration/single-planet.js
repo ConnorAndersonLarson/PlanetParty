@@ -66,6 +66,16 @@ describe('Single Planet Testing', () => {
     cy.get('input[name="day"]').clear().type('10')
     .get('.length-of-day-output').should('contain', '2,440 hours')
   })
+  it('Should be able to enter different distances and receive different outcomes based on that planet', () => {
+    cy.visit(`${baseURL}neptune`)
+    .get('.diameter-output').should('contain', '19.32 miles')
+    cy.get('input[name="diameter"]').clear().type('2')
+    .get('.diameter-output').should('contain', '7.73')
+    cy.visit(`${baseURL}mars`)
+    .get('.diameter-output').should('contain', '2.66 miles')
+    cy.get('input[name="diameter"]').clear().type('12')
+    .get('.diameter-output').should('contain', '6.38')
+  })
   it('Should only allow numbers to be entered', () => {
     cy.visit(`${baseURL}neptune`)
       .get('.gravity-words').should('contain', '114 pounds')
