@@ -51,7 +51,6 @@ class App extends React.Component<{}, AllData> {
       })
       .then(response => response.bodies.filter((planet: IncomingData) => (planet.id !== 'ceres' && planet.id !== 'pluton' && planet.id !== 'haumea' && planet.id !== 'makemake' && planet.id !== 'eris')))
       .then(planets => planets.map((info: IncomingData) => {
-        console.log(planets)
         return {
           id: info.id,
           name: info.englishName,
