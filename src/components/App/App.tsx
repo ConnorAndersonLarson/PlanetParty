@@ -51,6 +51,7 @@ class App extends React.Component<{}, AllData> {
       })
       .then(response => response.bodies.filter((planet: IncomingData) => (planet.id !== 'ceres' && planet.id !== 'pluton' && planet.id !== 'haumea' && planet.id !== 'makemake' && planet.id !== 'eris')))
       .then(planets => planets.map((info: IncomingData) => {
+        console.log(planets)
         return {
           id: info.id,
           name: info.englishName,
@@ -63,8 +64,13 @@ class App extends React.Component<{}, AllData> {
           number_of_moons: info.moons?.length || 0
         }
       }))
-      .then(result => this.setState({ allPlanets: result }))
-      .catch(err => this.setState({ error: 'Oh no! Something went wrong with the data launch!' }))
+      .then(result => {
+         this.setState({ allPlanets: result })
+       })
+      .catch(err => {
+        console.log(err)
+        this.setState({ error: 'Oh no! Something went wrong with the data launch!' })
+      })
   };
 
   render() {
