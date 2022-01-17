@@ -56,6 +56,16 @@ describe('Single Planet Testing', () => {
     cy.get('input[name="weight"]').clear().type('50')
       .get('.gravity-words').should('contain', '45 pounds')
   })
+  it('Should be able to enter different hours and receive different outcomes based on that planet', () => {
+    cy.visit(`${baseURL}uranus`)
+    .get('.length-of-day-output').should('contain', '2 hours')
+    cy.get('input[name="day"]').clear().type('10')
+    .get('.length-of-day-output').should('contain', '7 hours')
+    cy.visit(`${baseURL}venus`)
+    .get('.length-of-day-output').should('contain', '732')
+    cy.get('input[name="day"]').clear().type('10')
+    .get('.length-of-day-output').should('contain', '2,440 hours')
+  })
   it('Should only allow numbers to be entered', () => {
     cy.visit(`${baseURL}neptune`)
       .get('.gravity-words').should('contain', '114 pounds')
