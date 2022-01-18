@@ -1,12 +1,12 @@
 <h1 align="left">Planet Party</h1>
 
 <p align="center">
-  <a href="https://planet-party.herokuapp.com/">
+  <a href="https://planetparty.herokuapp.com/">
     <img src="https://media.giphy.com/media/VI2UC13hwWin1MIfmi/source.gif" alt="Spinning Earth with moon" width="200" height='auto'>
   </a>
     <p align="center">
     <br />
-    <a href="https://planet-party.herokuapp.com/"><strong>Explore the app »</strong></a>
+    <a href="https://planetparty.herokuapp.com/"><strong>Explore the app »</strong></a>
     <br />
     <br />
     </p>
@@ -29,7 +29,7 @@
 
 Planet Party is an application designed for kids to learn more about planets in our solar system. We implemented the Solar System OpenData API [(view documentation)](https://api.le-systeme-solaire.net/en/) to display each planet and relevant planet facts. Users have the ability to sort planets by different criteria and click on a planet to view more information. In the single planet view, a user can view different fun facts about the planet compared to Earth and input a weight on Earth to see how it would compare to that planet. We were given 8 days to complete this project while learning and implementing TypeScript from scratch. The project specs and rubic are from the Turing School of Software and Design and can be seen [here](https://frontend.turing.io/projects/module-3/stretch.html).
 
-View the deployed site: [here](https://planet-party.herokuapp.com/)
+View the deployed site: [here](https://planetparty.herokuapp.com/)
 
 ## Installation
 
@@ -50,12 +50,12 @@ View the deployed site: [here](https://planet-party.herokuapp.com/)
 * [Error Handling](#error-handling)
 * [Loading Screen](#loading-screen)
 
-#### All Planets View 
-  - When a user visits the site they should be able to see all planets in the solar system, and sort planets by sort options. 
+#### All Planets View
+  - When a user visits the site they should be able to see all planets in the solar system, and sort planets by sort options.
 <img src="https://media.giphy.com/media/IZ0Taem6JhG0VJYQQl/giphy.gif" width="1440">
 
 #### Planet Info
-  - When a user clicks on a planet they should see a single planet view with various fun facts about the planet. 
+  - When a user clicks on a planet they should see a single planet view with various fun facts about the planet.
 
 <img src="https://media.giphy.com/media/zVXMeEDnLV1jW0zZ95/giphy.gif" width="1440">
 
@@ -63,9 +63,9 @@ View the deployed site: [here](https://planet-party.herokuapp.com/)
  - Responsiveness was a consideration while designing this application. Our application viewed from a mobile device:
  <img src="https://media.giphy.com/media/HWFo2llXGa7uugvvx6/giphy.gif" width="500" align="center">
 
-#### Accessibility 
+#### Accessibility
 
-We made accessibility a priority in our application. Planet Party recieved a 100% acecessibility audit from Chrome's Lighthouse tool. Also using the Wave extension, our application has zero errors and zero contrast errors. 
+We made accessibility a priority in our application. Planet Party recieved a 100% acecessibility audit from Chrome's Lighthouse tool. Also using the Wave extension, our application has zero errors and zero contrast errors.
 
 #### Error Handling
 To maintain a better user experience, we implemented dynamic error handling, so that a user will receive a unique error message based on the type of error.
